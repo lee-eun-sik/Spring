@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -17,12 +19,13 @@ import back.model.common.PostFile;
 import back.util.FileUploadUtil;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-@Data
+@Service
 @Slf4j
 public class FileServiceImpl implements FileService {// 보안때문, 인터페이스 호출, 스프링때문에 생긴이유
-    private FileMapper fileMapper;
+	@Autowired
+	private FileMapper fileMapper;
 
-    private SqlSessionFactory sqlSessionFactory; // MyBatis SQL 세션 팩토리
+    
     
     /**
      * boardServiceImpl 생성자

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>로그인 화면</title>
+<script src="/js/jquery-3.7.1.min.js"></script>
+<script src="/js/common.js"></script>
+</head>
+<body>
+	
+		id : <input type="text" name="id"id="userId"><br/>
+		비밀번호 : <input type="password" name="pass"id="password">
+		<button type="button"id="loginBtn">로그인</button>
+
+	<a href="/user/join.do">회원가입 페이지로 이동</a>
+	
+	<script>
+	$(document).ready(function() {
+		//로긴 폼에 섬밋이벤트시 작동
+	    $("#loginBtn").click(function(event) {
+	        event.preventDefault(); // 기본 폼 제출 방지
+			let userId = $("#userId").val().trim();
+			let passwsord = $("#password").val().trim();
+			
+			if (!validationUtil.isEmpty(userId)) {
+				alert("아이디를 입력해주세요.")
+				$("#userId").focus();
+				return;
+			}
+			
+			if (!validationUtil.isEmpty(passwsord)) {
+				alert("비밀번호를 입력해주세요.")
+				$("#password").focus();
+				return;
+			}	
+	        ajaxRequest(
+	           	'[[${apiBaseUrl}]]/api/user/login.do', // 로그인 요청 URL
+				{
+					userId:$("#userId").val(),
+					password:$("#password").val()
+				},
+	            function(response) {
+	            	console.log(response);
+	                // 응답 처리
+	                if (response.success) {
+	                    alert("로그인 성공하셨습니다.");
+	                    window.location.href ='/'; // 로그인 성공 후 메인 페이지로 이동
+	                } else {
+	                	alert("로그인에 실패하셨습니다.");
+	                }
+	            }
+	            
+	        );
+	    });
+	});
+    </script>
+	
+</body>
+</html>

@@ -7,6 +7,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import back.exception.HException;
@@ -16,7 +17,7 @@ import back.util.MybatisUtil;
 import back.util.SHA256Util;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-@Data
+@Service
 @Slf4j
 public class UserServiceImpl implements UserService {// 보안때문, 인터페이스 호출, 스프링때문에 생긴이유
     @Autowired
