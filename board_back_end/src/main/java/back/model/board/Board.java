@@ -12,14 +12,14 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor // 기본 생성자 자동 생성
-@AllArgsConstructor
+@AllArgsConstructor // 모든 필드를 매개변수로 하는 생성자 자동 생성 게터 세터 쉽게 구성함. 편의 기능임
 @EqualsAndHashCode(callSuper = true)
 public class Board extends Model{
 	//검색 필터
-	private String searchText;
+	private String searchStartText;
 	private String startDate;
 	private String endDate;
-	
+	private String searchText;
 	//게시글 정보
 	private String boardId;
 	private String title;

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="back.mapper.board.BoardMapper"> <!-- 매퍼의 네임스페이스 설정 -->
+<mapper namespace="back.mapper.board.BoardMapper"> <!-- 매퍼의 네임스페이스 설정 인터페이스 경로 지정하기-->
 
        <select id="getBoardList" parameterType="back.model.board.Board" resultType="back.model.board.Board"> <!-- 조외조건 -->
      

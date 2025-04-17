@@ -51,7 +51,7 @@ var validationUtil = {
 };
 
 // 공통 AJAX 요청 함수
-function ajaxRequest(url, data, successCallback, loginCheck) {
+function ajaxRequestLogin(url, data, successCallback) {
 	console.log("data",data);
     $.ajax({
         url: url,
@@ -67,11 +67,11 @@ function ajaxRequest(url, data, successCallback, loginCheck) {
             if (response.success) {
                 if (successCallback) successCallback(response);
             } else {
-                handleAjaxError(loginCheck, response); // 공통 에러 처리 함수 호출
+                handleAjaxError(true, response); // 공통 에러 처리 함수 호출
             }
         },
         error: function (xhr, status, error) {
-            handleAjaxError(loginCheck, null, xhr, status, error); // 공통 에러 처리 함수 호출
+            handleAjaxError(true, null, xhr, status, error); // 공통 에러 처리 함수 호출
         }
     });
 }
@@ -79,6 +79,7 @@ function ajaxRequest(url, data, successCallback, loginCheck) {
 // 공통 AJAX 요청 함수
 function ajaxRequest(url, data, successCallback) {
 	console.log("data",data);
+	
     $.ajax({
         url: url,
         type: "POST",
@@ -119,11 +120,11 @@ function ajaxRequestFile(url, data, successCallback) {
             if (response.success) {
                 if (successCallback) successCallback(response);
             } else {
-                handleAjaxError(response); // 공통 에러 처리 함수 호출
+                handleAjaxError(false, response); // 공통 에러 처리 함수 호출
             }
         },
         error: function (xhr, status, error) {
-            handleAjaxError(null, xhr, status, error); // 공통 에러 처리 함수 호출
+            handleAjaxError(false, null, xhr, status, error); // 공통 에러 처리 함수 호출
         }
     });
 }
@@ -136,7 +137,7 @@ function handleAjaxError(loginCheck, response, xhr, status, error, ) {
 
     if(!loginCheck && xhr.status == 401) {
 		alert("로그인이 필요한 화면 입니다. 로그인 페이지로 이동합니다.");
-		window.location.href ='/user/login.do'; 
+		//window.location.href ='/user/login.do'; 
 	} else if (responseData) {
         alert(responseData.message || "알 수 없는 오류");
     } else {

@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="back.mapper.board.UserMapper"> <!-- 매퍼의 네임스페이스 설정 -->
+<mapper namespace="back.mapper.user.UserMapper"> <!-- 매퍼의 네임스페이스 설정 -->
 
     <!-- 사용자 ID로 사용자 정보 조회 -->
     <select id="getUserById" parameterType="string" resultType="back.model.user.User">
@@ -23,7 +23,7 @@
 
     <!-- 사용자 생성 -->
     <insert id="registerUser" parameterType="back.model.user.User">
-        INSERT INTO USERS (
+         INSERT INTO USERS (
 	        USER_ID, 
 	        USERNAME, 
 	        PASSWORD, 

@@ -20,7 +20,7 @@ public class BoardController {
 	 */
 	
 	@GetMapping("/board/view.do") 
-	public String viewPage(@RequestParam("id") String boardId, Model model) {
+	public String viewPage(@RequestParam("id") String boardId, Model model) { //이름을 가진것을 boardId에 넣음, 어노테이션 작업으로 한방에 한다. 
 		model.addAttribute("id", boardId); //화면에서 필요하면 id만 넘김
 		return "board/view";
 	}

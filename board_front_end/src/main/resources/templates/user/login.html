@@ -20,7 +20,7 @@
 	    $("#loginBtn").click(function(event) {
 	        event.preventDefault(); // 기본 폼 제출 방지
 			let userId = $("#userId").val().trim();
-			let passwsord = $("#password").val().trim();
+			let password = $("#password").val().trim();
 			
 			if (!validationUtil.isEmpty(userId)) {
 				alert("아이디를 입력해주세요.")
@@ -28,12 +28,12 @@
 				return;
 			}
 			
-			if (!validationUtil.isEmpty(passwsord)) {
+			if (!validationUtil.isEmpty(password)) {
 				alert("비밀번호를 입력해주세요.")
 				$("#password").focus();
 				return;
 			}	
-	        ajaxRequest(
+	        ajaxRequestLogin(
 	           	'[[${apiBaseUrl}]]/api/user/login.do', // 로그인 요청 URL
 				{
 					userId:$("#userId").val(),

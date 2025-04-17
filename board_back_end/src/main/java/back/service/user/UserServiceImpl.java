@@ -17,7 +17,7 @@ import back.util.MybatisUtil;
 import back.util.SHA256Util;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-@Service
+@Service //스프링이 관리함
 @Slf4j
 public class UserServiceImpl implements UserService {// 보안때문, 인터페이스 호출, 스프링때문에 생긴이유
     @Autowired

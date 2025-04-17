@@ -19,13 +19,13 @@ import jakarta.servlet.http.HttpServletResponse;
 
 /**
  * 🔐 Spring Security 설정 클래스
- * 
- * ✔ 세션 기반 인증 방식 사용 (프론트엔드 분리 구조 대응)
+ *  // 경로에 config파일을 다 넣기
+ * ✔ 세션 기반 인증 방식 사용 (프론트엔드 분리 구조 대응) 스프링 부트에게 위임 시켜서 우리가 관리함
  * ✔ JSON 기반 API 요청 처리 (폼 로그인 X) 폼 통신 안함
  * ✔ CORS 설정 포함 (withCredentials + 세션 쿠키 허용) Cross 도메인 아이피 주소와 폰트 주소가 동일하지 않으면 안된다.
  */
-@Configuration
-@EnableWebSecurity //스프링 보안을 사용하겠다. 객체에 설정한데로
+@Configuration // config파일로 인정함. 로그인 관리, 세션관리를 spring boot가 해줌. 보안 사용하겠다.
+@EnableWebSecurity //스프링 보안을 사용하겠다. 객체에 설정한데로 객체 내용에 따라서 작동한다.
 public class SecurityConfig {
 
     @Autowired // 빈등록 자동주입해주겠다.
@@ -49,7 +49,7 @@ public class SecurityConfig {
      */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
+        http // 객체안에서 함수 호출 데이터 실행문을 넣음
             /** 객체에서 뭔가 뽑아옴 자동주입 도는 시점에서
              * ✅ CORS 설정 적용
              * - WebConfig의 WebMvcConfigurer에서 정의한 CORS 정책을 활성화
@@ -61,14 +61,14 @@ public class SecurityConfig {
              * ✅ CSRF 비활성화
              * - 프론트엔드가 JSON으로 요청을 보낼 경우 보통 비활성화
              */
-            .csrf(csrf -> csrf.disable()) // 기본적으로 뭔가 요청 기본적으로 html로 받음, json 방식으로 리턴 비활성해야 가능
+            .csrf(csrf -> csrf.disable()) // 기본적으로 뭔가 요청 기본적으로 html로 받음, json 방식으로 리턴 비활성해야 가능 함수를 간단히함. 객체와 클래스를 생략함 함수 내용을 입력함. 함수뿐만아니라 객체를 리턴함. 인터페이스 구현객체를 받아서 실행시킴 리턴문 생략가능 a+b를 리턴시킴 익명 객체, 익며 함수를 만들고, 인터페이스를 반환함. 인터페이스에 값받아서 비활성화
 
             /**
              * ✅ 요청 경로별 인증/인가 정책 정의, 로그인 체크 할 것 안한 것이 있다. 이것을 여기에 넣음
              */
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers(
-                    "/api/user/login.do",
+                    "/api/user/login.do", // 로그인 하지 않아도 넘길 주소
                     "/api/user/logout.do",
                     "/api/user/register.do",
                     "/api/file/down.do",
@@ -101,9 +101,9 @@ public class SecurityConfig {
              * - 인증되지 않은 사용자가 요청 시 JSON 형식의 401 응답 전송
              */
             .exceptionHandling(ex -> ex
-                .authenticationEntryPoint((req, res, e) -> {
+                .authenticationEntryPoint((req, res, e) -> { //인증 익셉션 너는 인가된 사용자가 아님
                 	 res.setStatus(HttpServletResponse.SC_UNAUTHORIZED); //공인 인증에러 담음 401 Unauthorized
-                     res.setContentType("application/json; charset=UTF-8");// 보내기
+                     res.setContentType("application/json; charset=UTF-8");// 보내기, json방식
 
                      ApiResponse<Object> apiResponse = new ApiResponse<>(false, "권한 없음", null);//공통만듦. 담아서 작슨 객체를 넘겨줌
 

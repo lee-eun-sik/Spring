@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class DBUtil {
     private static final String URL = "jdbc:oracle:thin:@localhost:1521:xe"; // DB URL
-    private static final String USER = "c##skywindy"; // DB 사용자명
+    private static final String USER = "c##leeeunsik"; // DB 사용자명
     private static final String PASSWORD = "1234"; // DB 비밀번호
 
     public static Connection getConnection() throws SQLException {

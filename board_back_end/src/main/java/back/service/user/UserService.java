@@ -11,7 +11,7 @@ public interface UserService {
     boolean registerUser(User user);
     
     boolean validateUser(User user);
-    
+    //서비스 붙여야 스프링이 관리
     public User getUserById(String userId);
     
   

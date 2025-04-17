@@ -16,6 +16,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.servlet.ServletException;
@@ -35,21 +36,22 @@ import back.util.SecurityUtil;
 
 
 
-@Data
+
 @Slf4j
 @RestController // <- 이것도 추가해줘야 Rest API 컨트롤러가 작동함
+@RequestMapping("/api/user")
 public class UserController extends HttpServlet {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1441950303124081693L;
 
-	@Autowired //의존성 주입
+	@Autowired //의존성 주입 스프링 보안을 관리하는 매니저
     private AuthenticationManager authenticationManager;
 	
 	@Autowired
 	private UserService userService;
-	@PostMapping("/view.do")
+	@PostMapping("/view.do")// user정보를 꺼내온다.
 	public ResponseEntity<?> view() {
 		CustomUserDetails userDetails = (CustomUserDetails) SecurityContextHolder.getContext()
 				.getAuthentication().getPrincipal();
@@ -122,7 +124,7 @@ public class UserController extends HttpServlet {
 		// 삭제가 성공한 경우, 세션과 Spring Security 인증 정보 초기화
 		if (success) {
 			session.invalidate();// 세션 무효화 (로그아웃 처리)
-			SecurityContextHolder.clearContext();// SecurityContext 초기화
+			SecurityContextHolder.clearContext();// SecurityContext 초기화 getContext를 했기 때문이다.
 		}
 		// 클라이언트에게 결과를 JSON 형태로 응답
 	    // ApiResponse는 일반화된 응답 객체: (성공 여부, 메시지, 반환 데이터)

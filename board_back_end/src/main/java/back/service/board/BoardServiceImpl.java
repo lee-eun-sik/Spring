@@ -65,7 +65,7 @@ public class BoardServiceImpl implements BoardService {
     }
     
     @Override
-    @Transactional
+    @Transactional // 커밋 롤백 관리, 여러군데로 전파된다. 
     public boolean createBoard(Board board) {
         try {
             boolean result = boardMapper.create(board) > 0;
@@ -122,7 +122,7 @@ public class BoardServiceImpl implements BoardService {
     }
     
     @Override
-    @Transactional
+    @Transactional // 커밋 롤백 관리
     public boolean deleteBoard(Board board) {
         try {
             return boardMapper.delete(board) > 0;
