@@ -34,7 +34,7 @@ public class FileServiceImpl implements FileService {// 보안때문, 인터페�
     
 	@Override
 	public PostFile getFileByBoardIdAndFileId(PostFile file) {
-		return fileMapper.getFileByFileId(file);
+		return fileMapper.getFileByBoardIdAndFileId(file);
 	}
 	@Override
 	@Transactional
