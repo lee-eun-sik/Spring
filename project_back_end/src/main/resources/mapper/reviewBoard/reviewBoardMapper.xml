@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="reviewBoardMapper"> <!-- 매퍼의 네임스페이스 설정 -->
+
+    <!-- 게시글 -->
+    <select id="getBoardList" parameterType="model.board.Board" resultType="model.board.Board">
+        SELECT
+		    B.RN,
+		    B.BOARD_ID,
+		    B.TITLE,
+		    B.CONTENT,
+		    B.VIEW_COUNT,
+		    B.CREATE_ID,
+		    B.UPDATE_ID,
+		    B.CREATE_DT,
+		    B.UPDATE_DT,
+		    B.SITTER,
+		    B.DEL_YN
+		FROM (
+		    SELECT
+		        ROWNUM AS RN,
+		        A.BOARD_ID,
+		        A.TITLE,
+		        A.CONTENT,
+		        A.VIEW_COUNT,
+		        A.CREATE_ID,
+		        A.UPDATE_ID,
+		        A.SITTER,
+		        TO_CHAR(A.CREATE_DT, 'YYYY-MM-DD') AS CREATE_DT, 
+		        TO_CHAR(A.UPDATE_DT, 'YYYY-MM-DD') AS UPDATE_DT,  
+		        A.DEL_YN
+		    FROM REVIEW A
+	  <where>
+			   A.DEL_YN = 'N'
+			<if test="searchText != null and searchText != '' and searchColumn != null and searchColumn != ''">
+			   AND <choose>
+			   <when test="searchColumn == 'TITLE'">
+			   A.TITLE LIKE '%'||#{searchText}||'%' 
+			   </when>
+			   <when test="searchColumn == 'CREATE_ID'">
+			   A.CREATE_ID LIKE '%'||#{searchText}||'%'
+			   </when>
+			   </choose>
+			   
+			</if>
+			   
+			   </where>
+		) B      
+        WHERE B.RN BETWEEN #{startRow} AND #{endRow}      
+    </select>
+    
+    <select id="getTotalBoardCount" parameterType="model.board.Board" resultType="int">
+    	SELECT COUNT(B.BOARD_ID)
+   			FROM (
+		    SELECT
+		        ROWNUM AS RN,
+		        A.BOARD_ID,
+		        A.TITLE,
+		        A.CONTENT,
+		        A.VIEW_COUNT,
+		        A.CREATE_ID,
+		        A.UPDATE_ID,
+		        TO_CHAR(A.CREATE_DT, 'YYYY-MM-DD') AS CREATE_DT, 
+		        TO_CHAR(A.UPDATE_DT, 'YYYY-MM-DD') AS UPDATE_DT,  
+		        A.DEL_YN
+		    FROM REVIEW A
+	 <where>
+			   A.DEL_YN = 'N'
+			<if test="searchText != null and searchText != '' and searchColumn != null and searchColumn != ''">
+			   AND <choose>
+			   <when test="searchColumn == 'TITLE'">
+			   A.TITLE LIKE '%'||#{searchText}||'%' 
+			   </when>
+			   <when test="searchColumn == 'CREATE_ID'">
+			   A.CREATE_ID LIKE '%'||#{searchText}||'%'
+			   </when>
+			   </choose>
+			   
+			</if>
+			   
+			   </where>
+	    )B	
+    </select>
+    
+    
+    <select id="getBoardById" parameterType="string" resultType="model.board.Board">
+        SELECT
+            BOARD_ID,
+            TITLE,
+            CONTENT,
+            VIEW_COUNT,
+            CREATE_ID,
+            UPDATE_ID,
+            CREATE_DT,
+            UPDATE_DT,
+            RATING,
+            SITTER,
+            DEL_YN
+        FROM REVIEW
+        WHERE BOARD_ID = #{boardId}
+        	AND DEL_YN = 'N'
+    </select>
+	
+	<!-- 별점별 개수 집계 -->
+	<select id="selectRatingStats" resultType="map">
+	    SELECT rating AS rating, COUNT(*) AS count
+        FROM REVIEW
+        WHERE rating IS NOT NULL
+        GROUP BY rating
+        ORDER BY rating DESC
+	</select>
+	
+	<!-- 전체 별점 후기 개수 -->
+	<select id="TotalReviewCount" resultType="int">
+	    SELECT COUNT(*)
+	    FROM REVIEW
+	    WHERE rating IS NOT NULL
+	</select>
+
+	 <!-- 게시글 생성 -->
+    <insert id="create" parameterType="model.board.Board">
+        INSERT INTO REVIEW 
+		(
+	    BOARD_ID, 
+	    TITLE, 
+	    CONTENT,
+	    CREATE_ID,
+	    CREATE_DT,  
+	    RATING,
+	    SITTER
+		)
+		VALUES 
+		(
+	    REVIEW_SEQ.NEXTVAL, 
+	    #{title}, 
+	    #{content}, 
+	    #{createId},
+	    SYSDATE,  
+	    #{rating},
+	    #{sitter}
+		)
+
+        <selectKey keyProperty="boardId" resultType="string" order="AFTER">
+        	SELECT REVIEW_SEQ.CURRVAL FROM DUAL
+        </selectKey>
+    </insert>
+    
+    <update id="update" parameterType="model.board.Board">
+    UPDATE REVIEW
+    SET TITLE = #{title},
+        CONTENT = #{content},
+        VIEW_COUNT = #{viewCount}, 
+        UPDATE_ID = #{updateId},
+        UPDATE_DT = SYSDATE
+    WHERE BOARD_ID = #{boardId}
+	</update>
+	
+	<update id="delete" parameterType="model.board.Board">
+	    DELETE FROM REVIEW
+	    WHERE BOARD_ID = #{boardId}
+    </update>
+    
+    <update id="viewCount" parameterType="model.board.Board">
+	    UPDATE REVIEW
+	    SET VIEW_COUNT = #{viewCount}
+	    WHERE BOARD_ID = #{boardId}
+    </update>
+    
+    <!-- 댓글 등록 -->
+    <insert id="insertComment" parameterType="model.board.Comment">
+        INSERT INTO REVIEW_COMMENT (COMMENT_ID, BOARD_ID, PARENT_COMMENT_ID, CONTENT, CREATE_ID)
+        VALUES (SEQ_COMMENT.NEXTVAL, #{boardId}, #{parentCommentId}, #{content}, #{createId})
+    </insert>
+
+    <!-- 게시글에 대한 댓글 조회 (대댓글 포함) -->
+    <select id="getCommentsByBoardId" parameterType="string" resultType="model.board.Comment">
+	SELECT *
+	FROM REVIEW_COMMENT  
+	WHERE BOARD_ID = #{boardId} 
+		AND DEL_YN = 'N'  
+	ORDER BY PARENT_COMMENT_ID, CREATE_DT ASC 
+	</select>
+
+
+    <!-- 댓글 조회 -->
+    <select id="getCommentById" parameterType="int" resultType="model.board.Comment">
+        SELECT *
+        FROM REVIEW_COMMENT
+        WHERE COMMENT_ID = #{commentId}
+          AND DEL_YN = 'N'
+    </select>
+
+    <!-- 댓글 수정 -->
+    <update id="updateComment" parameterType="model.board.Comment">
+        UPDATE REVIEW_COMMENT
+        SET CONTENT = #{content},
+            UPDATE_ID = #{updateId},
+            UPDATE_DT = SYSDATE
+        WHERE COMMENT_ID = #{commentId}
+    </update>
+
+    <!-- 댓글 삭제 -->
+    <update id="deleteComment" parameterType="model.board.Comment">
+        UPDATE REVIEW_COMMENT
+        SET DEL_YN = 'Y',
+        	UPDATE_ID = #{updateId},
+            UPDATE_DT = SYSDATE
+        WHERE COMMENT_ID = #{commentId}
+    </update>
+
+</mapper>

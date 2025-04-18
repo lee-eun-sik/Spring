@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="PetPictureMapper">
+
+    <select id="getList" resultType="model.pet.PetPicture">
+        SELECT * FROM PET_PICTURE
+        ORDER BY CREATE_DATE DESC
+    </select>
+
+    <select id="getPetPictureById" parameterType="String" resultType="model.pet.PetPicture">
+        SELECT * FROM 
+        PET_PICTURE 
+        WHERE 
+        BOARD_ID = #{id}
+    </select>
+    
+    <!-- 총 게시글 수 (검색 조건 포함) -->
+    <select id="getPetPictureCount" resultType="int" parameterType="map">
+        SELECT COUNT(*) 
+        FROM PET_PICTURE
+        <where>
+            <if test="searchText != null and searchText != ''">
+                 AND create_id LIKE '%' || #{searchText} || '%'           
+            </if>
+        </where>
+    </select>
+
+    
+    <!-- 게시글 목록 조회 (검색 + 페이징) -->
+    <select id="getPetPictureList" resultType="model.pet.PetPicture" parameterType="map">
+	    SELECT * FROM (
+	        SELECT inner_table.*, ROWNUM AS rownum_
+	        FROM (
+	            SELECT 
+	                BOARD_ID,
+	                PET_NAME,
+	                CONTENT,
+	                IMAGE_PATH,
+	                CREATE_ID AS createId,       
+	                TO_CHAR(CREATE_DATE, 'YYYY-MM-DD') AS createDate
+	            FROM PET_PICTURE
+	            <where>
+	                <if test="searchText != null and searchText != ''">
+	                    AND create_id LIKE '%' || #{searchText} || '%'                    
+	                </if>
+	            </where>
+	            ORDER BY CREATE_DATE DESC
+	        ) inner_table
+	        WHERE ROWNUM &lt;= #{page} * #{size}
+	    )
+	    WHERE rownum_ &gt; (#{page} - 1) * #{size}
+	</select>
+    
+    <insert id="insertPetPicture" parameterType="model.pet.PetPicture">
+        INSERT INTO pet_picture (pet_id, pet_name, content, create_id, image_path, create_date)
+        VALUES (pet_picture_seq.NEXTVAL, #{petName}, #{content}, #{createId}, #{imagePath}, SYSDATE)
+    </insert>
+    
+	<insert id="insert" parameterType="model.pet.PetPicture">
+    INSERT INTO PET_PICTURE (
+        board_id,  
+        pet_name,
+        content,
+        <if test="imagePath != null and imagePath != ''">
+            image_path,
+        </if>
+        create_id,
+        create_date
+    ) VALUES (
+        PET_PICTURE_SEQ.NEXTVAL,
+        #{petName},
+        #{content},
+        <if test="imagePath != null and imagePath != ''">
+            #{imagePath},
+        </if>
+        #{createId, jdbcType=VARCHAR},
+        SYSDATE
+    )
+</insert>
+    
+    <update id="update" parameterType="model.pet.PetPicture">
+        UPDATE PET_PICTURE
+        SET 
+            PET_NAME = #{petName}, 
+            CONTENT = #{content}
+        WHERE BOARD_ID = #{boardId}
+    </update>
+
+    <delete id="delete" parameterType="String">
+        DELETE FROM PET_PICTURE WHERE BOARD_ID = #{id}
+    </delete>
+
+
+
+</mapper>
