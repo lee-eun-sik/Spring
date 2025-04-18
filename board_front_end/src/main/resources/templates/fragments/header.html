@@ -21,7 +21,7 @@
     	
         ajaxRequest(
             '[[${apiBaseUrl}]]/api/user/view.do',
-            {},
+            {}, // 로그인을 했다면 j섹션에서 쿠키를 자동으로 넘어옴. 쿠기에 들어가있는 값때문에 왔다갔다하면서 세션이 들어옴.
             function (response) {
                 if (response.success) {
                     const user = response.data;
@@ -35,7 +35,7 @@
                         <button type="button" id="logOutBtn">로그아웃</button>
                         </li>
                     `);
-                    $("#logOutBtn").click(function () {
+                    $("#logOutBtn").click(function () { // 로그아웃 처리
                 		ajaxRequest(
                	            '[[${apiBaseUrl}]]/api/user/logout.do',
                	            {},
@@ -52,7 +52,7 @@
                 	
                     
                 } else {
-                    $("#nav-menu").html(`
+                    $("#nav-menu").html(` // 로그인 회원가입을 리턴함
                         <li class="nav-item">
                             <a class="nav-link text-white" href="/user/login.do">로그인</a>
                         </li>

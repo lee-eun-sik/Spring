@@ -12,7 +12,7 @@
         
         	let edit = editInit("content");
         	
-        	let uploadedFiles = setupFileUpload({
+        	let uploadedFiles = setupFileUpload({//데이터 셋팅 필요없다.
         	    dropZone: '#dropZone',
         	    fileInput: '#files',
         	    fileList: '#fileList',
@@ -60,7 +60,7 @@
                 }
                 
                 ajaxRequestFile(
-                	"[[${apiBaseUrl}]]/api/board/create.do", 
+                	"[[${apiBaseUrl}]]/api/board/create.do", //파일을 업로드할 때함. json형태로 못함 fom데이터 형식으로 받는다. 기존것과 거의 비슷하다.
                 	formData, 
                 	function (response) {
                 		if (response.success) {

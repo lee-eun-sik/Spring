@@ -23,7 +23,7 @@
                 maxFileSize: 10 * 1024 * 1024 // 10MB
             });
 
-            // 게시글 정보 조회
+            // 게시글 정보 조회, 갖다가 넣어준다. 셋팅 부분만 달라짐. GET방식으로 얻어오기
             ajaxRequest( 
             	'[[${apiBaseUrl}]]/api/board/view.do', 
             	{ boardId: boardId }, 
@@ -41,14 +41,14 @@
 	                            <li>
 	                                ${file.fileName}
 	                                <button name="removeBtn" data-file="${file.fileId}">제거</button>
-	                                <a href="/file/down.do?fileId=${file.fileId}">다운로드</a>
+	                                <a href="[[${apiBaseUrl}]]/api/file/down.do?fileId=${file.fileId}">다운로드</a>
 	                            </li>`;
 	                    }
-	                    $("#existingFileList").html(html);
-	                    fileObj.existingFileListFind();
+	                    $("#existingFileList").html(html); // 기존파일을 넣어주는 작업이 바뀜.예전파일라스트
+	                    fileObj.existingFileListFind(); // 예전파일 리스트를 가져옴. 가져올 때 이전 정보를 갱신함. 안지워지는 애들만 뽑아옴. 서버에서 필터링을 한다.
 	                }
 	                if(gUserId && gUserId == board.createId){
-                    	$('#btnArea').show();
+                    	$('#btnArea').show(); //수정 삭제 버튼이 보이게 한다.
             		} 
 	            }
             );
@@ -107,7 +107,6 @@
 
                 fileObj.updateRemainingFileIds();
                 formData.append("remainingFileIds", $('#remainingFileIds').val());
-				alert($('#remainingFileIds').val());
                 ajaxRequestFile(
                 	"[[${apiBaseUrl}]]/api/board/update.do", 
                 	formData, 

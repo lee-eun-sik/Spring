@@ -40,7 +40,7 @@
                     }
 
 					
-                    loadComments(board.comments);
+                    loadComments(board.comments);// 자바스크립트 방식으로 보여주는 것으로 대체함
                     
                     if(gUserId && gUserId == board.createId){
                     	$('#commentWriteArea').show();
@@ -54,16 +54,16 @@
         );
     }
 
-    function renderComments(comments, parentId = 0, depth = 0) {
+    function renderComments(comments, parentId = 0, depth = 0) { // 기본값이 0이다. 값넘기면 가장 처음은 0임
         let html = '';
-        comments.filter(c => c.parentCommentId === parentId).forEach(c => {
+        comments.filter(c => c.parentCommentId === parentId).forEach(c => { //부모가 0인 애들만 필터링함. 이 실행문의 결과도 리턴해줘 돌려는 함수 생성. 부모 댓글의 아이디가 현재 parentId와 같냐?
             html += `
-                <div id="comment_${c.commentId}" style="margin-left: ${depth * 20}px;">
+                <div id="comment_${c.commentId}" style="margin-left: ${depth * 20}px;"> //글쓴이 아이디 작성일 내용 보여줌
                     <p><strong>${c.createId}</strong> (${c.createDt})</p>
                     <p id="commentContent_${c.commentId}">${c.content}</p>
                   `;
-                  if(gUserId) {
-	                  if(c.createId == gUserId) {
+                  if(gUserId) { // 위쪽헤더에서 구해온 아이디, 로그인 했으면 댓글에다가 달 수 있도록 함.
+	                  if(c.createId == gUserId) { // 로그인한 사용자와 같을 경우
 		                  html +=`
 		                    <button onclick="toggleEditComment(${c.commentId})">수정</button>
 		                    <button onclick="deleteComment(${c.commentId})">삭제</button>
@@ -74,21 +74,21 @@
 					  `;
                   }
             html += `
-	              <div id="editForm_${c.commentId}" style="display:none;">
-	                  <input type="text" id="editContent_${c.commentId}" />
+	              <div id="editForm_${c.commentId}" style="display:none;"> //toggle을 누르면 보여준다.
+	                  <input type="text" id="editContent_${c.commentId}" /> //수정
 	                  <button onclick="editComment(${c.commentId})">수정</button>
 	                  <button type="button" onclick="toggleEditComment(${c.commentId})">취소</button>
 	              </div>
 
 	              <div id="replyForm_${c.commentId}" style="display:none;">
 	                  <textarea id="replyContent_${c.commentId}" rows="2"></textarea>
-	                  <button onclick="addComment(${c.commentId})">답글 작성</button>
+	                  <button onclick="addComment(${c.commentId})">답글 작성</button> // 삭제
 	                  <button type="button" onclick="toggleReplyComment(${c.commentId})">취소</button>
 	              </div>
 	          </div>
       		`;
 
-            html += renderComments(comments, c.commentId, depth + 1);
+            html += renderComments(comments, c.commentId, depth + 1); //자기함수에서 자기함수를 부름. 재귀함수임 문제점: 어느 시점에서 끝나는지 결정해야함.
         });
         return html;
     }
@@ -123,7 +123,7 @@
             },
             function(response) {
                 alert(response.message);
-                if (response.success) location.reload();
+                if (response.success) location.reload(); // 이 화면 전체를 리플래쉬함.
             }
         );
     }
