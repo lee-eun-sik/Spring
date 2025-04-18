@@ -12,7 +12,7 @@ public interface FileMapper {
 	int insertFile(PostFile file);
 	
 	//파일 ID로 첨부된 파일 조회
-	PostFile getFileByFileId(PostFile file);
+	PostFile getFileByBoardIdAndFileId(PostFile file);
 	
 	//게시글 ID로 첨부된 파일 목록 조회
 	List<PostFile> getFilesByBoardId(String boardId);

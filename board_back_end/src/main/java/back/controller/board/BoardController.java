@@ -62,7 +62,8 @@ public class BoardController {
 		log.info(board.toString());
 		List<Board> boardList = boardService.getBoardList(board); //서비스 조회
 		Map dataMap = new HashMap();
-		dataMap.put("list", "board");
+		dataMap.put("board", board);        // ✅ 검색 조건 등 보낼 데이터
+	    dataMap.put("list", boardList);     // ✅ 게시글 목록
 		return ResponseEntity.ok(new ApiResponse<>(true, "목록 조회 성공", dataMap)); //리턴했을 때, 성공실패 리턴함 스프링 부트에서 제공
 	}
 	/**

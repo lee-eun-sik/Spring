@@ -16,7 +16,8 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 public class Board extends Model{
 	//검색 필터
-	private String searchStartText;
+	private String searchStartDate;
+	private String searchEndDate;
 	private String startDate;
 	private String endDate;
 	private String searchText;
