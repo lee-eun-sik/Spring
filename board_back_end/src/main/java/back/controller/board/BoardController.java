@@ -13,6 +13,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -81,9 +82,10 @@ public class BoardController {
 	@PostMapping(value = "/create.do", consumes = MediaType.MULTIPART_FORM_DATA_VALUE) // 파일은 데이터형 지정함 폼형태, 네임명에 따라 객체안에 값을 넣음
 	public ResponseEntity<?> createBoard(
 			@ModelAttribute Board board,
-			@RequestPart(value = "files", required = false) List<MultipartFile> files// 파일 받음 리스트 멀티파트 파일로 받음 파일처리 객체임
+			@RequestPart(value = "files", required = false) List<MultipartFile> files,// 파일 받음 리스트 멀티파트 파일로 받음 파일처리 객체임
+			@AuthenticationPrincipal CustomUserDetails userDetails
 	) {
-		CustomUserDetails userDetails = (CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		
 		SecurityUtil.checkAuthorization(userDetails);
 		board.setCreateId(userDetails.getUsername());
 		board.setFiles(files); // 파일을 넣어줌

@@ -120,7 +120,7 @@
      <delete id="delete" parameterType="back.model.board.Board">
         UPDATE BOARD 
         SET DEL_YN = 'Y', 
-            UPDATE_ID = #{updateId}, 
+            UPDATE_ID = #{updateId, jdbcType=VARCHAR}, 
             UPDATE_DT = SYSDATE  
         WHERE BOARD_ID = #{boardId}
     </delete>
