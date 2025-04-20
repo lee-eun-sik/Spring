@@ -1,67 +1,176 @@
-<div th:fragment="header">
-<div id="header-area">
-    <header class="bg-primary text-white p-3">
-        <div class="container d-flex justify-content-between align-items-center">
-            <h1 class="h3 mb-0">
-                <a href="/board/list.do" class="text-white text-decoration-none">My Board</a>
-            </h1>
+<!-- fragments/header.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <nav>
+        <img th:src="@{/images/logo.png}" alt="logo" />
 
-            <nav>
-                <ul class="nav" id="nav-menu">
-                    <!-- 여기에 JS로 동적으로 추가됩니다 -->
-                </ul>
-            </nav>
+        <div class="menu">
+            <a th:href="@{/notice/list}">공지사항</a>
+            <a th:href="@{/petsitter/list}">펫시터</a>
+            <a th:href="@{/reservation/list}">예약목록</a>
+            <a th:href="@{/review/list}">리뷰목록</a>
+
+            <!-- 드롭다운 -->
+            <div class="dropdown">
+                <a href="#" id="communityBtn">커뮤니티 ▼</a>
+                <div class="dropdown-content">
+                    <a th:href="@{/community/free}">자유게시판</a>
+                    <a th:href="@{/community/photo}">펫사진공유게시판</a>
+                </div>
+            </div>
         </div>
-    </header>
-</div>
-<script>
-	let gUserId;
-	let gApiBaseUrl = "[[${apiBaseUrl}]]";
-    	
-        ajaxRequest(
-            '[[${apiBaseUrl}]]/api/user/view.do',
-            {}, // 로그인을 했다면 j섹션에서 쿠키를 자동으로 넘어옴. 쿠기에 들어가있는 값때문에 왔다갔다하면서 세션이 들어옴.
-            function (response) {
-                if (response.success) {
-                    const user = response.data;
-                    gUserId = user.userId;
-                    console.log(gUserId);
-                    $("#nav-menu").html(`
-                        <li class="nav-item">
-                            <span class="nav-link text-white">👋 <strong>${user.userId}</strong>님</span>
-                        </li>
-                        <li class="nav-item">
-                        <button type="button" id="logOutBtn">로그아웃</button>
-                        </li>
-                    `);
-                    $("#logOutBtn").click(function () { // 로그아웃 처리
-                		ajaxRequest(
-               	            '[[${apiBaseUrl}]]/api/user/logout.do',
-               	            {},
-               	            function (response) {
-               	            	if (response.success) {
-            	                    alert("로그아웃에 성공하셨습니다.");
-            	                    window.location.href ='/user/login.do'; 
-            	                } else {
-            	                	alert("로그아웃에 실패하셨습니다.");
-            	                }
-               	            }
-               	    	);
-                	});
-                	
-                    
-                } else {
-                    $("#nav-menu").html(` // 로그인 회원가입을 리턴함
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="/user/login.do">로그인</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="/user/register.do">회원가입</a>
-                        </li>
-                    `);
+
+        <!-- 로그인 상태 표시 -->
+        <div class="signInfo">
+            <div th:if="${session.loginUser == null}">
+                <button type="button" id="login">로그인</button>
+                <button type="button" id="join">회원가입</button>
+            </div>
+            <div th:if="${session.loginUser != null}">
+                <p id="userGreeting">
+                    안녕하세요,
+                    <a th:href="@{${session.loginUser.role == 'admin'} ? '/user/manager' : '/user/main'}">
+                        <span th:text="${session.loginUser.userId} + '님!'"></span>
+                    </a>
+                </p>
+                <button type="button" id="logout">로그아웃</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="backgroundimg" th:if="${pageName != 'manager'}">
+        <img id="background" th:src="@{/images/pet.png}" />
+        <div class="text-overlay">
+            <p id="p">전문 펫시터가 돌봐드려요</p>
+            <p id="p1">나와 내 반려동물을 위한 돌봄 서비스</p>
+        </div>
+    </div>
+
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        $(document).ready(function () {
+            $("#communityBtn").click(function (event) {
+                event.preventDefault();
+                $(".dropdown-content").toggle();
+            });
+
+            $(document).click(function (event) {
+                if (!$(event.target).closest('.dropdown').length) {
+                    $(".dropdown-content").hide();
                 }
-            }
-        );
-    
-</script>
-</div>
+            });
+
+            $("#login").click(function () {
+                window.location.href = /*[[@{/user/login}]]*/ '/user/login';
+            });
+
+            $("#join").click(function () {
+                window.location.href = /*[[@{/user/join}]]*/ '/user/join';
+            });
+
+            $("#logout").click(function () {
+                $.ajax({
+                    url: /*[[@{/user/logout}]]*/ '/user/logout',
+                    type: "POST",
+                    dataType: "json",
+                    success: function (response) {
+                        if (response.success) {
+                            alert("로그아웃 되었습니다.");
+                            window.location.href = /*[[@{/user/login}]]*/ '/user/login';
+                        } else {
+                            alert("로그아웃에 실패했습니다.");
+                        }
+                    },
+                    error: function () {
+                        alert("서버 오류로 로그아웃에 실패했습니다.");
+                    }
+                });
+            });
+        });
+        /*]]>*/
+    </script>
+
+    <style>
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 100px;
+        }
+        .menu {
+            display: flex;
+            gap: 15px;
+            position: relative;
+        }
+        .menu a {
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            background-color: orange;
+            padding: 10px 15px;
+            border-radius: 40px;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 130px;
+        }
+        .dropdown-content a {
+            display: block;
+            padding: 10px;
+            background: orange;
+            text-align: center;
+            color: black;
+            text-decoration: none;
+        }
+        img {
+            width: 110px;
+            height: 110px;
+        }
+        .signInfo button {
+            background-color: #5A7262;
+            color: white;
+            padding: 10px 15px;
+            border: 2px solid white;
+            border-radius: 5px;
+        }
+        .backgroundimg img {
+            width: 1270px;
+            height: 700px;
+            display: flex;
+            justify-content: center;
+        }
+        .text-overlay {
+            font-family: 'Nanum Gothic', sans-serif;
+            position: absolute;
+            bottom: 18%;
+            left: 21%;
+            transform: translateX(-50%);
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            width: 80%;
+        }
+        .text-overlay #p {
+            font-size: 32px;
+            text-shadow: 3px 3px 7px rgba(0, 0, 0, 0.7);
+        }
+        .text-overlay #p1 {
+            font-size: 22px;
+            margin-top: 10px;
+            text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</body>
+</html>>

@@ -1,6 +1,6 @@
-package model.common;
+package back.model.common;
 
-import model.Model;
+import back.model.Model;
 
 public class PostFile extends Model {
     private int fileId;

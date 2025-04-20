@@ -1,4 +1,4 @@
-package service.user;
+package back.service.user;
 
 import org.apache.ibatis.session.SqlSession;
 import java.util.Map;

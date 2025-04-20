@@ -1,4 +1,4 @@
-package service.user;
+package back.service.user;
 
 import org.apache.ibatis.session.SqlSession;
 import java.util.Map;
@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Date;
 
-import model.user.User;
+import back.model.user.User;
 
 public interface UserService {
     /**

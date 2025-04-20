@@ -1,10 +1,10 @@
-package model.board;
+package back.model.board;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import model.Model;
+import back.model.Model;
 
 public class Comment{
     private int commentId;         // 댓글 고유 ID

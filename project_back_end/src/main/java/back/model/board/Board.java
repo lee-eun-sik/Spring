@@ -1,11 +1,10 @@
-package model.board;
+package back.model.board;
 
 import java.util.List;
 import java.util.Map;
 
-import model.Model;
-import model.common.PostFile;
-
+import back.model.common.PostFile;
+import back.model.Model;
 
 public class Board extends Model {
 

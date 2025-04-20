@@ -1,4 +1,4 @@
-package model.pet;
+package back.model.pet;
 
 public class PetPicture {
 	

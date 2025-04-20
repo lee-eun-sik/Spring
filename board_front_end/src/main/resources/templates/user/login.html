@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>로그인 화면</title>
 <script src="/js/jquery-3.7.1.min.js"></script>
-<script src="/js/common.js"></script>
+<script src="/js/common.js?v=1.0.1"></script>
 </head>
 <body>
 	
@@ -15,7 +15,7 @@
 	<a href="/user/join.do">회원가입 페이지로 이동</a>
 	
 	<script>
-	$(document).ready(function() {
+	
 		//로긴 폼에 섬밋이벤트시 작동
 	    $("#loginBtn").click(function(event) {
 	        event.preventDefault(); // 기본 폼 제출 방지
@@ -52,8 +52,7 @@
 	            
 	        );
 	    });
-	});
-    </script>
+	  </script>
 	
 </body>
 </html>

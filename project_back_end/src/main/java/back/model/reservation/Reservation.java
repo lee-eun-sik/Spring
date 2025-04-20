@@ -1,10 +1,10 @@
-package model.reservation;
+package back.model.reservation;
 
 import java.util.List;
 
-import model.board.Comment;
-import model.Model;
-import model.common.PostFile;
+import back.model.board.Comment;
+import back.model.Model;
+import back.model.common.PostFile;
 
 public class Reservation extends Model {
 	
@@ -93,21 +93,25 @@ public class Reservation extends Model {
    private List<Comment> comments;
 	
 	
+	
+	
+	
+
 	@Override
-	public String toString() {
-	    return "Reservation [boardId=" + boardId + ", reservationDate=" + reservationDate + 
-	    	   ", startDate=" + startDate+ ", endDate=" + endDate + 
-	           ", address=" + address + ", variety=" + variety + ", petName=" + petName + 
-	           ", phoneNumber=" + phoneNumber + ", sitter=" + sitter + ", price=" + price + 
-	           
-	           ", rn=" + rn + ", startRow=" + startRow + ", endRow=" + endRow +
-	           ", page=" + page + ", size=" + size + ", totalCount=" + totalCount +
-	            ", totalPage=" + totalPage + ", createId=" + createId + ", updateId=" + updateId +
-	            ", createDt=" + createDt + ", updateDt=" + updateDt + 
-	           ", reply=" + reply + ", addressDetail=" + addressDetail +"]";
-	}
-	
-	
+public String toString() {
+	return "Reservation [boardId=" + boardId + ", startDate=" + startDate + ", endDate=" + endDate
+			+ ", reservationDate=" + reservationDate + ", address=" + address + ", variety=" + variety
+			+ ", addressDetail=" + addressDetail + ", petName=" + petName + ", phoneNumber=" + phoneNumber + ", sitter="
+			+ sitter + ", price=" + price + ", reply=" + reply + ", searchText=" + searchText + ", searchColumn="
+			+ searchColumn + ", accept=" + accept + ", reason=" + reason + ", rn=" + rn + ", startRow=" + startRow
+			+ ", endRow=" + endRow + ", page=" + page + ", size=" + size + ", totalCount=" + totalCount + ", totalPage="
+			+ totalPage + ", postFiles=" + postFiles + ", comments=" + comments + ", getCreateId()=" + getCreateId()
+			+ ", getUpdateId()=" + getUpdateId() + ", getCreateDt()=" + getCreateDt() + ", getUpdateDt()="
+			+ getUpdateDt() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString() + ", getClass()="
+			+ getClass() + "]";
+}
+
+
 
 	public String getBoardId() {
 		return boardId;

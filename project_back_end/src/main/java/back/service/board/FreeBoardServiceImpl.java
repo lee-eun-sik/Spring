@@ -1,4 +1,4 @@
-package service.board;
+package back.service.board;
 
 import java.util.ArrayList;
 import java.util.Arrays;

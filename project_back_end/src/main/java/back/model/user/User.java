@@ -1,7 +1,7 @@
-package model.user;
+package back.model.user;
 import java.util.Date;
 
-import model.Model;
+import back.model.Model;
 
 public class User extends Model {
 	private String userId;

@@ -1,10 +1,10 @@
-package model.petSitter;
+package back.model.petSitter;
 
 import java.util.List;
 
-import model.board.Comment;
-import model.Model;
-import model.common.PostFile;
+import back.model.board.Comment;
+import back.model.Model;
+import back.model.common.PostFile;
 
 public class PetSitter extends Model {
 	

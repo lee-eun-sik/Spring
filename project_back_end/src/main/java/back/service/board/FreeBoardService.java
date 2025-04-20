@@ -1,10 +1,10 @@
-package service.board;
+package back.service.board;
 
 import java.util.List;
 
 import jakarta.servlet.http.HttpServletRequest;
-import model.board.Comment;
-import model.board.Board;
+import back.model.board.Comment;
+import back.model.board.Board;
 
 public interface FreeBoardService {
 
