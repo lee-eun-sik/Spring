@@ -1,10 +1,10 @@
-package service.file;
+package back.service.file;
 
 
 import java.util.HashMap;
 
 import jakarta.servlet.http.HttpServletRequest;
-import model.common.PostFile;
+import back.model.common.PostFile;
 
 public interface newsboardFileService {
     

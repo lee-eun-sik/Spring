@@ -44,8 +44,8 @@ import back.util.SecurityUtil;
 /**
  * 게시판 관련 요청을 처리하는 REST 컨트롤러
  */
-@RestController// 리스폰스 바디도 받겠다. json반환, consumes 받는것 json, produce 보내는 것은 json
-@RequestMapping("/api/board")
+@RestController// 리스폰스 바디도 받겠다. json반환, consumes 받는것 json, produce 보내는 것은 json 컨트롤러, 리스폰스 둘다 포함
+@RequestMapping("/api/board") // 주소는 누적이 된다. 모든 통신에 대해서 이곳에 다 들어온다. 
 @Slf4j
 public class BoardController {
 
@@ -58,8 +58,8 @@ public class BoardController {
 	/**
 	 * 게시글 목록 조회 (페이징 + 검색 조건)
 	 */// 매개변수받아서 넣음
-	@PostMapping("/list.do")
-	public ResponseEntity<?> getBoardList(@RequestBody Board board) { // json형태 받는다.
+	@PostMapping("/list.do") // 데이터 넘기는 제한 이 너무 크다. 
+	public ResponseEntity<?> getBoardList(@RequestBody Board board) { // json형태 데이터를 받는다. 
 		log.info(board.toString());
 		List<Board> boardList = boardService.getBoardList(board); //서비스 조회
 		Map dataMap = new HashMap();
@@ -79,11 +79,11 @@ public class BoardController {
 	/**
 	 *  게시글 등록
 	 */
-	@PostMapping(value = "/create.do", consumes = MediaType.MULTIPART_FORM_DATA_VALUE) // 파일은 데이터형 지정함 폼형태, 네임명에 따라 객체안에 값을 넣음
+	@PostMapping(value = "/create.do", consumes = MediaType.MULTIPART_FORM_DATA_VALUE) // 파일은 데이터형 지정함 폼형태, 네임명에 따라 객체안에 값을 넣음 멀티파트 폼데이터이다. 
 	public ResponseEntity<?> createBoard(
 			@ModelAttribute Board board,
 			@RequestPart(value = "files", required = false) List<MultipartFile> files,// 파일 받음 리스트 멀티파트 파일로 받음 파일처리 객체임
-			@AuthenticationPrincipal CustomUserDetails userDetails
+			@AuthenticationPrincipal CustomUserDetails userDetails// json으로 된 파일을 받기 어렵기 때문임.
 	) {
 		
 		SecurityUtil.checkAuthorization(userDetails);

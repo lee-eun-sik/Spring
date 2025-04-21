@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="reviewBoardMapper"> <!-- 매퍼의 네임스페이스 설정 -->
+<mapper namespace="back.mapper.reviewboard.reviewBoardMapper"> <!-- 매퍼의 네임스페이스 설정 -->
 
     <!-- 게시글 -->
-    <select id="getBoardList" parameterType="model.board.Board" resultType="model.board.Board">
+    <select id="getBoardList" parameterType="back.model.board.Board" resultType="back.model.board.Board">
         SELECT
 		    B.RN,
 		    B.BOARD_ID,
@@ -51,7 +51,7 @@
         WHERE B.RN BETWEEN #{startRow} AND #{endRow}      
     </select>
     
-    <select id="getTotalBoardCount" parameterType="model.board.Board" resultType="int">
+    <select id="getTotalBoardCount" parameterType="back.model.board.Board" resultType="int">
     	SELECT COUNT(B.BOARD_ID)
    			FROM (
 		    SELECT
@@ -85,7 +85,7 @@
     </select>
     
     
-    <select id="getBoardById" parameterType="string" resultType="model.board.Board">
+    <select id="getBoardById" parameterType="string" resultType="back.model.board.Board">
         SELECT
             BOARD_ID,
             TITLE,
@@ -120,7 +120,7 @@
 	</select>
 
 	 <!-- 게시글 생성 -->
-    <insert id="create" parameterType="model.board.Board">
+    <insert id="create" parameterType="back.model.board.Board">
         INSERT INTO REVIEW 
 		(
 	    BOARD_ID, 
@@ -147,7 +147,7 @@
         </selectKey>
     </insert>
     
-    <update id="update" parameterType="model.board.Board">
+    <update id="update" parameterType="back.model.board.Board">
     UPDATE REVIEW
     SET TITLE = #{title},
         CONTENT = #{content},
@@ -157,25 +157,25 @@
     WHERE BOARD_ID = #{boardId}
 	</update>
 	
-	<update id="delete" parameterType="model.board.Board">
+	<update id="delete" parameterType="back.model.board.Board">
 	    DELETE FROM REVIEW
 	    WHERE BOARD_ID = #{boardId}
     </update>
     
-    <update id="viewCount" parameterType="model.board.Board">
+    <update id="viewCount" parameterType="back.model.board.Board">
 	    UPDATE REVIEW
 	    SET VIEW_COUNT = #{viewCount}
 	    WHERE BOARD_ID = #{boardId}
     </update>
     
     <!-- 댓글 등록 -->
-    <insert id="insertComment" parameterType="model.board.Comment">
+    <insert id="insertComment" parameterType="back.model.board.Comment">
         INSERT INTO REVIEW_COMMENT (COMMENT_ID, BOARD_ID, PARENT_COMMENT_ID, CONTENT, CREATE_ID)
         VALUES (SEQ_COMMENT.NEXTVAL, #{boardId}, #{parentCommentId}, #{content}, #{createId})
     </insert>
 
     <!-- 게시글에 대한 댓글 조회 (대댓글 포함) -->
-    <select id="getCommentsByBoardId" parameterType="string" resultType="model.board.Comment">
+    <select id="getCommentsByBoardId" parameterType="string" resultType="back.model.board.Comment">
 	SELECT *
 	FROM REVIEW_COMMENT  
 	WHERE BOARD_ID = #{boardId} 
@@ -185,7 +185,7 @@
 
 
     <!-- 댓글 조회 -->
-    <select id="getCommentById" parameterType="int" resultType="model.board.Comment">
+    <select id="getCommentById" parameterType="int" resultType="back.model.board.Comment">
         SELECT *
         FROM REVIEW_COMMENT
         WHERE COMMENT_ID = #{commentId}
@@ -193,7 +193,7 @@
     </select>
 
     <!-- 댓글 수정 -->
-    <update id="updateComment" parameterType="model.board.Comment">
+    <update id="updateComment" parameterType="back.model.board.Comment">
         UPDATE REVIEW_COMMENT
         SET CONTENT = #{content},
             UPDATE_ID = #{updateId},
@@ -202,7 +202,7 @@
     </update>
 
     <!-- 댓글 삭제 -->
-    <update id="deleteComment" parameterType="model.board.Comment">
+    <update id="deleteComment" parameterType="back.model.board.Comment">
         UPDATE REVIEW_COMMENT
         SET DEL_YN = 'Y',
         	UPDATE_ID = #{updateId},

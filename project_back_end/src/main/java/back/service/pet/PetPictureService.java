@@ -1,8 +1,8 @@
-package service.pet;
+package back.service.pet;
 
 import java.util.List;
 
-import model.pet.PetPicture;
+import back.model.pet.PetPicture;
 
 
 public interface PetPictureService {

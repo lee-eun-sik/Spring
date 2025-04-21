@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="ReservationMapper"> <!-- 매퍼의 네임스페이스 설정 -->
+<mapper namespace="back.mapper.reservation.ReservationMapper"> <!-- 매퍼의 네임스페이스 설정 -->
     
      <!-- 예약신청 생성  -->
-    <insert id="create" parameterType="model.reservation.Reservation">
+    <insert id="create" parameterType="back.model.reservation.Reservation">
         INSERT INTO RESERVATION
          (
 	        BOARD_ID,
@@ -47,7 +47,7 @@
          </selectKey>
     </insert> 
     <!-- 예약신청 목록 조회 list에 필요한애 -->
-    <select id="getReservationList" parameterType="model.reservation.Reservation" resultType="model.reservation.Reservation">
+    <select id="getReservationList" parameterType="back.model.reservation.Reservation" resultType="back.model.reservation.Reservation">
 		SELECT
 		    B.RN,
     		B.BOARD_ID,
@@ -118,7 +118,7 @@
   	</select>
   	
   	<!-- 예약신청 ID view에 필요한거 -->
-      <select id="getReservationById" parameterType="string" resultType="model.reservation.Reservation">
+      <select id="getReservationById" parameterType="string" resultType="back.model.reservation.Reservation">
 		SELECT
     		BOARD_ID,
     		RESERVATION_DATE,
@@ -143,7 +143,7 @@
     </select>
     
     <!-- 예약신청 수정 -->
-     <update id="updateReservation" parameterType="model.reservation.Reservation">
+     <update id="updateReservation" parameterType="back.model.reservation.Reservation">
 	    UPDATE RESERVATION
 	    SET 
 	        RESERVATION_DATE = #{reservationDate},
@@ -163,7 +163,7 @@
 	</update>
 	
 	<!-- 예약신청 수락거절 -->
-	<update id="acceptReservation" parameterType="model.reservation.Reservation">
+	<update id="acceptReservation" parameterType="back.model.reservation.Reservation">
         UPDATE RESERVATION 
         SET ACCEPT = #{accept},  
             REASON = #{reason},  
@@ -172,7 +172,7 @@
     </update>
     
 	<!-- 예약신청 삭제 -->
-	<update id="deleteReservation" parameterType="model.reservation.Reservation">
+	<update id="deleteReservation" parameterType="back.model.reservation.Reservation">
         UPDATE RESERVATION 
         SET DEL_YN = 'Y',  
             UPDATE_ID = #{updateId},  

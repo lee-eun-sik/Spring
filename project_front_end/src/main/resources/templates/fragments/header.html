@@ -1,10 +1,6 @@
-<!-- fragments/header.html -->
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-</head>
-<body>
+
+<!-- flagments/header.html-->
+<div th:fragment="header">	
     <nav>
         <img th:src="@{/images/logo.png}" alt="logo" />
 
@@ -49,8 +45,9 @@
             <p id="p1">나와 내 반려동물을 위한 돌봄 서비스</p>
         </div>
     </div>
-
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>	
     <script th:inline="javascript">
+		
         /*<![CDATA[*/
         $(document).ready(function () {
             $("#communityBtn").click(function (event) {
@@ -172,5 +169,4 @@
             text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.7);
         }
     </style>
-</body>
-</html>>
+</div>	

@@ -65,7 +65,7 @@ public class BoardServiceImpl implements BoardService {
     }
     
     @Override
-    @Transactional // 커밋 롤백 관리, 여러군데로 전파된다. 
+    @Transactional // 커밋 롤백 관리, 여러군데로 전파된다. 이 함수 안에서 에러나 throw를 발생시키면 자동 롤백시킴. 자동 커밋함. 하나의 비즈니스 작업단위, 
     public boolean createBoard(Board board) {
         try {
             boolean result = boardMapper.create(board) > 0;

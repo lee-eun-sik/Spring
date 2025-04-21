@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="PetSitterMapper"> <!-- 매퍼의 네임스페이스 설정 -->
+<mapper namespace="back.mapper.PetSitter.PetSitterMapper"> <!-- 매퍼의 네임스페이스 설정 -->
 
-    <resultMap id="petSitterMap" type="model.petSitter.PetSitter">
+    <resultMap id="petSitterMap" type="back.model.petSitter.PetSitter">
         <result property="sitterName" column="SITTER_NAME"/>
         <result property="content" column="CONTENT"/>
     </resultMap>

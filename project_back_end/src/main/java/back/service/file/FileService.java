@@ -1,10 +1,10 @@
-package service.file;
+package back.service.file;
 
 
 import java.util.HashMap;
 
 import jakarta.servlet.http.HttpServletRequest;
-import model.common.PostFile;
+import back.model.common.PostFile;
 
 public interface FileService {
     
@@ -12,6 +12,8 @@ public interface FileService {
     public PostFile getFileByFileId(PostFile file);
     
     public HashMap insertBoardFiles(HttpServletRequest request);
+
+	
     
 
 }

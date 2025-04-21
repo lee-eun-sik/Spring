@@ -8,81 +8,86 @@ import java.util.Date;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import dao.user.UserDAO;
-import model.user.User;
-import util.MybatisUtil;
+import back.mapper.user.UserMapper;
+import back.model.user.User;
+import back.util.MybatisUtil;
+import back.util.SHA256Util;
 
+@Service
 public class UserServiceImpl implements UserService {
-    private static final Logger logger = LogManager.getLogger(UserServiceImpl.class);
-    private UserDAO userDAO;
+	@Autowired
+    private UserMapper userMapper;
 
-    private SqlSessionFactory sqlSessionFactory; // MyBatis SQL 세션 팩토리
-    
-    /**
-     * UserServiceImpl 생성자
-     */
-    public UserServiceImpl() {
-        this.userDAO = new UserDAO();
-        try {
-            sqlSessionFactory = MybatisUtil.getSqlSessionFactory(); // SQL 세션 팩토리 초기화
-        } catch (Exception e) {
-            logger.error("Mybatis 오류", e); // 오류 발생 시 로그 출력
-        }
-    }
+	@Override
+	public boolean registerUser(User user) {
+	    try (SqlSession session = MybatisUtil.getSqlSessionFactory().openSession()) {
+	        UserMapper mapper = session.getMapper(UserMapper.class);
 
-    /**
-     * 사용자 회원가입 서비스
-     * @param userId 사용자 ID
-     * @param username 사용자 이름
-     * @param password 비밀번호 (SHA-256 암호화 적용)
-     * @param email 이메일
-     * @return 성공 여부
-     */
-    
-	public boolean validateUser(User user) {
-		SqlSession session = sqlSessionFactory.openSession();
-		boolean result = false; 
-		try {
-			  User selectUser = userDAO.getUserById(session, user.getUserId()); // 사용자 정보 조회
-			  // 사용자 정보가 없으면 false 반환
-			  if (user == null) {
-				  return false; // 사용자 ID가 존재하지 않을 경우
-			  }
-			  // 입력된 비밀번호와 DB에 저장된 비밀번호 비교
-			  result = user.getPassword().equals(selectUser.getPassword()); // 비밀번호 비교
-			  session.commit();
-		  
-		} catch (Exception e) {
-			e.printStackTrace();
-		    session.rollback();
-		}
-		return result;
+	        // 사용자 ID 중복 체크
+	        int count = mapper.checkUserIdDuplicate(user.getUserId());
+	        if (count > 0) {
+	            return false; // 이미 존재하는 ID
+	        }
+
+	        // 비밀번호 SHA-256 해싱
+	        String encryptedPass = SHA256Util.encrypt(user.getPassword());
+	        user.setPassword(encryptedPass);
+
+	        user.setCreateId(user.getUserId()); // 기본 작성자 ID로 userId 저장
+	        user.setRole("USER"); // 기본 권한 설정
+
+	        mapper.registerUser(user);
+	        session.commit();
+	        return true;
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return false;
+	    }
 	}
 
 	@Override
-    public boolean registerUser(User user) {
-        SqlSession session = sqlSessionFactory.openSession();
-        boolean result = false; 
-        try {
-            // DAO를 통해 회원가입 진행
-            result = userDAO.registerUser(session, user);
-            session.commit(); // 트랜잭션 커밋
-        } catch (Exception e) {
-            e.printStackTrace();
-            session.rollback();
-        }
-        return result;
-    }
-	
-	public User getUserById(String userId) {
-		SqlSession session = sqlSessionFactory.openSession();
-		User selectUser = userDAO.getUserById(session, userId);
-		return selectUser;
+	public boolean validateUser(User user) {
+	    try (SqlSession session = MybatisUtil.getSqlSessionFactory().openSession()) {
+	        UserMapper mapper = session.getMapper(UserMapper.class);
+	        int count = mapper.checkUserIdDuplicate(user.getUserId());
+	        return count == 0; // 중복 없으면 유효
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return false;
+	    }
 	}
-	
-	
-    
 
+	@Override
+	public User login(String id, String pass) {
+	    try (SqlSession session = MybatisUtil.getSqlSessionFactory().openSession()) {
+	        UserMapper mapper = session.getMapper(UserMapper.class);
+	        User user = mapper.getUserById(id); // id == userId
 
+	        if (user != null) {
+	            String encryptedPass = SHA256Util.encrypt(pass); // 입력한 비밀번호를 해싱
+	            if (user.getPassword().equals(encryptedPass)) {
+	                return user;
+	            }
+	        }
+	        return null;
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return null;
+	    }
+	}
+
+	@Override
+	public User getUserById(String userId) {
+	    try (SqlSession session = MybatisUtil.getSqlSessionFactory().openSession()) {
+	        UserMapper mapper = session.getMapper(UserMapper.class);
+	        return mapper.getUserById(userId);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return null;
+	    }
+	}
+   
 }
