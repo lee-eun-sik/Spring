@@ -1,12 +1,12 @@
-package service.reservation;
+package back.service.reservation;
 
 import java.util.List;
 
 import jakarta.servlet.http.HttpServletRequest;
-import model.board.Comment;
-import model.petSitter.PetSitter;
-import model.reservation.Reservation;
-import model.board.Board;
+import back.model.board.Comment;
+import back.model.petSitter.PetSitter;
+import back.model.reservation.Reservation;
+import back.model.board.Board;
 
 public interface ReservationService {
 	//예약신청

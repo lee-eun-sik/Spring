@@ -1,52 +1,52 @@
-package service.pet;
+package back.service.pet;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import dao.pet.PetPictureDAO;
-import model.pet.PetPicture;
+
+import back.model.pet.PetPicture;
 
 
 public class PetPictureServiceImpl implements PetPictureService {
 
-    private PetPictureDAO petPictureDAO;
+	@Override
+	public back.model.pet.PetPicture getPetPictureById(String petPictureId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-    public PetPictureServiceImpl() {
-        petPictureDAO = new PetPictureDAO();
-    }
+	@Override
+	public boolean petPictureCreate(back.model.pet.PetPicture petPicture) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
-    @Override
-    public PetPicture getPetPictureById(String petPictureId) {
-        return petPictureDAO.getPetPictureById(petPictureId);  // 이름을 수정
-    }
+	@Override
+	public List<back.model.pet.PetPicture> getPetPictureList(back.model.pet.PetPicture search) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
-    @Override
-    public boolean petPictureCreate(PetPicture petPicture) {
-        return petPictureDAO.petPictureCreate(petPicture);
-    }
+	@Override
+	public int getPetPictureCount(back.model.pet.PetPicture search) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean updatePetPicture(back.model.pet.PetPicture petPicture) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deletePetPicture(String petPictureId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
     
-    @Override
-    public List<PetPicture> getPetPictureList(PetPicture search) {
-        return petPictureDAO.getPetPictureList(search);
-    }
-
-    @Override
-    public int getPetPictureCount(PetPicture search) {
-        return petPictureDAO.getPetPictureCount(search);
-    }
-
-
-    
-    @Override
-    public boolean updatePetPicture(PetPicture petPicture) {
-        return petPictureDAO.updatePetPicture(petPicture);
-    }
-
-    @Override
-    public boolean deletePetPicture(String petPictureId) {
-        return petPictureDAO.deletePetPicture(petPictureId);  // 이름을 수정
-    }
     
     
 }

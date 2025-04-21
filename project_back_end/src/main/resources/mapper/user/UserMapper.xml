@@ -2,71 +2,134 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="UserMapper"> <!-- 매퍼의 네임스페이스 설정 -->
+<mapper namespace="back.mapper.user.UserMapper">
+<resultMap id="userResultMap" type="back.model.user.User">
+    <result property="userId" column="USER_ID"/>
+    <result property="username" column="USERNAME"/>
+    <result property="password" column="PASSWORD"/>
+    <result property="email" column="EMAIL"/>
+    <result property="createId" column="CREATE_ID"/>
+    <result property="updateId" column="UPDATE_ID"/>
+    <result property="createDt" column="CREATE_DT"/>
+    <result property="updateDt" column="UPDATE_DT"/>
+    <result property="role" column="ROLE"/>
+    <result property="gender" column="GENDER"/>        
+    <result property="phonenumber" column="PHONENUMBER"/> 
+    <result property="birthdate" column="BIRTH_DATE"/>
+    <result property="delYn" column="DEL_YN"/>
+</resultMap>
 
     <!-- 사용자 ID로 사용자 정보 조회 -->
-    <select id="getUserById" parameterType="string" resultType="model.user.User">
-        SELECT 
-            USER_ID, 
-            USERNAME, 
-            PASSWORD, 
-            EMAIL, 
-            PHONENUMBER,
-            GENDER,
-            BIRTH_DATE,
-            CREATE_DT,
-            CREATE_ID,
-            UPDATE_ID, 
-            UPDATE_DT
-        FROM 
-            USERS
-        WHERE 
-            USER_ID = #{userId} <!-- SQL 매개변수 바인딩 -->
-    </select>
+    <select id="getUserById" resultMap="userResultMap" parameterType="string">
+	    SELECT USER_ID, 
+		       USERNAME, 
+		       PASSWORD, 
+		       EMAIL, 
+		       PHONENUMBER,
+		       GENDER,
+		       BIRTH_DATE,
+		       CREATE_ID, 
+		       UPDATE_ID, 
+		       CREATE_DT, 
+		       UPDATE_DT, 
+		       ROLE
+		FROM USERS
+	    WHERE USER_ID = #{userId}
+	      AND DEL_YN = 'N'
+	</select>
 
     <!-- 사용자 생성 -->
-    <insert id="registerUser" parameterType="model.user.User">
-        INSERT INTO USERS (USER_ID, USERNAME, PASSWORD, EMAIL, CREATE_ID, GENDER, PHONENUMBER, BIRTH_DATE)
-        VALUES (#{userId}, #{username}, #{password}, #{email}, #{createId}, #{gender}, #{phonenumber}, #{birthdate})
-    </insert>
 
-    <!-- 사용자 업데이트 -->
-    <update id="updateUser" parameterType="model.user.User">
-	    UPDATE USERS
-	    SET 
-	        USERNAME = #{username},
-	        PASSWORD = #{password},
-	        EMAIL = #{email},
-	    WHERE USER_ID = #{userId}
-	</update>
+    <insert id="registerUser" parameterType="back.model.user.User">
+	    INSERT INTO USERS (
+	        USER_ID, 
+	        USERNAME, 
+	        PASSWORD,
+	        EMAIL,
+	        CREATE_ID,
+	        PHONENUMBER,
+	        GENDER,
+	        BIRTH_DATE,
+	        CREATE_DT,
+	        ROLE,
+	        DEL_YN
+	    ) VALUES (
+	        #{userId}, 
+	        #{username}, 
+	        #{password},
+	        #{email},
+	        #{createId},
+	        #{phonenumber},
+	        #{gender},
+	        #{birthdate, jdbcType=DATE},
+	        SYSDATE,
+	        #{role},
+	        'N'
+	    )
+	</insert>
 
-    <!-- 사용자 삭제 
-    <delete id="deleteUser" parameterType="string">
-        DELETE FROM USERS
-        WHERE USER_ID = #{userId}
-    </delete>
-    -->
-    
+
     <!-- 사용자 삭제 (논리 삭제) -->
-    <update id="deleteUser" parameterType="model.user.User">
-        UPDATE USERS 
-        SET DEL_YN = 'Y',  <!-- 삭제된 사용자 표시 -->
-            UPDATE_ID = #{updateId},  <!-- 삭제를 수행한 관리자 ID -->
-            UPDATE_DT = SYSDATE  <!-- 삭제 시간 기록 -->
-        WHERE USER_ID = #{userId}
-    </update>
-
-    <!-- 모든 사용자 조회 (선택 사항) -->
-    <select id="getAllUsers" resultType="model.user.User">
-        SELECT 
-            USER_ID, 
-            USERNAME, 
-            EMAIL, 
-            CREATE_DT, 
-            UPDATE_DT
-        FROM 
-            USERS
-    </select>
-    
-    
+    <update id="deleteUser" parameterType="string">
+	    UPDATE USERS 
+	    SET DEL_YN = 'Y',  
+	        UPDATE_DT = SYSDATE  
+	    WHERE USER_ID = #{userId} AND DEL_YN = 'N'
+	</update>
+	
+	<select id="checkUserIdDuplicate" parameterType="String" resultType="int">
+	    SELECT 
+	        COUNT(*) 
+	    FROM USERS
+	    WHERE USER_ID = #{userId}
+	      AND DEL_YN = 'N'
+	</select>
+	
+	<update id="updatePassword" parameterType="back.model.user.User">
+	    UPDATE users
+	    SET password = NVL(#{password}, password)
+	    WHERE user_id = #{userId}
+	</update>
+	<select id="getUserRoleById" parameterType="string" resultType="string">
+	    SELECT ROLE 
+	    FROM USERS 
+	    WHERE USER_ID = #{userId}
+	      AND DEL_YN = 'N'
+	</select>
+	
+	<select id="getAllUsers" resultMap="userResultMap">
+	   SELECT 
+		   USER_ID,
+		   USERNAME,
+		   PASSWORD,
+		   EMAIL,
+		   PHONENUMBER,
+		   GENDER,
+		   CREATE_ID,
+		   UPDATE_ID,
+		   CREATE_DT,
+		   UPDATE_DT,
+		   ROLE,
+		   BIRTH_DATE,
+		   DEL_YN
+	   FROM USERS
+	   WHERE DEL_YN = 'N'
+	</select>
+	
+	<select id="findUserByInfo" parameterType="map" resultType="back.model.user.User">
+	    SELECT *
+	    FROM users
+	    WHERE username = #{name}
+	      AND phonenumber = #{phone}       
+	      AND birth_date = #{birthDate}
+	</select>
+	
+	<select id="findUserByCredentials" resultType="back.model.user.User">
+	  SELECT *
+	  FROM users
+	  WHERE username = #{name}
+	    AND user_id = #{userId}
+	    AND phonenumber = #{phone}
+	    AND BIRTH_DATE = #{birthDate, jdbcType=DATE}
+	</select>
 </mapper>

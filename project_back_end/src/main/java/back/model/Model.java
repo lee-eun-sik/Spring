@@ -8,4 +8,8 @@ public class Model {
     private String updateId;   // 수정자 ID
     private String createDt;   // 생성일
     private String updateDt;   // 수정일
+	public void addAttribute(String string, String string2) {
+		// TODO Auto-generated method stub
+		
+	}
 }

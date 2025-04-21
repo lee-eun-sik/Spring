@@ -1,59 +1,72 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>로그인 화면</title>
-<script src="/js/jquery-3.7.1.min.js"></script>
-<script src="/js/common.js"></script>
+  <meta charset="UTF-8">
+  <title>로그인 화면</title>
+  <script src="/js/jquery-3.7.1.min.js"></script>
+  <script src="/js/common.js"></script>
+  <style>
+    body {
+      background-image: url('/images/pet.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
 </head>
 <body>
-	
-		id : <input type="text" name="id"id="userId"><br/>
-		비밀번호 : <input type="password" name="pass"id="password">
-		<button type="button"id="loginBtn">로그인</button>
+  <th:block th:replace="~{fragments/header :: header}"></th:block>
 
-	<a href="/user/join.do">회원가입 페이지로 이동</a>
-	
-	<script>
-	$(document).ready(function() {
-		//로긴 폼에 섬밋이벤트시 작동
-	    $("#loginBtn").click(function(event) {
-	        event.preventDefault(); // 기본 폼 제출 방지
-			let userId = $("#userId").val().trim();
-			let password = $("#password").val().trim();
-			
-			if (!validationUtil.isEmpty(userId)) {
-				alert("아이디를 입력해주세요.")
-				$("#userId").focus();
-				return;
-			}
-			
-			if (!validationUtil.isEmpty(password)) {
-				alert("비밀번호를 입력해주세요.")
-				$("#password").focus();
-				return;
-			}	
-	        ajaxRequestLogin(
-	           	'[[${apiBaseUrl}]]/api/user/login.do', // 로그인 요청 URL
-				{
-					userId:$("#userId").val(),
-					password:$("#password").val()
-				},
-	            function(response) {
-	            	console.log(response);
-	                // 응답 처리
-	                if (response.success) {
-	                    alert("로그인 성공하셨습니다.");
-	                    window.location.href ='/'; // 로그인 성공 후 메인 페이지로 이동
-	                } else {
-	                	alert("로그인에 실패하셨습니다.");
-	                }
-	            }
-	            
-	        );
-	    });
-	});
-    </script>
-	
+  <form method="post" id="loginForm">
+    <h2>상표</h2>
+    <h4>로그인</h4>
+    <input type="text" name="id" id="id" placeholder="아이디"><br/>
+    <input type="password" name="pass" id="pass" placeholder="비밀번호">
+    <div>
+      <a th:href="@{/find/findId}">아이디찾기</a>
+      <a th:href="@{/find/findPw}">비밀번호찾기</a>
+    </div>
+    <button type="submit">로그인</button>
+  </form>
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // 필요 요소 숨김
+      $("#background, #p, #p1, #join, #login").hide();
+
+      $("#loginForm").submit(function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // 유효성 검사 예시 적용
+        if (!validationUtil.validateField("#id", validationUtil.isEmpty, "아이디를 입력해주세요")) return;
+        if (!validationUtil.validateField("#pass", validationUtil.isEmpty, "비밀번호를 입력해주세요")) return;
+
+		const formData = {
+		  id: $("#id").val(),
+		  pass: $("#pass").val()
+		};
+
+		function ajaxRequestLogin(url, data, callback) {
+		  $.ajax({
+		    url: url,
+		    type: 'POST',
+		    contentType: 'application/json', // Set Content-Type to JSON
+		    data: JSON.stringify(data), // Send the data as JSON
+		    success: function(response) {
+		      if (response.redirectUrl) {
+		        window.location.href = response.redirectUrl;
+		      }
+		    },
+		    error: function(xhr, status, error) {
+		      alert("로그인 실패! 다시 시도해주세요.");
+		    }
+		  });
+		}
+
+        // Call ajaxRequestLogin with the appropriate URL and data
+        ajaxRequestLogin('/user/login.do', formData);
+      });
+    });
+  </script>
 </body>
 </html>

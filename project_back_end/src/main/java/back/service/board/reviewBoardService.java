@@ -1,12 +1,12 @@
-package service.board;
+package back.service.board;
 
 import java.util.List;
 import java.util.Map;
 
 import jakarta.servlet.http.HttpServletRequest;
-import model.board.Board;
-import model.board.Comment;
-import model.petSitter.PetSitter;
+import back.model.board.Board;
+import back.model.board.Comment;
+import back.model.petSitter.PetSitter;
 
 public interface reviewBoardService {
 	
