@@ -13,15 +13,6 @@ java {
 	targetCompatibility = JavaVersion.VERSION_17
 }
 
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
-	all {
-		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
-	}
-}
-
 repositories {
 	mavenCentral()
 }
@@ -41,4 +32,7 @@ dependencies {
 	// log4j2 설정
 	implementation 'org.springframework.boot:spring-boot-starter-log4j2'
 	
+}
+tasks.named('test') {
+	useJUnitPlatform()
 }
