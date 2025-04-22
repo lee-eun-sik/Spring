@@ -2695,3 +2695,31 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving fragment: "~{'f
 2025-04-22 21:42:49 [http-nio-8080-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-04-22 21:42:49 [http-nio-8080-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2025-04-22 21:42:49 [http-nio-8080-exec-1] INFO  DispatcherServlet - Completed initialization in 2 ms
+2025-04-22 22:45:34 [RMI TCP Connection(69)-127.0.0.1] INFO  SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-04-22 22:45:34 [RMI TCP Connection(69)-127.0.0.1] INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-22 22:45:34 [tomcat-shutdown] INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-04-22 22:45:35 [tomcat-shutdown] INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-22 22:45:35 [RMI TCP Connection(69)-127.0.0.1] INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-04-22 23:23:07 [restartedMain] INFO  ProjectFrontEndApplication - Starting ProjectFrontEndApplication using Java 17.0.1 with PID 13880 (C:\Users\dldms\git\Spring\project_front_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_front_end)
+2025-04-22 23:23:07 [restartedMain] INFO  ProjectFrontEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-22 23:23:09 [restartedMain] INFO  DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-22 23:23:09 [restartedMain] INFO  DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-22 23:23:11 [restartedMain] INFO  TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-22 23:23:11 [restartedMain] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-22 23:23:11 [restartedMain] INFO  StandardService - Starting service [Tomcat]
+2025-04-22 23:23:11 [restartedMain] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-22 23:23:12 [restartedMain] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-22 23:23:12 [restartedMain] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2575 ms
+2025-04-22 23:23:12 [restartedMain] INFO  WelcomePageHandlerMapping - Adding welcome page template: index
+2025-04-22 23:23:15 [restartedMain] WARN  OptionalLiveReloadServer - Unable to start LiveReload server
+2025-04-22 23:23:15 [restartedMain] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-22 23:23:15 [restartedMain] INFO  TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-22 23:23:15 [restartedMain] INFO  ProjectFrontEndApplication - Started ProjectFrontEndApplication in 8.995 seconds (process running for 11.937)
+2025-04-22 23:26:02 [http-nio-8080-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-22 23:26:02 [http-nio-8080-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-22 23:26:02 [http-nio-8080-exec-1] INFO  DispatcherServlet - Completed initialization in 1 ms
+2025-04-22 23:32:25 [RMI TCP Connection(11)-127.0.0.1] INFO  SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-04-22 23:32:25 [RMI TCP Connection(11)-127.0.0.1] INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-22 23:32:25 [tomcat-shutdown] INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-04-22 23:32:25 [tomcat-shutdown] INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-22 23:32:25 [RMI TCP Connection(11)-127.0.0.1] INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
