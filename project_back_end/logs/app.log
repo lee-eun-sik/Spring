@@ -14,3 +14,8 @@
 2025-04-22 01:41:36 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
 2025-04-22 01:41:36 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
 2025-04-22 01:41:36 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 14.038 seconds (process running for 16.592)
+2025-04-22 01:47:45 INFO  SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-04-22 01:47:45 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-22 01:47:45 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-22 01:47:46 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-22 01:47:46 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
