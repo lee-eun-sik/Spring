@@ -2582,3 +2582,8 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving fragment: "~{'f
 	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-10.1.39.jar:10.1.39]
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.39.jar:10.1.39]
 	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-04-22 17:34:07 [RMI TCP Connection(359)-127.0.0.1] INFO  SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-04-22 17:34:07 [RMI TCP Connection(359)-127.0.0.1] INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-22 17:34:07 [tomcat-shutdown] INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-04-22 17:34:07 [tomcat-shutdown] INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-22 17:34:07 [RMI TCP Connection(359)-127.0.0.1] INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]

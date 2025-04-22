@@ -13442,3 +13442,8 @@ CREATE_DT, UPDATE_DT, ROLE FROM USERS WHERE USER_ID = 'ppoo8' AND DEL_YN = 'N'  
 2025-04-22 17:22:10 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
 2025-04-22 17:22:10 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 0.687 seconds (process running for 20494.122)
 2025-04-22 17:22:10 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-22 17:34:06 INFO  SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-04-22 17:34:06 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-22 17:34:06 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-22 17:34:07 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-22 17:34:07 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
