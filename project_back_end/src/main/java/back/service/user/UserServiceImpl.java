@@ -15,7 +15,8 @@ import back.mapper.user.UserMapper;
 import back.model.user.User;
 import back.util.MybatisUtil;
 import back.util.SHA256Util;
-
+import lombok.extern.slf4j.Slf4j;
+@Slf4j
 @Service
 public class UserServiceImpl implements UserService {
 	@Autowired
@@ -32,10 +33,7 @@ public class UserServiceImpl implements UserService {
 	            return false; // 이미 존재하는 ID
 	        }
 
-	        // 비밀번호 SHA-256 해싱
-	        String encryptedPass = SHA256Util.encrypt(user.getPassword());
-	        user.setPassword(encryptedPass);
-
+	       
 	        user.setCreateId(user.getUserId()); // 기본 작성자 ID로 userId 저장
 	        user.setRole("USER"); // 기본 권한 설정
 
@@ -83,11 +81,15 @@ public class UserServiceImpl implements UserService {
 	public User getUserById(String userId) {
 	    try (SqlSession session = MybatisUtil.getSqlSessionFactory().openSession()) {
 	        UserMapper mapper = session.getMapper(UserMapper.class);
-	        return mapper.getUserById(userId);
+	        User user = mapper.getUserById(userId);
+	        log.info("조회된 사용자 정보: {}", user);  // 디버깅용 로그 추가
+	        return user;
 	    } catch (Exception e) {
-	        e.printStackTrace();
+	        log.error("DB 조회 오류: {}", e.getMessage());
 	        return null;
 	    }
 	}
+
+	
    
 }

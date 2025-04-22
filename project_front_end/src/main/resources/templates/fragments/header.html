@@ -1,5 +1,5 @@
-
 <!-- flagments/header.html-->
+<body th:data-loggedin="${session.loginUser != null}">
 <div th:fragment="header">	
     <nav>
         <img th:src="@{/images/logo.png}" alt="logo" />
@@ -21,7 +21,8 @@
         </div>
 
         <!-- 로그인 상태 표시 -->
-        <div class="signInfo">
+        <div class="header">
+			<p th:text="'[디버깅] 세션 loginUser: ' + ${session.loginUser}"></p>
             <div th:if="${session.loginUser == null}">
                 <button type="button" id="login">로그인</button>
                 <button type="button" id="join">회원가입</button>
@@ -29,8 +30,8 @@
             <div th:if="${session.loginUser != null}">
                 <p id="userGreeting">
                     안녕하세요,
-                    <a th:href="@{${session.loginUser.role == 'admin'} ? '/user/manager' : '/user/main'}">
-                        <span th:text="${session.loginUser.userId} + '님!'"></span>
+                    <a th:href="@{${loginUser.role == 'admin'} ? '/user/manager' : '/user/main'}">
+                        <span th:text="|${loginUser.userId} + '님!'|"></span>
                     </a>
                 </p>
                 <button type="button" id="logout">로그아웃</button>
@@ -50,6 +51,7 @@
 		
         /*<![CDATA[*/
         $(document).ready(function () {
+			
             $("#communityBtn").click(function (event) {
                 event.preventDefault();
                 $(".dropdown-content").toggle();
@@ -169,4 +171,4 @@
             text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.7);
         }
     </style>
-</div>	
+</div>
