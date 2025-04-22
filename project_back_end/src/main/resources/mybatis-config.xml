@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"  
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+  
+  	<settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    
+    <!-- 환경 설정 -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/> <!-- 트랜잭션 관리 방법 설정 -->
+            <dataSource type="POOLED"> <!-- 데이터 소스 설정 -->
+                <!--  <property name="driver" value="oracle.jdbc.OracleDriver"/> Oracle JDBC 드라이버 -->
+                <!--<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>  DB URL -->
+                <property name="driver" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/> <!--Oracle JDBC 드라이버 -->
+                <property name="url" value="jdbc:log4jdbc:oracle:thin:@//localhost:1521/xe"/> <!--DB URL -->
+                <property name="username" value="eunsik"/> <!-- DB 사용자명 -->
+                <property name="password" value="1234"/> <!-- DB 비밀번호 -->
+            </dataSource>
+        </environment>
+    </environments>
+
+
+    <!-- 매퍼 파일 등록 --> 
+    <mappers> 
+        <mapper resource="mapper/user/UserMapper.xml"/> <!-- 사용자 매퍼 파일 -->
+        
+        
+    </mappers>
+</configuration>

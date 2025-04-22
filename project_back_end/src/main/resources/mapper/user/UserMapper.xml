@@ -59,9 +59,9 @@
 	        #{password},
 	        #{email},
 	        #{createId},
-	        #{phonenumber},
+	        #{phonenumber, jdbcType=VARCHAR},
 	        #{gender},
-	        #{birthdate, jdbcType=DATE},
+	        TO_DATE(#{birthdate}, 'MM/DD/YYYY'),
 	        SYSDATE,
 	        #{role},
 	        'N'
@@ -113,7 +113,8 @@
 		   BIRTH_DATE,
 		   DEL_YN
 	   FROM USERS
-	   WHERE DEL_YN = 'N'
+	   WHERE USER_ID = #{userId}
+	   AND DEL_YN = 'N'
 	</select>
 	
 	<select id="findUserByInfo" parameterType="map" resultType="back.model.user.User">
