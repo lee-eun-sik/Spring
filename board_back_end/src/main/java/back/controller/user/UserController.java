@@ -40,7 +40,7 @@ import back.util.SecurityUtil;
 @Slf4j
 @RestController // <- 이것도 추가해줘야 Rest API 컨트롤러가 작동함
 @RequestMapping("/api/user")
-public class UserController extends HttpServlet {
+public class UserController {
 	/**
 	 * 
 	 */

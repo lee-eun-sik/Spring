@@ -16,8 +16,7 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.text.ParseException;
 import java.util.List;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 
 import java.util.Date;
 

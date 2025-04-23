@@ -1,0 +1,46 @@
+2025-04-23 21:47:16 [restartedMain] INFO  BoardFrontEndApplication - Starting BoardFrontEndApplication using Java 17.0.1 with PID 15564 (C:\Users\dldms\git\Spring\board_front_end\bin\main started by dldms in C:\Users\dldms\git\Spring\board_front_end)
+2025-04-23 21:47:17 [restartedMain] INFO  BoardFrontEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 21:47:20 [restartedMain] INFO  DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-23 21:47:20 [restartedMain] INFO  DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-23 21:47:23 [restartedMain] INFO  TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-23 21:47:23 [restartedMain] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-23 21:47:23 [restartedMain] INFO  StandardService - Starting service [Tomcat]
+2025-04-23 21:47:23 [restartedMain] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 21:47:24 [restartedMain] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 21:47:24 [restartedMain] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3065 ms
+2025-04-23 21:47:24 [restartedMain] INFO  WelcomePageHandlerMapping - Adding welcome page template: index
+2025-04-23 21:47:27 [restartedMain] WARN  OptionalLiveReloadServer - Unable to start LiveReload server
+2025-04-23 21:47:27 [restartedMain] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-23 21:47:28 [restartedMain] INFO  TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-23 21:47:28 [restartedMain] INFO  BoardFrontEndApplication - Started BoardFrontEndApplication in 11.93 seconds (process running for 16.081)
+2025-04-23 21:47:58 [http-nio-8080-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-23 21:47:58 [http-nio-8080-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-23 21:47:58 [http-nio-8080-exec-1] INFO  DispatcherServlet - Completed initialization in 1 ms
+2025-04-23 21:59:02 [RMI TCP Connection(15)-127.0.0.1] INFO  SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-04-23 21:59:02 [RMI TCP Connection(15)-127.0.0.1] INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 21:59:02 [tomcat-shutdown] INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-04-23 21:59:03 [tomcat-shutdown] INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 21:59:03 [RMI TCP Connection(15)-127.0.0.1] INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-04-23 22:06:04 [restartedMain] INFO  BoardFrontEndApplication - Starting BoardFrontEndApplication using Java 17.0.1 with PID 15580 (C:\Users\dldms\git\Spring\board_front_end\bin\main started by dldms in C:\Users\dldms\git\Spring\board_front_end)
+2025-04-23 22:06:04 [restartedMain] INFO  BoardFrontEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 22:06:06 [restartedMain] INFO  DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-23 22:06:06 [restartedMain] INFO  DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-23 22:06:08 [restartedMain] INFO  TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-23 22:06:08 [restartedMain] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-23 22:06:08 [restartedMain] INFO  StandardService - Starting service [Tomcat]
+2025-04-23 22:06:08 [restartedMain] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 22:06:08 [restartedMain] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 22:06:08 [restartedMain] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2319 ms
+2025-04-23 22:06:09 [restartedMain] INFO  WelcomePageHandlerMapping - Adding welcome page template: index
+2025-04-23 22:06:10 [restartedMain] WARN  OptionalLiveReloadServer - Unable to start LiveReload server
+2025-04-23 22:06:10 [restartedMain] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-23 22:06:10 [restartedMain] INFO  TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-23 22:06:10 [restartedMain] INFO  BoardFrontEndApplication - Started BoardFrontEndApplication in 6.175 seconds (process running for 8.485)
+2025-04-23 22:06:17 [http-nio-8080-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-23 22:06:17 [http-nio-8080-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-23 22:06:17 [http-nio-8080-exec-1] INFO  DispatcherServlet - Completed initialization in 2 ms
+2025-04-23 22:10:10 [RMI TCP Connection(6)-127.0.0.1] INFO  SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-04-23 22:10:10 [RMI TCP Connection(6)-127.0.0.1] INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 22:10:10 [tomcat-shutdown] INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-04-23 22:10:10 [tomcat-shutdown] INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 22:10:10 [RMI TCP Connection(6)-127.0.0.1] INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]

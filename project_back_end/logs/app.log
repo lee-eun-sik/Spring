@@ -23869,3 +23869,1446 @@ CREATE_DT, UPDATE_DT, ROLE FROM USERS WHERE USER_ID = '5544' AND DEL_YN = 'N'  {
 2025-04-23 17:20:20 INFO  log4j2 - 99. Connection.new Connection returned 
 2025-04-23 17:20:20 INFO  log4j2 - 99. Connection.isReadOnly() returned false
 2025-04-23 17:20:20 INFO  log4j2 - 99. Connection.getAutoCommit() returned true
+2025-04-23 21:15:57 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 10020 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 21:15:57 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 21:15:57 INFO  ChangeableUrls - The Class-Path manifest attribute in C:\Users\dldms\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc8\19.8.0.0\df9cff9b91c47d06b9a0482d566ee2d83a03e586\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/dldms/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc8/19.8.0.0/df9cff9b91c47d06b9a0482d566ee2d83a03e586/oraclepki.jar
+2025-04-23 21:15:57 INFO  DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-23 21:15:57 INFO  DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-23 21:16:02 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 21:16:02 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 21:16:02 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 21:16:02 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 21:16:02 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 21:16:02 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5715 ms
+2025-04-23 21:16:06 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 21:16:07 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 21:16:07 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 21:16:08 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 21:16:08 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 13.9 seconds (process running for 22.258)
+2025-04-23 21:20:08 INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-23 21:20:08 INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-23 21:20:08 INFO  DispatcherServlet - Completed initialization in 1 ms
+2025-04-23 21:20:08 INFO  UserController - 회원가입 요청: 0587
+2025-04-23 21:20:08 INFO  UserController - 암호화된 비밀번호: $2a$10$1ny9u8Z5VjIgqTlRreb8OOx0lU9Cb9UecZklv1XKYqEp8Pzt.mrY2
+2025-04-23 21:20:08 INFO  UserController - 받은 전화번호: 010-8258-2058
+2025-04-23 21:25:40 INFO  SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-04-23 21:25:40 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 21:25:40 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 21:25:41 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 21:25:41 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:04:20 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19360 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 22:04:20 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 22:04:20 INFO  ChangeableUrls - The Class-Path manifest attribute in C:\Users\dldms\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc8\19.8.0.0\df9cff9b91c47d06b9a0482d566ee2d83a03e586\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/dldms/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc8/19.8.0.0/df9cff9b91c47d06b9a0482d566ee2d83a03e586/oraclepki.jar
+2025-04-23 22:04:20 INFO  DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-23 22:04:20 INFO  DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-23 22:04:28 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 22:04:28 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:04:28 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 22:04:28 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 22:04:29 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 22:04:29 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 8628 ms
+2025-04-23 22:10:53 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 22:10:53 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 22:10:53 INFO  ChangeableUrls - The Class-Path manifest attribute in C:\Users\dldms\.gradle\caches\modules-2\files-2.1\com.oracle.database.jdbc\ojdbc8\19.8.0.0\df9cff9b91c47d06b9a0482d566ee2d83a03e586\ojdbc8-19.8.0.0.jar referenced one or more files that do not exist: file:/C:/Users/dldms/.gradle/caches/modules-2/files-2.1/com.oracle.database.jdbc/ojdbc8/19.8.0.0/df9cff9b91c47d06b9a0482d566ee2d83a03e586/oraclepki.jar
+2025-04-23 22:10:53 INFO  DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-04-23 22:10:53 INFO  DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-04-23 22:10:58 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 22:10:58 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:10:58 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 22:10:58 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 22:10:58 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 22:10:58 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 5610 ms
+2025-04-23 22:11:01 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 22:11:02 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 22:11:02 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:11:03 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 22:11:03 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 10.707 seconds (process running for 12.92)
+2025-04-23 22:13:26 INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-23 22:13:26 INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-23 22:13:26 INFO  DispatcherServlet - Completed initialization in 3 ms
+2025-04-23 22:13:26 INFO  UserController - 회원가입 요청: 74
+2025-04-23 22:13:26 INFO  UserController - 암호화된 비밀번호: $2a$10$.LNxcSY01mcaugBIwUvrTOBtGZccQzgAWMgpOOgrheHVErTYhDQlO
+2025-04-23 22:13:26 INFO  UserController - 받은 전화번호: 010-4522-7145
+2025-04-23 22:15:08 INFO  UserController - 회원가입 요청: 332
+2025-04-23 22:15:09 INFO  UserController - 암호화된 비밀번호: $2a$10$J2Sk1WSds0HJdmqeHNXMUe634JFfHr3Hquifs0XdVBYrcAQJJwRXq
+2025-04-23 22:15:09 INFO  UserController - 받은 전화번호: 010-2852-0102
+2025-04-23 22:17:16 INFO  UserController - 회원가입 요청: 867
+2025-04-23 22:17:16 INFO  UserController - 암호화된 비밀번호: $2a$10$dVDyj/JJjZahBeD7bZYVmOb6QJlpwFyMeSpzBUQc9BcchK6nvGkU.
+2025-04-23 22:17:16 INFO  UserController - 받은 전화번호: 010-4522-7145
+2025-04-23 22:20:04 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 22:20:04 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 22:20:04 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:20:05 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 22:20:05 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:20:06 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 22:20:06 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 22:20:09 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 22:20:09 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:20:09 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 22:20:09 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 22:20:09 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 22:20:09 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3546 ms
+2025-04-23 22:20:10 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 22:20:10 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 22:20:10 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:20:10 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 22:20:10 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 4.655 seconds (process running for 560.505)
+2025-04-23 22:20:10 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 22:20:27 INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-23 22:20:27 INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-23 22:20:27 INFO  DispatcherServlet - Completed initialization in 2 ms
+2025-04-23 22:20:27 INFO  UserController - 회원가입 요청: 6654
+2025-04-23 22:20:27 INFO  UserController - 암호화된 비밀번호: $2a$10$j/6/DWhEA37L3J4vvgFgnOZP6vb9AVoOw6G7T.rOCHhC1qeXjJk5W
+2025-04-23 22:20:27 INFO  UserController - 받은 전화번호: 010-0001-5842
+2025-04-23 22:22:36 INFO  UserController - 회원가입 요청: 665
+2025-04-23 22:22:36 INFO  UserController - 암호화된 비밀번호: $2a$10$YpizLPFRZjWqNRnCNtD4peqpCbwZKLmbRNz4G7P2kH9OVZ3g06zBK
+2025-04-23 22:22:36 INFO  UserController - 받은 전화번호: 010-4522-7145
+2025-04-23 22:35:21 INFO  UserController - 회원가입 요청: 908
+2025-04-23 22:35:22 INFO  UserController - 암호화된 비밀번호: $2a$10$wy18BI/GopZ5.81uoi5wqeH/olZytiUOd2js7VJZ6I146uMoT7CDa
+2025-04-23 22:35:22 INFO  UserController - 받은 전화번호: 010-4522-7145
+2025-04-23 22:36:46 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 22:36:46 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 22:36:46 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:36:47 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 22:36:47 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:36:47 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 22:36:47 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 22:36:49 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 22:36:49 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:36:49 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 22:36:49 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 22:36:49 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 22:36:49 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1436 ms
+2025-04-23 22:36:49 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 22:36:50 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 22:36:50 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:36:50 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 22:36:50 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 2.348 seconds (process running for 1559.92)
+2025-04-23 22:36:50 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 22:37:12 INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-23 22:37:12 INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-23 22:37:12 INFO  DispatcherServlet - Completed initialization in 3 ms
+2025-04-23 22:37:12 INFO  UserController - 회원가입 요청: 654
+2025-04-23 22:37:12 INFO  UserController - 암호화된 비밀번호: $2a$10$6997DTp2zS6TqVxg3T4uwOkCkgnzlMBjJm7LtWu99PLh77tEdCSjS
+2025-04-23 22:37:12 INFO  UserController - 받은 전화번호: 010-0001-5842
+2025-04-23 22:37:51 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 22:37:51 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 22:37:51 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:37:52 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 22:37:52 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:37:52 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 22:37:52 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 22:37:53 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 22:37:53 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:37:53 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 22:37:53 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 22:37:53 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 22:37:53 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1120 ms
+2025-04-23 22:37:53 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 22:37:54 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 22:37:54 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:37:54 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 22:37:54 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.942 seconds (process running for 1623.916)
+2025-04-23 22:37:54 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 22:39:05 INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-23 22:39:05 INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-23 22:39:05 INFO  DispatcherServlet - Completed initialization in 4 ms
+2025-04-23 22:39:05 INFO  UserController - 회원가입 요청: 098
+2025-04-23 22:39:05 INFO  UserController - 암호화된 비밀번호: $2a$10$CoFw3h.H2ekRf0NXMoJEIuaKTIE2GLziLSBGFQnl2xzxzqpYiY9hO
+2025-04-23 22:39:05 INFO  UserController - 받은 전화번호: 010-4522-7145
+2025-04-23 22:44:21 INFO  UserController - 회원가입 요청: 09833
+2025-04-23 22:44:21 INFO  UserController - 암호화된 비밀번호: $2a$10$tSDtLvQPLnGgvDMVrmUfZ.N6wbDS/LpQJ9Ykrzy.1zByDid5jSzsW
+2025-04-23 22:44:21 INFO  UserController - 받은 전화번호: 010-4522-7145
+2025-04-23 22:51:10 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2025-04-23 22:51:11 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 22:51:11 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:51:11 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 22:51:11 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:51:12 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 22:51:12 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 22:51:14 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 22:51:14 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:51:14 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 22:51:14 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 22:51:14 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 22:51:14 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2916 ms
+2025-04-23 22:51:19 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 22:51:20 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 22:51:20 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:51:20 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 22:51:20 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 8.312 seconds (process running for 2429.941)
+2025-04-23 22:51:20 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 22:51:21 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2025-04-23 22:51:21 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 22:51:21 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:51:22 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 22:51:22 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:51:22 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 22:51:22 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 22:51:23 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 22:51:23 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:51:23 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 22:51:23 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 22:51:23 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 22:51:23 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 853 ms
+2025-04-23 22:51:23 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 22:51:23 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 22:51:23 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:51:23 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 22:51:23 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.532 seconds (process running for 2433.648)
+2025-04-23 22:51:23 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 22:51:36 INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-23 22:51:36 INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-23 22:51:36 INFO  DispatcherServlet - Completed initialization in 2 ms
+2025-04-23 22:51:36 INFO  UserController - 회원가입 요청: 655
+2025-04-23 22:51:36 INFO  UserController - 암호화된 비밀번호: $2a$10$/NweaEqRHyQcVm60ae.YXO/HfIu2BM1sFlodQWdlJVQErOT0zyWN6
+2025-04-23 22:51:36 INFO  UserController - 받은 전화번호: 010-3140-0190
+2025-04-23 22:52:13 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 22:52:13 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 22:52:13 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:52:13 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 22:52:13 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:52:13 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 22:52:13 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 22:52:14 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 22:52:14 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:52:14 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 22:52:14 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 22:52:14 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 22:52:14 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 889 ms
+2025-04-23 22:52:15 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 22:52:15 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 22:52:15 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:52:15 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 22:52:15 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.577 seconds (process running for 2485.28)
+2025-04-23 22:52:15 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 22:52:31 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 22:52:31 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 22:52:31 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:52:31 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 22:52:31 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:52:31 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 22:52:31 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 22:52:32 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 22:52:32 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:52:32 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 22:52:32 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 22:52:32 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 22:52:32 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 848 ms
+2025-04-23 22:52:32 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 22:52:33 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 22:52:33 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:52:33 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 22:52:33 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.544 seconds (process running for 2503.086)
+2025-04-23 22:52:33 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 22:52:46 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 22:52:46 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 22:52:46 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:52:47 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 22:52:47 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:52:47 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 22:52:47 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 22:52:48 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 22:52:48 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:52:48 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 22:52:48 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 22:52:48 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 22:52:48 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 817 ms
+2025-04-23 22:52:48 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 22:52:48 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 22:52:49 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:52:49 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 22:52:49 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.414 seconds (process running for 2518.863)
+2025-04-23 22:52:49 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 22:53:26 INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-23 22:53:26 INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-23 22:53:26 INFO  DispatcherServlet - Completed initialization in 2 ms
+2025-04-23 22:53:26 INFO  UserController - 회원가입 요청: 644
+2025-04-23 22:53:26 INFO  UserController - 암호화된 비밀번호: $2a$10$Z4bjdzhsUpb48vIT9hs92us1/7ven5wUGYRRDNY7dPcZ1f7KOpoKe
+2025-04-23 22:53:26 INFO  UserController - 받은 전화번호: 010-0001-5842
+2025-04-23 22:53:53 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 22:53:53 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 22:53:53 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:53:54 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 22:53:54 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:53:54 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 22:53:54 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 22:53:55 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 22:53:55 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:53:55 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 22:53:55 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 22:53:55 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 22:53:55 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 874 ms
+2025-04-23 22:53:55 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 22:53:55 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 22:53:55 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 22:53:55 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 22:53:55 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.489 seconds (process running for 2585.578)
+2025-04-23 22:53:55 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 22:58:29 INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-23 22:58:29 INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-23 22:58:29 INFO  DispatcherServlet - Completed initialization in 2 ms
+2025-04-23 22:58:29 INFO  UserController - 로그인 시도: ley1234
+2025-04-23 22:58:29 INFO  HikariDataSource - HikariPool-1 - Starting...
+2025-04-23 22:58:30 INFO  log4j2 - 1. Connection opened. {executed in 529ms} 
+2025-04-23 22:58:30 INFO  log4j2 - 1. Connection.new Connection returned 
+2025-04-23 22:58:30 INFO  log4j2 - 1. Connection.getNetworkTimeout() returned 0
+2025-04-23 22:58:30 INFO  log4j2 - 1. Connection.isReadOnly() returned false
+2025-04-23 22:58:30 INFO  log4j2 - 1. Connection.getAutoCommit() returned true
+2025-04-23 22:58:30 INFO  log4j2 - 1. Connection.isValid(1) returned true
+2025-04-23 22:58:30 INFO  log4j2 - 1. Connection.getTransactionIsolation() returned 2
+2025-04-23 22:58:30 INFO  HikariPool - HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@7ded6609
+2025-04-23 22:58:30 INFO  HikariDataSource - HikariPool-1 - Start completed.
+2025-04-23 22:58:30 INFO  log4j2 - 1. Connection.getAutoCommit() returned true
+2025-04-23 22:58:30 INFO  log4j2 - 2. Connection opened. {executed in 276ms} 
+2025-04-23 22:58:30 INFO  log4j2 - 2. Connection.new Connection returned 
+2025-04-23 22:58:30 INFO  log4j2 - 2. Connection.isReadOnly() returned false
+2025-04-23 22:58:30 INFO  log4j2 - 2. Connection.getAutoCommit() returned true
+2025-04-23 22:58:31 INFO  log4j2 - 3. Connection opened. {executed in 699ms} 
+2025-04-23 22:58:31 INFO  log4j2 - 3. Connection.new Connection returned 
+2025-04-23 22:58:31 INFO  log4j2 - 3. Connection.isReadOnly() returned false
+2025-04-23 22:58:31 INFO  log4j2 - 3. Connection.getAutoCommit() returned true
+2025-04-23 22:58:32 INFO  log4j2 - 4. Connection opened. {executed in 536ms} 
+2025-04-23 22:58:32 INFO  log4j2 - 4. Connection.new Connection returned 
+2025-04-23 22:58:32 INFO  log4j2 - 4. Connection.isReadOnly() returned false
+2025-04-23 22:58:32 INFO  log4j2 - 4. Connection.getAutoCommit() returned true
+2025-04-23 22:58:32 INFO  log4j2 - 5. Connection opened. {executed in 443ms} 
+2025-04-23 22:58:32 INFO  log4j2 - 5. Connection.new Connection returned 
+2025-04-23 22:58:32 INFO  log4j2 - 5. Connection.isReadOnly() returned false
+2025-04-23 22:58:32 INFO  log4j2 - 5. Connection.getAutoCommit() returned true
+2025-04-23 22:58:32 INFO  log4j2 - 1. PreparedStatement.new PreparedStatement returned 
+2025-04-23 22:58:32 INFO  log4j2 - 1. Connection.prepareStatement(SELECT USER_ID, 
+		       USERNAME, 
+		       PASSWORD, 
+		       EMAIL, 
+		       PHONENUMBER,
+		       GENDER,
+		       BIRTH_DATE,
+		       CREATE_ID, 
+		       UPDATE_ID, 
+		       CREATE_DT, 
+		       UPDATE_DT, 
+		       ROLE
+		FROM USERS
+	    WHERE USER_ID = ?
+	      AND DEL_YN = 'N') returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@408879ac
+2025-04-23 22:58:32 INFO  log4j2 - 1. PreparedStatement.setString(1, "ley1234") returned 
+2025-04-23 22:58:32 INFO  log4j2 - 6. Connection opened. {executed in 284ms} 
+2025-04-23 22:58:32 INFO  log4j2 - 6. Connection.new Connection returned 
+2025-04-23 22:58:32 INFO  log4j2 - 6. Connection.isReadOnly() returned false
+2025-04-23 22:58:32 INFO  log4j2 - 6. Connection.getAutoCommit() returned true
+2025-04-23 22:58:34 INFO  log4j2 - 1. SELECT USER_ID, USERNAME, PASSWORD, EMAIL, PHONENUMBER, GENDER, BIRTH_DATE, CREATE_ID, UPDATE_ID, 
+CREATE_DT, UPDATE_DT, ROLE FROM USERS WHERE USER_ID = 'ley1234' AND DEL_YN = 'N'  {executed in 1326 ms}
+2025-04-23 22:58:34 INFO  log4j2 - 1. PreparedStatement.execute() returned true
+2025-04-23 22:58:34 INFO  log4j2 - 1. ResultSet.new ResultSet returned 
+2025-04-23 22:58:34 INFO  log4j2 - 1. PreparedStatement.getResultSet() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@71e8afbb
+2025-04-23 22:58:34 INFO  log4j2 - 1. ResultSet.getMetaData() returned oracle.jdbc.driver.OracleResultSetMetaData@2838e8ff
+2025-04-23 22:58:34 INFO  log4j2 - 1. ResultSet.getType() returned 1003
+2025-04-23 22:58:34 INFO  log4j2 - 1. ResultSet.isClosed() returned false
+2025-04-23 22:58:34 INFO  log4j2 - 1. ResultSet.next() returned true
+2025-04-23 22:58:34 INFO  log4j2 - 1. ResultSet.getString(USER_ID) returned ley1234
+2025-04-23 22:58:34 INFO  log4j2 - 1. ResultSet.getString(USERNAME) returned 이은식
+2025-04-23 22:58:34 INFO  log4j2 - 1. ResultSet.getString(PASSWORD) returned fe2592b42a727e977f055947385b709cc82b16b9a87f88c6abf3900d65d0cdc3
+2025-04-23 22:58:34 INFO  log4j2 - 1. ResultSet.getString(EMAIL) returned dldmstlr20419@naver.com
+2025-04-23 22:58:34 INFO  log4j2 - 1. ResultSet.getString(CREATE_ID) returned SYSTEM
+2025-04-23 22:58:34 INFO  log4j2 - 1. ResultSet.getString(UPDATE_ID) returned void
+2025-04-23 22:58:34 INFO  log4j2 - 1. ResultSet.getString(CREATE_DT) returned 2025-04-03 21:33:25
+2025-04-23 22:58:34 INFO  log4j2 - 1. ResultSet.getString(UPDATE_DT) returned 2025-04-03 21:33:25
+2025-04-23 22:58:34 INFO  log4j2 - 1. ResultSet.getString(ROLE) returned admin
+2025-04-23 22:58:34 INFO  log4j2 - 1. ResultSet.getString(GENDER) returned M
+2025-04-23 22:58:34 INFO  log4j2 - 1. ResultSet.getString(PHONENUMBER) returned 010-3140-0190
+2025-04-23 22:58:34 INFO  log4j2 - 1. ResultSet.getString(BIRTH_DATE) returned 1999-02-22 00:00:00
+2025-04-23 22:58:34 INFO  log4j2 - 1. ResultSet.isClosed() returned false
+2025-04-23 22:58:34 INFO  log4j2 - 
+|--------|---------|-----------------------------------------------------------------|------------------------|--------------|-------|--------------------|----------|----------|--------------------|--------------------|------|
+|user_id |username |password                                                         |email                   |phonenumber   |gender |birth_date          |create_id |update_id |create_dt           |update_dt           |role  |
+|--------|---------|-----------------------------------------------------------------|------------------------|--------------|-------|--------------------|----------|----------|--------------------|--------------------|------|
+|ley1234 |이은식      |fe2592b42a727e977f055947385b709cc82b16b9a87f88c6abf3900d65d0cdc3 |dldmstlr20419@naver.com |010-3140-0190 |M      |1999-02-22 00:00:00 |SYSTEM    |null      |2025-04-03 21:33:25 |2025-04-03 21:33:25 |admin |
+|--------|---------|-----------------------------------------------------------------|------------------------|--------------|-------|--------------------|----------|----------|--------------------|--------------------|------|
+
+2025-04-23 22:58:34 INFO  log4j2 - 1. ResultSet.next() returned false
+2025-04-23 22:58:34 INFO  log4j2 - 1. ResultSet.close() returned void
+2025-04-23 22:58:34 INFO  log4j2 - 1. Connection.getMetaData() returned oracle.jdbc.driver.OracleDatabaseMetaData@3e2433f8
+2025-04-23 22:58:34 INFO  log4j2 - 1. PreparedStatement.close() returned 
+2025-04-23 22:58:34 INFO  log4j2 - 1. Connection.clearWarnings() returned 
+2025-04-23 22:58:34 WARN  BCryptPasswordEncoder - Encoded password does not look like BCrypt
+2025-04-23 22:58:34 WARN  UserController - 로그인 실패: ley1234
+org.springframework.security.authentication.BadCredentialsException: Bad credentials
+	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.additionalAuthenticationChecks(DaoAuthenticationProvider.java:93) ~[spring-security-core-6.4.4.jar:6.4.4]
+	at org.springframework.security.authentication.dao.AbstractUserDetailsAuthenticationProvider.authenticate(AbstractUserDetailsAuthenticationProvider.java:147) ~[spring-security-core-6.4.4.jar:6.4.4]
+	at org.springframework.security.authentication.ProviderManager.authenticate(ProviderManager.java:182) ~[spring-security-core-6.4.4.jar:6.4.4]
+	at back.controller.user.UserController.login(UserController.java:57) ~[main/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:547) ~[jakarta.servlet-api-6.0.0.jar:6.0.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:614) ~[jakarta.servlet-api-6.0.0.jar:6.0.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:181) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) [spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) [spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238) [spring-security-config-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) [spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) [spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) [spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) [spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) [spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) [spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) [tomcat-embed-core-10.1.39.jar:10.1.39]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+2025-04-23 22:59:30 INFO  log4j2 - 6. Connection.isClosed() returned false
+2025-04-23 22:59:30 INFO  log4j2 - 6. Connection closed. {executed in 2ms} 
+2025-04-23 22:59:30 INFO  log4j2 - 6. Connection.close() returned 
+2025-04-23 22:59:30 INFO  log4j2 - 6. Connection closed. {executed in 0ms} 
+2025-04-23 22:59:30 INFO  log4j2 - 6. Connection.close() returned 
+2025-04-23 23:05:54 INFO  UserController - 회원가입 요청: 987
+2025-04-23 23:05:54 INFO  UserController - 암호화된 비밀번호: $2a$10$q5pHiVMq7RgUlBDhkUX7Z.SVbsv7oAjAlwDKCVKoWekYXuChLWZj2
+2025-04-23 23:05:54 INFO  UserController - 받은 전화번호: 010-4522-7145
+2025-04-23 23:08:19 INFO  log4j2 - 1. Connection.isClosed() returned false
+2025-04-23 23:08:19 INFO  log4j2 - 1. Connection closed. {executed in 2ms} 
+2025-04-23 23:08:19 INFO  log4j2 - 1. Connection.close() returned 
+2025-04-23 23:08:19 INFO  log4j2 - 1. Connection closed. {executed in 0ms} 
+2025-04-23 23:08:19 INFO  log4j2 - 1. Connection.close() returned 
+2025-04-23 23:08:19 INFO  log4j2 - 7. Connection opened. {executed in 220ms} 
+2025-04-23 23:08:19 INFO  log4j2 - 7. Connection.new Connection returned 
+2025-04-23 23:08:19 INFO  log4j2 - 7. Connection.isReadOnly() returned false
+2025-04-23 23:08:19 INFO  log4j2 - 7. Connection.getAutoCommit() returned true
+2025-04-23 23:08:20 INFO  log4j2 - 3. Connection.isClosed() returned false
+2025-04-23 23:08:20 INFO  log4j2 - 3. Connection closed. {executed in 2ms} 
+2025-04-23 23:08:20 INFO  log4j2 - 3. Connection.close() returned 
+2025-04-23 23:08:20 INFO  log4j2 - 3. Connection closed. {executed in 0ms} 
+2025-04-23 23:08:20 INFO  log4j2 - 3. Connection.close() returned 
+2025-04-23 23:08:21 INFO  log4j2 - 8. Connection opened. {executed in 407ms} 
+2025-04-23 23:08:21 INFO  log4j2 - 8. Connection.new Connection returned 
+2025-04-23 23:08:21 INFO  log4j2 - 8. Connection.isReadOnly() returned false
+2025-04-23 23:08:21 INFO  log4j2 - 8. Connection.getAutoCommit() returned true
+2025-04-23 23:08:25 INFO  log4j2 - 5. Connection.isClosed() returned false
+2025-04-23 23:08:25 INFO  log4j2 - 5. Connection closed. {executed in 2ms} 
+2025-04-23 23:08:25 INFO  log4j2 - 5. Connection.close() returned 
+2025-04-23 23:08:25 INFO  log4j2 - 5. Connection closed. {executed in 0ms} 
+2025-04-23 23:08:25 INFO  log4j2 - 5. Connection.close() returned 
+2025-04-23 23:08:25 INFO  log4j2 - 9. Connection opened. {executed in 226ms} 
+2025-04-23 23:08:25 INFO  log4j2 - 9. Connection.new Connection returned 
+2025-04-23 23:08:25 INFO  log4j2 - 9. Connection.isReadOnly() returned false
+2025-04-23 23:08:25 INFO  log4j2 - 9. Connection.getAutoCommit() returned true
+2025-04-23 23:08:26 INFO  log4j2 - 2. Connection.isClosed() returned false
+2025-04-23 23:08:26 INFO  log4j2 - 2. Connection closed. {executed in 1ms} 
+2025-04-23 23:08:26 INFO  log4j2 - 2. Connection.close() returned 
+2025-04-23 23:08:26 INFO  log4j2 - 2. Connection closed. {executed in 0ms} 
+2025-04-23 23:08:26 INFO  log4j2 - 2. Connection.close() returned 
+2025-04-23 23:08:26 INFO  log4j2 - 10. Connection opened. {executed in 178ms} 
+2025-04-23 23:08:26 INFO  log4j2 - 10. Connection.new Connection returned 
+2025-04-23 23:08:26 INFO  log4j2 - 10. Connection.isReadOnly() returned false
+2025-04-23 23:08:26 INFO  log4j2 - 10. Connection.getAutoCommit() returned true
+2025-04-23 23:08:31 INFO  log4j2 - 4. Connection.isClosed() returned false
+2025-04-23 23:08:31 INFO  log4j2 - 4. Connection closed. {executed in 1ms} 
+2025-04-23 23:08:31 INFO  log4j2 - 4. Connection.close() returned 
+2025-04-23 23:08:31 INFO  log4j2 - 4. Connection closed. {executed in 0ms} 
+2025-04-23 23:08:31 INFO  log4j2 - 4. Connection.close() returned 
+2025-04-23 23:08:31 INFO  log4j2 - 11. Connection opened. {executed in 170ms} 
+2025-04-23 23:08:31 INFO  log4j2 - 11. Connection.new Connection returned 
+2025-04-23 23:08:31 INFO  log4j2 - 11. Connection.isReadOnly() returned false
+2025-04-23 23:08:31 INFO  log4j2 - 11. Connection.getAutoCommit() returned true
+2025-04-23 23:10:02 WARN  SessionIdGeneratorBase - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [2,393] milliseconds.
+2025-04-23 23:11:27 INFO  UserController - 회원가입 요청: 0058
+2025-04-23 23:11:27 INFO  UserController - 암호화된 비밀번호: $2a$10$RjjlXbOc8GKiEKUb4OP8NOkBZq7fHynIxHCZR18nKk.ztpZT1zr42
+2025-04-23 23:11:27 INFO  UserController - 받은 전화번호: 010-0001-5842
+2025-04-23 23:16:15 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:16:15 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:16:15 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:16:16 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:16:16 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:16:16 INFO  HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-04-23 23:16:16 INFO  log4j2 - 7. Connection.isClosed() returned false
+2025-04-23 23:16:16 INFO  log4j2 - 7. Connection closed. {executed in 1ms} 
+2025-04-23 23:16:16 INFO  log4j2 - 7. Connection.close() returned 
+2025-04-23 23:16:16 INFO  log4j2 - 7. Connection closed. {executed in 0ms} 
+2025-04-23 23:16:16 INFO  log4j2 - 7. Connection.close() returned 
+2025-04-23 23:16:16 INFO  log4j2 - 8. Connection.isClosed() returned false
+2025-04-23 23:16:16 INFO  log4j2 - 8. Connection closed. {executed in 2ms} 
+2025-04-23 23:16:16 INFO  log4j2 - 8. Connection.close() returned 
+2025-04-23 23:16:16 INFO  log4j2 - 8. Connection closed. {executed in 0ms} 
+2025-04-23 23:16:16 INFO  log4j2 - 8. Connection.close() returned 
+2025-04-23 23:16:16 INFO  log4j2 - 9. Connection.isClosed() returned false
+2025-04-23 23:16:16 INFO  log4j2 - 9. Connection closed. {executed in 1ms} 
+2025-04-23 23:16:16 INFO  log4j2 - 9. Connection.close() returned 
+2025-04-23 23:16:16 INFO  log4j2 - 9. Connection closed. {executed in 0ms} 
+2025-04-23 23:16:16 INFO  log4j2 - 9. Connection.close() returned 
+2025-04-23 23:16:16 INFO  log4j2 - 10. Connection.isClosed() returned false
+2025-04-23 23:16:16 INFO  log4j2 - 10. Connection closed. {executed in 1ms} 
+2025-04-23 23:16:16 INFO  log4j2 - 10. Connection.close() returned 
+2025-04-23 23:16:16 INFO  log4j2 - 10. Connection closed. {executed in 0ms} 
+2025-04-23 23:16:16 INFO  log4j2 - 10. Connection.close() returned 
+2025-04-23 23:16:16 INFO  log4j2 - 11. Connection.isClosed() returned false
+2025-04-23 23:16:16 INFO  log4j2 - 11. Connection closed. {executed in 1ms} 
+2025-04-23 23:16:16 INFO  log4j2 - 11. Connection.close() returned 
+2025-04-23 23:16:16 INFO  log4j2 - 11. Connection closed. {executed in 0ms} 
+2025-04-23 23:16:16 INFO  log4j2 - 11. Connection.close() returned 
+2025-04-23 23:16:16 INFO  HikariDataSource - HikariPool-1 - Shutdown completed.
+2025-04-23 23:16:17 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:16:17 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:16:19 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:16:19 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:16:19 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:16:19 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:16:19 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:16:19 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2160 ms
+2025-04-23 23:16:19 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:16:20 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:16:20 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:16:20 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:16:20 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 3.169 seconds (process running for 3930.01)
+2025-04-23 23:16:20 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:16:38 INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-23 23:16:38 INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-23 23:16:38 INFO  DispatcherServlet - Completed initialization in 3 ms
+2025-04-23 23:16:38 INFO  UserController - 회원가입 요청: 66tt4
+2025-04-23 23:16:38 INFO  UserController - 암호화된 비밀번호: $2a$10$Oe6nz2Rdj3UH9MIlcd15HuoGyazKo7NWOpua7zRrgJ1euMIpPeFLq
+2025-04-23 23:16:38 INFO  UserController - 받은 전화번호: 010-4522-7145
+2025-04-23 23:17:10 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:17:10 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:17:10 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:17:11 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:17:11 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:17:11 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:17:11 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:17:12 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:17:12 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:17:12 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:17:12 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:17:12 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:17:12 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 841 ms
+2025-04-23 23:17:12 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:17:12 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:17:12 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:17:12 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:17:12 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.441 seconds (process running for 3982.475)
+2025-04-23 23:17:12 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:18:23 INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-23 23:18:23 INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-23 23:18:23 INFO  DispatcherServlet - Completed initialization in 3 ms
+2025-04-23 23:18:23 INFO  UserController - 회원가입 요청: 788
+2025-04-23 23:18:23 INFO  UserController - 암호화된 비밀번호: $2a$10$saLyoyqsxFRVRfRHM0kxG.nNBQ4FKhq4Z/XIrWE5XxKDSjn2mhvuC
+2025-04-23 23:18:23 INFO  UserController - 받은 전화번호: 010-4522-7145
+2025-04-23 23:23:43 INFO  UserController - 회원가입 요청: 788
+2025-04-23 23:23:43 INFO  UserController - 암호화된 비밀번호: $2a$10$Fnq5wLY8pNxwddayjBU4kOMc.HT5/kF/.wWM/lwWwu3BJKS5KUFUC
+2025-04-23 23:23:43 INFO  UserController - 받은 전화번호: 010-4522-7145
+2025-04-23 23:23:47 INFO  UserController - 회원가입 요청: 788
+2025-04-23 23:23:47 INFO  UserController - 암호화된 비밀번호: $2a$10$hSLnJw9hSQg9BLj0IUkEKeYbuRRSYH8.jlaFu/P2FZ6EeFl/Notem
+2025-04-23 23:23:47 INFO  UserController - 받은 전화번호: 010-4522-7145
+2025-04-23 23:23:58 INFO  UserController - 회원가입 요청: 788
+2025-04-23 23:23:58 INFO  UserController - 암호화된 비밀번호: $2a$10$j.HBayKiKUb.M2R6Ah2pW..p6wHl6R2eEVdxqX8O2VIucq3a.ITue
+2025-04-23 23:23:58 INFO  UserController - 받은 전화번호: 010-4522-7145
+2025-04-23 23:24:40 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:24:40 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:24:40 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:24:40 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:24:40 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:24:41 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:24:41 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:24:42 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:24:42 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:24:42 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:24:42 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:24:42 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:24:42 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1051 ms
+2025-04-23 23:24:42 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:24:42 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:24:42 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:24:42 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:24:42 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.745 seconds (process running for 4432.562)
+2025-04-23 23:24:42 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:25:10 INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-23 23:25:10 INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-23 23:25:10 INFO  DispatcherServlet - Completed initialization in 2 ms
+2025-04-23 23:25:10 INFO  UserController - 회원가입 요청: 3322
+2025-04-23 23:25:10 INFO  UserController - 암호화된 비밀번호: $2a$10$f9aMzQLrMAIC3xoJw7fJQevw/5//3TVs5EOGjWMAH7nisSUJ5TS0m
+2025-04-23 23:25:10 INFO  UserController - 받은 전화번호: 010-5582-0485
+2025-04-23 23:31:17 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:31:17 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:31:17 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:31:17 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:31:17 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:31:18 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:31:18 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:31:19 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:31:20 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:31:20 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:31:20 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:31:21 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:31:21 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3001 ms
+2025-04-23 23:31:21 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:31:21 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:31:21 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:31:21 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:31:21 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 3.723 seconds (process running for 4831.466)
+2025-04-23 23:31:21 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:31:38 INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-23 23:31:38 INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-23 23:31:38 INFO  DispatcherServlet - Completed initialization in 3 ms
+2025-04-23 23:31:38 INFO  UserController - 회원가입 요청: 6655
+2025-04-23 23:31:38 INFO  UserController - 암호화된 비밀번호: $2a$10$lEnhQ6c6KSsXA3C4NRdTYeVjtDD6ZFsmB0WbAZtEEpQ7sdUI4fHlq
+2025-04-23 23:31:38 INFO  UserController - 받은 전화번호: 010-4522-7145
+2025-04-23 23:33:00 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:33:00 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:33:00 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:33:01 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:33:01 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:33:01 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:33:01 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:33:02 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:33:02 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:33:02 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:33:02 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:33:02 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:33:02 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1134 ms
+2025-04-23 23:33:03 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:33:03 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:33:03 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:33:03 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:33:03 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 2.1 seconds (process running for 4933.236)
+2025-04-23 23:33:03 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:33:23 INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-23 23:33:23 INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-23 23:33:23 INFO  DispatcherServlet - Completed initialization in 2 ms
+2025-04-23 23:33:23 INFO  UserController - 회원가입 요청: htt44
+2025-04-23 23:33:23 INFO  UserController - 암호화된 비밀번호: $2a$10$hAUEtPXppQfsih7JKACMgeOlqSH/ShvDdwvVVBUOIAE0OwscBGK9O
+2025-04-23 23:33:23 INFO  UserController - 받은 전화번호: 010-0001-5842
+2025-04-23 23:37:48 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:37:48 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:37:48 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:37:48 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:37:48 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:37:48 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:37:48 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:37:49 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:37:49 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:37:49 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:37:49 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:37:49 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:37:49 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 930 ms
+2025-04-23 23:37:50 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:37:50 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:37:50 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:37:50 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:37:50 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.691 seconds (process running for 5220.358)
+2025-04-23 23:37:50 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:40:10 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 73 class path changes (0 additions, 73 deletions, 0 modifications)
+2025-04-23 23:40:10 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:40:10 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:40:11 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:40:11 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:40:11 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:40:11 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:40:12 WARN  ClassPathMapperScanner - No MyBatis mapper was found in '[back]' package. Please check your configuration.
+2025-04-23 23:40:12 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:40:12 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:40:12 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:40:12 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:40:12 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:40:12 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1080 ms
+2025-04-23 23:40:13 WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\Users\dldms\git\Spring\project_back_end\bin\main\mapper\File\FileMapper.xml]'
+2025-04-23 23:40:13 INFO  StandardService - Stopping service [Tomcat]
+2025-04-23 23:40:13 INFO  ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-04-23 23:40:13 ERROR SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\Users\dldms\git\Spring\project_back_end\bin\main\mapper\File\FileMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1361) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1155) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1121) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1056) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.4.jar:3.4.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) [spring-boot-3.4.4.jar:3.4.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) [spring-boot-3.4.4.jar:3.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) [spring-boot-3.4.4.jar:3.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) [spring-boot-3.4.4.jar:3.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) [spring-boot-3.4.4.jar:3.4.4]
+	at back.ProjectBackEndApplication.main(ProjectBackEndApplication.java:10) [main/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.4.4.jar:3.4.4]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\Users\dldms\git\Spring\project_back_end\bin\main\mapper\File\FileMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:199) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.5.jar:6.2.5]
+	... 26 more
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [C:\Users\dldms\git\Spring\project_back_end\bin\main\mapper\File\FileMapper.xml]'
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:695) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:572) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:712) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:189) ~[mybatis-spring-boot-starter-3.0.4.jar:3.0.4]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.5.jar:6.2.5]
+	... 26 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\Users\dldms\git\Spring\project_back_end\bin\main\mapper\File\FileMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'back.model.common.PostFile'.  Cause: java.lang.ClassNotFoundException: Cannot find class: back.model.common.PostFile
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:125) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:98) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:693) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:572) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:712) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:189) ~[mybatis-spring-boot-starter-3.0.4.jar:3.0.4]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.5.jar:6.2.5]
+	... 26 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'back.model.common.PostFile'.  Cause: java.lang.ClassNotFoundException: Cannot find class: back.model.common.PostFile
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:103) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:105) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:141) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:133) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:98) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:693) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:572) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:712) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:189) ~[mybatis-spring-boot-starter-3.0.4.jar:3.0.4]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.5.jar:6.2.5]
+	... 26 more
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'back.model.common.PostFile'.  Cause: java.lang.ClassNotFoundException: Cannot find class: back.model.common.PostFile
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:132) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:101) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:105) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:141) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:133) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:98) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:693) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:572) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:712) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:189) ~[mybatis-spring-boot-starter-3.0.4.jar:3.0.4]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.5.jar:6.2.5]
+	... 26 more
+Caused by: java.lang.ClassNotFoundException: Cannot find class: back.model.common.PostFile
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:226) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:103) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:322) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:132) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:101) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:105) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:141) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:133) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:98) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:693) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:572) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:712) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:189) ~[mybatis-spring-boot-starter-3.0.4.jar:3.0.4]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.5.jar:6.2.5]
+	... 26 more
+2025-04-23 23:40:15 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:40:15 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:40:16 WARN  ClassPathMapperScanner - No MyBatis mapper was found in '[back]' package. Please check your configuration.
+2025-04-23 23:40:16 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:40:16 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:40:16 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:40:16 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:40:16 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:40:16 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 919 ms
+2025-04-23 23:40:17 WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\Users\dldms\git\Spring\project_back_end\bin\main\mapper\File\FileMapper.xml]'
+2025-04-23 23:40:17 INFO  StandardService - Stopping service [Tomcat]
+2025-04-23 23:40:17 INFO  ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-04-23 23:40:17 ERROR SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\Users\dldms\git\Spring\project_back_end\bin\main\mapper\File\FileMapper.xml]'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:657) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:645) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1361) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1191) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:347) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1155) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1121) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1056) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.5.jar:6.2.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.4.jar:3.4.4]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) [spring-boot-3.4.4.jar:3.4.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) [spring-boot-3.4.4.jar:3.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) [spring-boot-3.4.4.jar:3.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) [spring-boot-3.4.4.jar:3.4.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) [spring-boot-3.4.4.jar:3.4.4]
+	at back.ProjectBackEndApplication.main(ProjectBackEndApplication.java:10) [main/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.4.4.jar:3.4.4]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.ibatis.session.SqlSessionFactory]: Factory method 'sqlSessionFactory' threw exception with message: Failed to parse mapping resource: 'file [C:\Users\dldms\git\Spring\project_back_end\bin\main\mapper\File\FileMapper.xml]'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:199) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.5.jar:6.2.5]
+	... 26 more
+Caused by: java.io.IOException: Failed to parse mapping resource: 'file [C:\Users\dldms\git\Spring\project_back_end\bin\main\mapper\File\FileMapper.xml]'
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:695) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:572) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:712) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:189) ~[mybatis-spring-boot-starter-3.0.4.jar:3.0.4]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.5.jar:6.2.5]
+	... 26 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. The XML location is 'file [C:\Users\dldms\git\Spring\project_back_end\bin\main\mapper\File\FileMapper.xml]'. Cause: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'back.model.common.PostFile'.  Cause: java.lang.ClassNotFoundException: Cannot find class: back.model.common.PostFile
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:125) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:98) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:693) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:572) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:712) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:189) ~[mybatis-spring-boot-starter-3.0.4.jar:3.0.4]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.5.jar:6.2.5]
+	... 26 more
+Caused by: org.apache.ibatis.builder.BuilderException: Error resolving class. Cause: org.apache.ibatis.type.TypeException: Could not resolve type alias 'back.model.common.PostFile'.  Cause: java.lang.ClassNotFoundException: Cannot find class: back.model.common.PostFile
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:103) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:105) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:141) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:133) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:98) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:693) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:572) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:712) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:189) ~[mybatis-spring-boot-starter-3.0.4.jar:3.0.4]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.5.jar:6.2.5]
+	... 26 more
+Caused by: org.apache.ibatis.type.TypeException: Could not resolve type alias 'back.model.common.PostFile'.  Cause: java.lang.ClassNotFoundException: Cannot find class: back.model.common.PostFile
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:128) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:132) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:101) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:105) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:141) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:133) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:98) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:693) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:572) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:712) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:189) ~[mybatis-spring-boot-starter-3.0.4.jar:3.0.4]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.5.jar:6.2.5]
+	... 26 more
+Caused by: java.lang.ClassNotFoundException: Cannot find class: back.model.common.PostFile
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:226) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.io.ClassLoaderWrapper.classForName(ClassLoaderWrapper.java:103) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.io.Resources.classForName(Resources.java:322) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.type.TypeAliasRegistry.resolveAlias(TypeAliasRegistry.java:124) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.BaseBuilder.resolveAlias(BaseBuilder.java:132) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.BaseBuilder.resolveClass(BaseBuilder.java:101) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLStatementBuilder.parseStatementNode(XMLStatementBuilder.java:105) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:141) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.buildStatementFromContext(XMLMapperBuilder.java:133) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:123) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:98) ~[mybatis-3.5.17.jar:3.5.17]
+	at org.mybatis.spring.SqlSessionFactoryBean.buildSqlSessionFactory(SqlSessionFactoryBean.java:693) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.SqlSessionFactoryBean.afterPropertiesSet(SqlSessionFactoryBean.java:572) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.SqlSessionFactoryBean.getObject(SqlSessionFactoryBean.java:712) ~[mybatis-spring-3.0.4.jar:3.0.4]
+	at org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration.sqlSessionFactory(MybatisAutoConfiguration.java:189) ~[mybatis-spring-boot-starter-3.0.4.jar:3.0.4]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.lambda$instantiate$0(SimpleInstantiationStrategy.java:171) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiateWithFactoryMethod(SimpleInstantiationStrategy.java:88) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:168) ~[spring-beans-6.2.5.jar:6.2.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:653) ~[spring-beans-6.2.5.jar:6.2.5]
+	... 26 more
+2025-04-23 23:40:19 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:40:19 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:40:20 WARN  ClassPathMapperScanner - No MyBatis mapper was found in '[back]' package. Please check your configuration.
+2025-04-23 23:40:20 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:40:20 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:40:20 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:40:20 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:40:20 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:40:20 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1193 ms
+2025-04-23 23:40:23 WARN  UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 60fbc761-386c-4ae4-96c1-9efde5aae663
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-04-23 23:40:23 INFO  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-04-23 23:40:23 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:40:23 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:40:23 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:40:23 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 4.787 seconds (process running for 5373.53)
+2025-04-23 23:40:23 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration matched:
+      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+      - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   UserDetailsServiceAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - AnyNestedCondition 1 matched 2 did not; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'password'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'name'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured)
+      - @ConditionalOnBean (types: org.springframework.security.config.ObjectPostProcessor; SearchStrategy: all) found beans 'objectPostProcessor', 'webAuthorizationManagerPostProcessor', 'filterChainDecoratorPostProcessor', 'authenticationManagerPostProcessor'; @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2025-04-23 23:41:25 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:41:25 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:41:25 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:41:25 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:41:25 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:41:25 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:41:25 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:41:26 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:41:26 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:41:26 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:41:26 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:41:26 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:41:26 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 876 ms
+2025-04-23 23:41:27 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:41:27 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:41:27 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:41:27 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:41:27 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.566 seconds (process running for 5437.238)
+2025-04-23 23:41:27 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   SpringBootWebSecurityConfiguration.SecurityFilterChainConfiguration:
+      Did not match:
+         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' securityFilterChain; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) found beans named springSecurityFilterChain (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+
+   UserDetailsServiceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) found beans of type 'org.springframework.security.authentication.AuthenticationManager' authenticationManager and found beans of type 'org.springframework.security.core.userdetails.UserDetailsService' customUserDetailsService (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+         - found 'session' scope (OnWebApplicationCondition)
+         - AnyNestedCondition 1 matched 2 did not; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'password'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'name'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2025-04-23 23:41:45 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:41:45 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:41:45 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:41:46 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:41:46 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:41:46 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:41:46 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:41:47 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:41:47 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:41:47 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:41:47 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:41:47 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:41:47 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 932 ms
+2025-04-23 23:41:47 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:41:47 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:41:47 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:41:47 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:41:47 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.544 seconds (process running for 5457.467)
+2025-04-23 23:41:47 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:41:59 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:41:59 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:41:59 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:41:59 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:41:59 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:41:59 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:41:59 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:42:00 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:42:00 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:42:00 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:42:00 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:42:00 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:42:00 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 844 ms
+2025-04-23 23:42:00 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:42:01 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:42:01 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:42:01 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:42:01 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.5 seconds (process running for 5471.033)
+2025-04-23 23:42:01 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:42:14 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:42:14 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:42:14 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:42:15 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:42:15 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:42:15 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:42:15 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:42:16 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:42:16 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:42:16 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:42:16 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:42:16 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:42:16 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 815 ms
+2025-04-23 23:42:16 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:42:16 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:42:16 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:42:16 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:42:16 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.432 seconds (process running for 5486.634)
+2025-04-23 23:42:16 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:42:36 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:42:36 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:42:36 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:42:36 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:42:36 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:42:37 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:42:37 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:42:38 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:42:38 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:42:38 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:42:38 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:42:38 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:42:38 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1261 ms
+2025-04-23 23:42:38 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:42:39 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:42:39 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:42:39 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:42:39 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 2.088 seconds (process running for 5508.973)
+2025-04-23 23:42:39 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:42:46 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:42:46 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:42:46 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:42:46 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:42:46 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:42:47 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:42:47 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:42:47 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:42:47 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:42:47 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:42:47 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:42:47 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:42:47 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 863 ms
+2025-04-23 23:42:48 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:42:48 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:42:48 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:42:48 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:42:48 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.448 seconds (process running for 5518.268)
+2025-04-23 23:42:48 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:42:54 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:42:54 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:42:54 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:42:54 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:42:54 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:42:55 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:42:55 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:42:55 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:42:55 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:42:55 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:42:55 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:42:55 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:42:55 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 826 ms
+2025-04-23 23:42:56 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:42:56 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:42:56 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:42:56 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:42:56 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.444 seconds (process running for 5526.308)
+2025-04-23 23:42:56 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:43:06 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:43:06 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:43:06 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:07 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:43:07 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:07 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:43:07 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:43:08 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:43:08 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:08 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:43:08 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:43:08 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:43:08 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 840 ms
+2025-04-23 23:43:08 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:43:08 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:43:08 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:08 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:43:08 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.501 seconds (process running for 5538.82)
+2025-04-23 23:43:08 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:43:14 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:43:14 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:43:14 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:15 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:43:15 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:15 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:43:15 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:43:16 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:43:16 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:16 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:43:16 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:43:16 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:43:16 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 862 ms
+2025-04-23 23:43:16 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:43:17 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:43:17 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:17 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:43:17 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.449 seconds (process running for 5546.941)
+2025-04-23 23:43:17 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:43:24 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:43:24 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:43:24 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:24 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:43:24 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:24 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:43:24 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:43:25 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:43:25 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:25 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:43:25 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:43:25 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:43:25 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 916 ms
+2025-04-23 23:43:26 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:43:26 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:43:26 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:26 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:43:26 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.588 seconds (process running for 5556.248)
+2025-04-23 23:43:26 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:43:33 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:43:33 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:43:33 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:34 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:43:34 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:34 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:43:34 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:43:35 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:43:35 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:35 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:43:35 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:43:35 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:43:35 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 835 ms
+2025-04-23 23:43:35 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:43:35 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:43:35 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:35 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:43:35 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.444 seconds (process running for 5565.507)
+2025-04-23 23:43:35 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:43:46 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:43:46 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:43:46 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:46 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:43:46 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:46 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:43:46 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:43:47 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:43:47 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:47 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:43:47 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:43:47 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:43:47 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 864 ms
+2025-04-23 23:43:47 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:43:48 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:43:48 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:48 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:43:48 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.489 seconds (process running for 5578.051)
+2025-04-23 23:43:48 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:43:54 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:43:54 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:43:54 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:54 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:43:54 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:54 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:43:54 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:43:55 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:43:55 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:55 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:43:55 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:43:55 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:43:55 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 864 ms
+2025-04-23 23:43:56 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:43:56 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:43:56 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:43:56 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:43:56 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.45 seconds (process running for 5586.136)
+2025-04-23 23:43:56 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:44:05 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:44:05 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:44:05 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:44:06 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:44:06 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:44:06 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:44:06 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:44:06 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:44:06 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:44:06 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:44:06 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:44:07 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:44:07 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 803 ms
+2025-04-23 23:44:07 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:44:07 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:44:07 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:44:07 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:44:07 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.422 seconds (process running for 5597.352)
+2025-04-23 23:44:07 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:48:13 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:48:13 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:48:13 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:48:14 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:48:14 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:48:14 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:48:14 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:48:17 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:48:17 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:48:17 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:48:17 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:48:17 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:48:17 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2456 ms
+2025-04-23 23:48:18 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:48:18 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:48:18 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:48:18 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:48:18 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 3.856 seconds (process running for 5848.314)
+2025-04-23 23:48:18 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:49:57 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 62 class path changes (0 additions, 62 deletions, 0 modifications)
+2025-04-23 23:49:57 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:49:57 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:50:01 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:50:01 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:50:01 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:50:01 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:50:02 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:50:02 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:50:02 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:50:02 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:50:02 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:50:02 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 912 ms
+2025-04-23 23:50:10 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:50:10 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:50:10 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:50:10 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:50:10 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 9.185 seconds (process running for 5960.463)
+2025-04-23 23:50:10 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:53:57 INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-23 23:53:57 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:53:57 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:53:57 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:53:57 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:53:57 INFO  ProjectBackEndApplication - Starting ProjectBackEndApplication using Java 17.0.1 with PID 19528 (C:\Users\dldms\git\Spring\project_back_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_back_end)
+2025-04-23 23:53:57 INFO  ProjectBackEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-23 23:53:58 INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-23 23:53:58 INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:53:58 INFO  StandardService - Starting service [Tomcat]
+2025-04-23 23:53:58 INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-23 23:53:58 INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-23 23:53:58 INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 981 ms
+2025-04-23 23:53:58 WARN  InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2025-04-23 23:53:59 INFO  OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-04-23 23:53:59 INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:53:59 INFO  TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-04-23 23:53:59 INFO  ProjectBackEndApplication - Started ProjectBackEndApplication in 1.612 seconds (process running for 6189.104)
+2025-04-23 23:53:59 INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-23 23:55:10 INFO  SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-04-23 23:55:10 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 23:55:10 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 23:55:11 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 23:55:11 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
