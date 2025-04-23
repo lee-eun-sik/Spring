@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>펫 시터 소개</title>
+    <script src="/js/jquery-3.7.1.min.js"></script>
+	<style>
+		        .container {
+		            width: 90%;
+		            max-width: 800px;
+		            margin: 50px auto;
+		            background-color: pink;
+		            padding: 30px;
+		            border-radius: 15px;
+		            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+		            text-align: center;
+		        }
+		        .sitter-box {
+		            background-color: white;
+		            border: 2px solid #ccc;
+		            padding: 20px;
+		            margin-bottom: 20px;
+		            border-radius: 15px;
+		            text-align: left;
+		            display: flex;
+		            justify-content: space-between;
+		        }
+		        .sitter-name {
+		            font-weight: bold;
+		            width: 30%;
+		        }
+		        .sitter-content {
+		            width: 65%;
+		        }
+	</style>
+	<script>
+				        $(document).ready(function () {
+				            loadSitterList();
+							$("#background").hide();
+							$("#p").hide(); // 단락 숨기기
+							$("#p1").hide(); //단락 숨기기
+							$("#join").hide(); // 회원가입 버튼 숨기기
+							$("#login").hide(); // 로그인 버튼 숨기기
+				        
+						});
+						function loadSitterList() {
+						    $.ajax({
+						        url: '[[${apiBaseUrl}]]/api/petsitter/list.do',
+						        type: 'GET',
+								dataType: 'json',
+						        success: function (data) {
+									console.log(data)
+						            const sitterList = data.data.list;
+									console.log(sitterList)
+						            if (!sitterList || sitterList.length === 0) {
+						                $("#sitterList").html("<p>펫시터 목록이 없습니다.</p>");
+						                return;
+						            }
+
+						            let html = "";
+						            $.each(sitterList, function (i, sitter) {
+						                html += `
+						                    <div class="sitter-box">
+						                        <div class="sitter-name">${sitter.sitterName || '이름 없음'}</div>
+						                        <div class="sitter-content">${sitter.content || '소개 내용 없음'}</div>
+						                    </div>
+						                `;
+						            });
+
+						            $("#sitterList").html(html);
+						        },
+						        error: function () {
+						            $("#sitterList").html("<p style='color:red;'>펫 시터 데이터를 불러오는 데 실패했습니다.</p>");
+						        }
+						    });
+						}
+					
+				    </script>
+	
+</head>
+<body>
+	<div th:replace="~{fragments/header :: header}"></div>
+	
+	      <div class="container">
+	          <h2>펫 시터 소개</h2>
+	          <div id="sitterList"></div>
+	      </div>
+	  
+</body>
+</html>

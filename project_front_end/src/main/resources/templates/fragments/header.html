@@ -6,7 +6,7 @@
 
         <div class="menu">
             <a th:href="@{/notice/list}">공지사항</a>
-            <a th:href="@{/petsitter/list}">펫시터</a>
+            <a th:href="@{/petsitter/petsitterlist}">펫시터</a>
             <a th:href="@{/reservation/list}">예약목록</a>
             <a th:href="@{/review/list}">리뷰목록</a>
 
@@ -20,24 +20,7 @@
             </div>
         </div>
 
-        <!-- 로그인 상태 표시 -->
-        <div class="header">
-			<p th:text="'[디버깅] 세션 loginUser: ' + ${session.loginUser}"></p>
-            <div th:if="${session.loginUser == null}">
-                <button type="button" id="login">로그인</button>
-                <button type="button" id="join">회원가입</button>
-            </div>
-            <div th:if="${session.loginUser != null}">
-                <p id="userGreeting">
-                    안녕하세요,
-                    <a th:href="@{${loginUser.role == 'admin'} ? '/user/manager' : '/user/main'}">
-                        <span th:text="|${loginUser.userId} + '님!'|"></span>
-                    </a>
-                </p>
-                <button type="button" id="logout">로그아웃</button>
-            </div>
-        </div>
-    </nav>
+        
 
     <div class="backgroundimg" th:if="${pageName != 'manager'}">
         <img id="background" th:src="@{/images/pet.png}" />

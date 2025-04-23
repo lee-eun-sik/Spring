@@ -71,6 +71,7 @@ public class SecurityConfig {
                     "/api/user/login.do", // 로그인 하지 않아도 넘길 주소
                     "/api/user/logout.do",
                     "/api/user/register.do",
+                    "/api/petsitter/list.do",
                     "/api/file/down.do",
                     "/api/file/imgDown.do",
                     "/api/file/imgUpload.do"

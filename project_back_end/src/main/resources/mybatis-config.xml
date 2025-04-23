@@ -27,7 +27,7 @@
     <!-- 매퍼 파일 등록 --> 
     <mappers> 
         <mapper resource="mapper/user/UserMapper.xml"/> <!-- 사용자 매퍼 파일 -->
-        
+        <mapper resource="mapper/PetSitter/PetSitterMapper.xml"/>
         
     </mappers>
 </configuration>
