@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>회원 목록 관리</title>
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <style>
+        /* Your existing styles */
+    </style>
+</head>
+<body>
+	<div th:replace="~{fragments/header :: header}"></div>
+<h2>가입된 회원목록</h2>
+<div>
+    <button type="button" onclick="location.href='/user/main'">마이페이지</button>
+    <button type="button" onclick="location.href='/reservation/reservationlist'">예약관리</button>
+    <button type="button" onclick="location.href='/member/memberlist'">회원관리</button>
+</div>
+
+<table border="1" id="memberListTable">
+    <thead>
+        <tr>
+            <th>이름</th>
+            <th>성별</th>
+            <th>아이디</th>
+            <th>비밀번호</th>
+            <th>전화번호</th>
+            <th>이메일</th>
+            <th>가입일자</th>
+            <th>관리</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Member rows will be populated by AJAX -->
+    </tbody>
+</table>
+
+<!-- 페이지네이션 및 검색 UI는 보류 상태이므로 비활성 -->
+<div class="search-container">
+    <select id="searchType">
+        <option value="user_id">아이디</option>
+        <option value="user_name">이름</option>
+    </select>
+    <div class="search-box">
+        <input type="text" id="searchKeyword" placeholder="검색어 입력">
+        <button onclick="searchMember()" class="search-btn">🔍</button>
+    </div>
+</div>
+
+<script type="text/javascript">
+    // Fetch and display members on page load
+    function loadMemberList(page=1) {
+        $.ajax({
+            url: "[[${apiBaseUrl}]]/api/member/list.do",
+            method: "GET",
+            data: { page: page },
+            success: function(response) {
+                const userList = response.data;
+                const tbody = $("#memberListTable tbody");
+                tbody.empty(); // Clear previous rows
+                if (userList.length === 0) {
+                    tbody.append('<tr><td colspan="8" style="text-align: center;">검색 결과가 없습니다.</td></tr>');
+                } else {
+                    userList.forEach(user => {
+                        tbody.append(`
+                            <tr>
+                                <td>${user.username}</td>
+                                <td>${user.gender}</td>
+                                <td>${user.userId}</td>
+                                <td>****</td>
+                                <td>${user.phonenumber}</td>
+                                <td>${user.email}</td>
+                                <td>${user.createDt}</td>
+                                <td><button onclick="deleteUser('${user.userId}')">탈퇴</button></td>
+                            </tr>
+                        `);
+                    });
+                }
+            }
+        });
+    }
+
+    // Delete user via AJAX
+    function deleteUser(userId) {
+        if (confirm(`${userId} 회원을 정말 탈퇴하시겠습니까?`)) {
+            $.ajax({
+                url: "[[${apiBaseUrl}]]/api/member/delete.do",
+                method: "POST",
+                data: { userId: userId },
+                success: function(response) {
+                    alert(response.message);
+                    loadMemberList(); // Reload the member list after deletion
+                },
+                error: function() {
+                    alert("회원 탈퇴 중 오류가 발생했습니다.");
+                }
+            });
+        }
+    }
+
+	// Search functionality
+	function searchMember() {
+	    const type = $("#searchType").val();
+	    const keyword = $("#searchKeyword").val().trim();
+	    
+	    if (!keyword) {
+	        alert("검색어를 입력해주세요.");
+	        return;
+	    }
+	    
+	    $.ajax({
+	        url: "[[${apiBaseUrl}]]/api/member/list.do",
+	        method: "GET",
+	        data: { 
+	            searchType: type, 
+	            searchKeyword: keyword,
+	            page: 1  // Search starts from page 1
+	        },
+	        success: function(response) {
+				console.log(response)
+	            const userList = response.data;
+	            const tbody = $("#memberListTable tbody");
+	            tbody.empty(); // Clear previous rows
+
+	            if (userList.length === 0) {
+	                tbody.append('<tr><td colspan="8" style="text-align: center;">검색 결과가 없습니다.</td></tr>');
+	            } else {
+	                userList.forEach(user => {
+	                    tbody.append(`
+	                        <tr>
+	                            <td>${user.username}</td>
+	                            <td>${user.gender}</td>
+	                            <td>${user.userId}</td>
+	                            <td>****</td>
+	                            <td>${user.phonenumber}</td>
+	                            <td>${user.email}</td>
+	                            <td>${user.createDt}</td>
+	                            <td><button onclick="deleteUser('${user.userId}')">탈퇴</button></td>
+	                        </tr>
+	                    `);
+	                });
+	            }
+	        }
+	    });
+	}
+
+    // Initialize the member list
+    $(document).ready(function() {
+		$("#background").hide(); // 헤더 배경 사진 숨기기
+		$("#p").hide(); // 단락 숨기기
+		$("#p1").hide(); //단락 숨기기
+		$("#join").hide(); // 회원가입 버튼 숨기기
+		$("#login").hide(); // 로그인 버튼 숨기기
+        loadMemberList(); // Initial load
+    });
+</script>
+
+</body>
+</html>

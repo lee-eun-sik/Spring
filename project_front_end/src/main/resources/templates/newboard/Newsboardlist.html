@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>공지사항</title>
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <script src="/js/common.js?ver=1.0.1"></script>
+    <link rel="stylesheet" href="/css/list.css?ver=1.0.1">
+</head>
+<body>
+<header th:replace="fragments/header :: header"></header>
+
+<h2>공지사항</h2>
+
+<div class="button-wrapper">
+    <a href="/newsboard/newsboardcreate" class="write-btn">게시글 작성</a>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>번호</th>
+            <th>작성자</th>
+            <th>제목</th>
+            <th>조회수</th>
+            <th>작성일</th>
+            <th>상세보기</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr th:if="${#lists.isEmpty(newboardList)}">
+        <td colspan="6" style="text-align:center; font-size:17px;">게시물이 없습니다.</td>
+    </tr>
+    <tr th:each="board : ${newboardList}">
+        <td th:text="${board.rn}">1</td>
+        <td th:text="${board.createId}">아이디</td>
+        <td th:text="${board.title}">제목</td>
+        <td th:text="${board.viewCount}">0</td>
+        <td th:text="${board.createDt}">2025-03-27</td>
+        <td><a th:href="@{'/newsboardview?id=' + ${board.boardId}}">보기</a></td>
+    </tr>
+    </tbody>
+</table>
+
+<!-- 페이지 네비게이션 -->
+<ul>
+    <li th:if="${currentPage > 1}">
+        <a th:href="@{|/newboardlist?page=${currentPage - 1}&size=${size}|}">&laquo;</a>
+    </li>
+    <li th:each="i : ${#numbers.sequence(1, totalPages)}">
+        <a th:href="@{|/newboardlist?page=${i}&size=${size}|}"
+           th:style="${i == currentPage} ? 'font-weight:bold;' : ''"
+           th:text="${i}">1</a>
+    </li>
+    <li th:if="${currentPage < totalPages}">
+        <a th:href="@{|/newboardlist?page=${currentPage + 1}&size=${size}|}">&raquo;</a>
+    </li>
+</ul>
+
+<!-- 검색 영역 -->
+<div class="search-container">
+    <select name="searchColumn" id="searchColumn">
+        <option value="TITLE" th:selected="${searchColumn == 'TITLE'}">제목</option>
+        <option value="CREATE_ID" th:selected="${searchColumn == 'CREATE_ID'}">작성자</option>
+    </select>
+    <input type="text" id="searchText" name="searchText"
+           th:value="${searchText}" placeholder="입력해주세요">
+    <button type="button" id="searchBtn" class="icon-button">🔍</button>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#searchBtn").click(function () {
+            searchname(1, true);
+        });
+        $("#viewcategory").change(function () {
+            let selectedValue = $(this).val();
+            sortByCategory(1, selectedValue);
+        });
+    });
+
+    function url(page, viewcategory) {
+        let searchText = $("#searchText").val();
+        let searchColumn = $("#searchColumn").val();
+
+        if (viewcategory) {
+            window.location.href = "/newboardlist?" +
+                "searchText=" + searchText + "&" +
+                "searchColumn=" + searchColumn + "&" +
+                "viewcategory=" + viewcategory + "&" +
+                "page=" + page + "&" +
+                "size=[[${size}]]";
+        } else {
+            window.location.href = "/newboardlist?" +
+                "searchText=" + searchText + "&" +
+                "searchColumn=" + searchColumn + "&" +
+                "page=" + page + "&" +
+                "size=[[${size}]]";
+        }
+    }
+
+    function searchname(page, checkNow) {
+        url(1, null);
+    }
+</script>
+
+</body>
+</html>

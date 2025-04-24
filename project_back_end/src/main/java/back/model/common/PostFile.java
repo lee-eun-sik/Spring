@@ -1,7 +1,15 @@
 package back.model.common;
 
 import back.model.Model;
-
+import back.model.NewBoard.NewBoard;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 public class PostFile extends Model {
     private int fileId;
     private int boardId;
@@ -9,10 +17,7 @@ public class PostFile extends Model {
     private String filePath;
     private String delYn;
     
-    public PostFile() {
-        
-    }
-
+   
 	public int getFileId() {
 		return fileId;
 	}

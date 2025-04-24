@@ -2,182 +2,93 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="back.mapper.reservation.ReservationMapper"> <!-- 매퍼의 네임스페이스 설정 -->
-    
-     <!-- 예약신청 생성  -->
-    <insert id="create" parameterType="back.model.reservation.Reservation">
-        INSERT INTO RESERVATION
-         (
-	        BOARD_ID,
-	         
-			RESERVATION_DATE,
-			START_DATE,
-			END_DATE, 
-			ADDRESS,
-			VARIETY,  
-			PET_NAME, 
-			PHONENUMBER, 
-			SITTER, 
-			PRICE,
-			REPLY,
-			ADDRESSDETAIL,
-            CREATE_ID,
-	        CREATE_DT
-			
-          )
-        VALUES
-         (
-	         SEQ_BOARD.NEXTVAL,
-             #{reservationDate},
-             TO_DATE(#{startDate}, 'YYYY-MM-DD'),
-             TO_DATE(#{endDate}, 'YYYY-MM-DD'),
-	         #{address}, 
-	         #{variety}, 
-	         #{petName},
-	         #{phoneNumber},
-	         #{sitter},
-	         #{price},
-	         #{reply},
-	         #{addressDetail},
-     	     #{createId},
-	         SYSDATE
-         )
-         <selectKey keyProperty="boardId" resultType="string" order="AFTER">
-         SELECT SEQ_BOARD.CURRVAL FROM DUAL
-         </selectKey>
-    </insert> 
-    <!-- 예약신청 목록 조회 list에 필요한애 -->
-    <select id="getReservationList" parameterType="back.model.reservation.Reservation" resultType="back.model.reservation.Reservation">
-		SELECT
-		    B.RN,
-    		B.BOARD_ID,
-			B.START_DATE,
-			B.END_DATE, 
-			B.ADDRESS,
-			B.VARIETY,  
-			B.PET_NAME, 
-			B.PHONENUMBER, 
-			B.SITTER, 
-			B.PRICE,
-			B.ADDRESSDETAIL,
-    		B.CREATE_ID,
-    		B.UPDATE_ID,
-    		B.CREATE_DT,
-    		B.UPDATE_DT,
-    		B.DEL_YN,
-    		B.ACCEPT,
-    		B.REASON
-		FROM (
-	        	SELECT
-				 		    ROWNUM AS RN,
-    					A.BOARD_ID,
-			            TO_CHAR(A.START_DATE, 'YYYY-MM-DD') AS START_DATE,
-			            TO_CHAR(A.END_DATE, 'YYYY-MM-DD') AS END_DATE,
-						A.ADDRESS,
-						A.VARIETY,  
-						A.PET_NAME, 
-						A.PHONENUMBER, 
-						A.SITTER, 
-						A.PRICE,
-						A.ADDRESSDETAIL,
-    					A.CREATE_ID,
-    					A.UPDATE_ID,
-    					TO_CHAR(A.CREATE_DT,  'YYYY-MM-DD') AS CREATE_DT,
-    					TO_CHAR(A.UPDATE_DT,  'YYYY-MM-DD') AS UPDATE_DT,
-    					A.DEL_YN,
-    					A.ACCEPT,
-    					A.REASON 				
-			FROM RESERVATION A
-			<where>
-   			A.DEL_YN = 'N'
-   			<if test="searchText != null and searchText != '' and searchColumn != null and searchColumn != ''">
-   				AND <choose>
-   				<when test="searchColumn == 'VARIETY'">
-   					A.VARIETY LIKE '%'||#{searchText}||'%' 
-   				</when>
-   				<when test="searchColumn == 'SITTER'">
-   					A.SITTER LIKE '%'||#{searchText}||'%' 
-   				</when>
-   				<when test="searchColumn == 'CREATE_ID'">
-   					A.CREATE_ID LIKE '%'||#{searchText}||'%'
-   				</when>
-   				</choose>
-   				
-   			</if>
-   			
-   		</where>
-		) B
-		WHERE B.RN BETWEEN #{startRow} AND #{endRow}
-    </select>
-    
-    <!-- 예약신청 총 갯수조회 -->
-    <select id="getTotalReservationCount"  resultType="int">
-    SELECT COUNT(*)
-    FROM RESERVATION
-    WHERE DEL_YN = 'N'
-  	</select>
-  	
-  	<!-- 예약신청 ID view에 필요한거 -->
-      <select id="getReservationById" parameterType="string" resultType="back.model.reservation.Reservation">
-		SELECT
-    		BOARD_ID,
-    		RESERVATION_DATE,
-			START_DATE,
-			END_DATE, 
-			ADDRESS,
-			VARIETY,  
-			PET_NAME, 
-			PHONENUMBER, 
-			SITTER, 
-			PRICE,
-			REPLY,
-			ADDRESSDETAIL,
-    		CREATE_ID,
-    		UPDATE_ID,
-    		CREATE_DT,
-    		UPDATE_DT,
-    		DEL_YN
-		FROM RESERVATION
-		WHERE BOARD_ID = #{boardId}
-		AND  DEL_YN = 'N'
-    </select>
-    
-    <!-- 예약신청 수정 -->
-     <update id="updateReservation" parameterType="back.model.reservation.Reservation">
-	    UPDATE RESERVATION
-	    SET 
-	        RESERVATION_DATE = #{reservationDate},
-	        START_DATE = TO_DATE(#{startDate}, 'YYYY-MM-DD'),
-	        END_DATE  = TO_DATE(#{endDate}, 'YYYY-MM-DD'),
-	        ADDRESS = #{address},
-	        VARIETY = #{variety},
-			PET_NAME = #{petName},
-			PHONENUMBER = #{phoneNumber},
-			SITTER = #{sitter},
-			PRICE = #{price},
-			REPLY = #{reply},
-			ADDRESSDETAIL = #{addressDetail},
-	        UPDATE_ID = #{updateId},
-            UPDATE_DT = SYSDATE
-	    WHERE BOARD_ID = #{boardId}
-	</update>
-	
-	<!-- 예약신청 수락거절 -->
-	<update id="acceptReservation" parameterType="back.model.reservation.Reservation">
-        UPDATE RESERVATION 
-        SET ACCEPT = #{accept},  
-            REASON = #{reason},  
-            UPDATE_DT = SYSDATE  
-        WHERE BOARD_ID = #{boardId}
-    </update>
-    
-	<!-- 예약신청 삭제 -->
-	<update id="deleteReservation" parameterType="back.model.reservation.Reservation">
-        UPDATE RESERVATION 
-        SET DEL_YN = 'Y',  
-            UPDATE_ID = #{updateId},  
-            UPDATE_DT = SYSDATE  
-        WHERE BOARD_ID = #{boardId}
-    </update>
+<mapper namespace="back.mapper.reservation.ReservationMapper">
 
+    
+	    <insert id="insertReservation" parameterType="back.model.reservation.Reservation">
+		    INSERT INTO reservation (
+		        reservation_id, 
+		        start_date, 
+		        end_date, 
+		        reservation_date,
+		        address, 
+		        variety, 
+		        pet_name,
+		        phonenumber, 
+		        sitter, 
+		        price, 
+		        reply, 
+		        create_id,
+		        update_id, 
+		        create_dt, 
+		        update_dt, 
+		        del_yn,
+		        addressdetail
+		    ) VALUES (
+		        reservation_seq.NEXTVAL, 
+		        #{startDate, jdbcType=DATE}, 
+		        #{endDate, jdbcType=DATE}, 
+		        SYSDATE,
+		        #{address}, 
+		        #{variety}, 
+		        #{petName},
+		        #{phoneNumber}, 
+		        #{sitterName}, 
+		        #{price, jdbcType=INTEGER}, 
+		        #{reply, jdbcType=VARCHAR},
+		        #{createId, jdbcType=VARCHAR},
+		        #{updateId, jdbcType=VARCHAR},
+		        SYSDATE, 
+		        SYSDATE, 
+		        'N',
+		        #{addressDetail}
+		    )
+		</insert>
+		
+		<select id="selectAllReservations" resultType="back.model.reservation.Reservation">
+		    SELECT 
+		        reservation_id,
+		        start_date,
+		        end_date,
+		        reservation_date,
+		        address,
+		        variety,
+		        pet_name,
+		        phonenumber,
+		        sitter,
+		        price,
+		        reply,
+		        create_id,
+		        update_id,
+		        create_dt,
+		        update_dt,
+		        del_yn,
+		        addressdetail
+		    FROM reservation
+		    WHERE del_yn = 'N'
+		    ORDER BY reservation_date DESC
+		</select>
+		<select id="getReservationList" parameterType="back.model.reservation.Reservation" resultType="back.model.reservation.Reservation">
+		    SELECT 
+		        reservation_id,
+		        start_date,
+		        end_date,
+		        reservation_date,
+		        address,
+		        variety,
+		        pet_name,
+		        phonenumber,
+		        sitter,
+		        price,
+		        reply,
+		        create_id,
+		        update_id,
+		        create_dt,
+		        update_dt,
+		        del_yn,
+		        addressdetail
+		    FROM reservation
+		    WHERE del_yn = 'N'
+		    ORDER BY reservation_date DESC
+		</select>
 </mapper>
