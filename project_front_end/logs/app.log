@@ -1,149 +1,102 @@
-<<<<<<< HEAD
-2025-04-24 00:17:10 [RMI TCP Connection(21)-127.0.0.1] INFO  SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
-2025-04-24 00:17:10 [RMI TCP Connection(21)-127.0.0.1] INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-24 00:17:10 [tomcat-shutdown] INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
-2025-04-24 00:17:11 [tomcat-shutdown] INFO  GracefulShutdown - Graceful shutdown complete
-2025-04-24 00:17:11 [RMI TCP Connection(21)-127.0.0.1] INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
-=======
-2025-04-24 09:21:57 [restartedMain] INFO  ProjectFrontEndApplication - Starting ProjectFrontEndApplication using Java 17 with PID 5088 (C:\Users\Admin\git\Spring\project_front_end\bin\main started by Admin in C:\Users\Admin\git\Spring\project_front_end)
-2025-04-24 09:21:57 [restartedMain] INFO  ProjectFrontEndApplication - No active profile set, falling back to 1 default profile: "default"
-2025-04-24 09:21:57 [restartedMain] INFO  DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-04-24 09:21:57 [restartedMain] INFO  DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-04-24 09:21:58 [restartedMain] INFO  TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-04-24 09:21:58 [restartedMain] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2025-04-24 09:21:58 [restartedMain] INFO  StandardService - Starting service [Tomcat]
-2025-04-24 09:21:58 [restartedMain] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-24 09:21:58 [restartedMain] INFO  [/] - Initializing Spring embedded WebApplicationContext
-2025-04-24 09:21:58 [restartedMain] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 759 ms
-2025-04-24 09:21:58 [restartedMain] INFO  WelcomePageHandlerMapping - Adding welcome page template: index
-2025-04-24 09:21:59 [restartedMain] WARN  OptionalLiveReloadServer - Unable to start LiveReload server
-2025-04-24 09:21:59 [restartedMain] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2025-04-24 09:21:59 [restartedMain] INFO  TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2025-04-24 09:21:59 [restartedMain] INFO  ProjectFrontEndApplication - Started ProjectFrontEndApplication in 1.763 seconds (process running for 2.565)
-2025-04-24 09:22:15 [http-nio-8080-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-24 09:22:15 [http-nio-8080-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-04-24 09:22:15 [http-nio-8080-exec-1] INFO  DispatcherServlet - Completed initialization in 0 ms
-2025-04-24 10:11:45 [File Watcher] INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
-2025-04-24 10:11:45 [Thread-1] INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-24 10:11:45 [tomcat-shutdown] INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
-2025-04-24 10:11:45 [tomcat-shutdown] INFO  GracefulShutdown - Graceful shutdown complete
-2025-04-24 10:11:45 [Thread-1] INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
-2025-04-24 10:11:45 [restartedMain] INFO  ProjectFrontEndApplication - Starting ProjectFrontEndApplication using Java 17 with PID 5088 (C:\Users\Admin\git\Spring\project_front_end\bin\main started by Admin in C:\Users\Admin\git\Spring\project_front_end)
-2025-04-24 10:11:45 [restartedMain] INFO  ProjectFrontEndApplication - No active profile set, falling back to 1 default profile: "default"
-2025-04-24 10:11:45 [restartedMain] INFO  TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-04-24 10:11:45 [restartedMain] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2025-04-24 10:11:45 [restartedMain] INFO  StandardService - Starting service [Tomcat]
-2025-04-24 10:11:45 [restartedMain] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-24 10:11:45 [restartedMain] INFO  [/] - Initializing Spring embedded WebApplicationContext
-2025-04-24 10:11:45 [restartedMain] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 195 ms
-2025-04-24 10:11:45 [restartedMain] INFO  WelcomePageHandlerMapping - Adding welcome page template: index
-2025-04-24 10:11:45 [restartedMain] WARN  OptionalLiveReloadServer - Unable to start LiveReload server
-2025-04-24 10:11:45 [restartedMain] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2025-04-24 10:11:45 [restartedMain] INFO  TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2025-04-24 10:11:45 [restartedMain] INFO  ProjectFrontEndApplication - Started ProjectFrontEndApplication in 0.336 seconds (process running for 2988.987)
-2025-04-24 10:11:45 [restartedMain] INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
-2025-04-24 10:19:56 [File Watcher] INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2025-04-24 10:19:56 [Thread-5] INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-24 10:19:56 [tomcat-shutdown] INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
-2025-04-24 10:19:56 [tomcat-shutdown] INFO  GracefulShutdown - Graceful shutdown complete
-2025-04-24 10:19:56 [Thread-5] INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
-2025-04-24 10:19:56 [restartedMain] INFO  ProjectFrontEndApplication - Starting ProjectFrontEndApplication using Java 17 with PID 5088 (C:\Users\Admin\git\Spring\project_front_end\bin\main started by Admin in C:\Users\Admin\git\Spring\project_front_end)
-2025-04-24 10:19:56 [restartedMain] INFO  ProjectFrontEndApplication - No active profile set, falling back to 1 default profile: "default"
-2025-04-24 10:19:56 [restartedMain] INFO  TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-04-24 10:19:56 [restartedMain] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2025-04-24 10:19:56 [restartedMain] INFO  StandardService - Starting service [Tomcat]
-2025-04-24 10:19:56 [restartedMain] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-24 10:19:56 [restartedMain] INFO  [/] - Initializing Spring embedded WebApplicationContext
-2025-04-24 10:19:56 [restartedMain] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 174 ms
-2025-04-24 10:19:56 [restartedMain] INFO  WelcomePageHandlerMapping - Adding welcome page template: index
-2025-04-24 10:19:56 [restartedMain] WARN  OptionalLiveReloadServer - Unable to start LiveReload server
-2025-04-24 10:19:56 [restartedMain] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2025-04-24 10:19:56 [restartedMain] INFO  TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2025-04-24 10:19:56 [restartedMain] INFO  ProjectFrontEndApplication - Started ProjectFrontEndApplication in 0.305 seconds (process running for 3480.325)
-2025-04-24 10:19:56 [restartedMain] INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
-2025-04-24 10:49:05 [http-nio-8080-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-24 10:49:05 [http-nio-8080-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-04-24 10:49:05 [http-nio-8080-exec-1] INFO  DispatcherServlet - Completed initialization in 1 ms
-2025-04-24 11:59:58 [File Watcher] INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
-2025-04-24 11:59:58 [Thread-9] INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-24 11:59:58 [tomcat-shutdown] INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
-2025-04-24 11:59:58 [tomcat-shutdown] INFO  GracefulShutdown - Graceful shutdown complete
-2025-04-24 11:59:58 [Thread-9] INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
-2025-04-24 11:59:58 [restartedMain] INFO  ProjectFrontEndApplication - Starting ProjectFrontEndApplication using Java 17 with PID 5088 (C:\Users\Admin\git\Spring\project_front_end\bin\main started by Admin in C:\Users\Admin\git\Spring\project_front_end)
-2025-04-24 11:59:58 [restartedMain] INFO  ProjectFrontEndApplication - No active profile set, falling back to 1 default profile: "default"
-2025-04-24 11:59:58 [restartedMain] INFO  TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-04-24 11:59:58 [restartedMain] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2025-04-24 11:59:58 [restartedMain] INFO  StandardService - Starting service [Tomcat]
-2025-04-24 11:59:58 [restartedMain] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-24 11:59:58 [restartedMain] INFO  [/] - Initializing Spring embedded WebApplicationContext
-2025-04-24 11:59:58 [restartedMain] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 178 ms
-2025-04-24 11:59:58 [restartedMain] INFO  WelcomePageHandlerMapping - Adding welcome page template: index
-2025-04-24 11:59:59 [restartedMain] WARN  OptionalLiveReloadServer - Unable to start LiveReload server
-2025-04-24 11:59:59 [restartedMain] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2025-04-24 11:59:59 [restartedMain] INFO  TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2025-04-24 11:59:59 [restartedMain] INFO  ProjectFrontEndApplication - Started ProjectFrontEndApplication in 0.331 seconds (process running for 9482.529)
-2025-04-24 11:59:59 [restartedMain] INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
-2025-04-24 12:01:13 [File Watcher] INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2025-04-24 12:01:13 [Thread-13] INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-24 12:01:13 [tomcat-shutdown] INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
-2025-04-24 12:01:13 [tomcat-shutdown] INFO  GracefulShutdown - Graceful shutdown complete
-2025-04-24 12:01:13 [Thread-13] INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
-2025-04-24 12:01:13 [restartedMain] INFO  ProjectFrontEndApplication - Starting ProjectFrontEndApplication using Java 17 with PID 5088 (C:\Users\Admin\git\Spring\project_front_end\bin\main started by Admin in C:\Users\Admin\git\Spring\project_front_end)
-2025-04-24 12:01:13 [restartedMain] INFO  ProjectFrontEndApplication - No active profile set, falling back to 1 default profile: "default"
-2025-04-24 12:01:13 [restartedMain] INFO  TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-04-24 12:01:13 [restartedMain] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2025-04-24 12:01:13 [restartedMain] INFO  StandardService - Starting service [Tomcat]
-2025-04-24 12:01:13 [restartedMain] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-24 12:01:14 [restartedMain] INFO  [/] - Initializing Spring embedded WebApplicationContext
-2025-04-24 12:01:14 [restartedMain] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 152 ms
-2025-04-24 12:01:14 [restartedMain] INFO  WelcomePageHandlerMapping - Adding welcome page template: index
-2025-04-24 12:01:14 [restartedMain] WARN  OptionalLiveReloadServer - Unable to start LiveReload server
-2025-04-24 12:01:14 [restartedMain] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2025-04-24 12:01:14 [restartedMain] INFO  TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2025-04-24 12:01:14 [restartedMain] INFO  ProjectFrontEndApplication - Started ProjectFrontEndApplication in 0.262 seconds (process running for 9557.564)
-2025-04-24 12:01:14 [restartedMain] INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
-2025-04-24 12:45:59 [http-nio-8080-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-24 12:45:59 [http-nio-8080-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-04-24 12:45:59 [http-nio-8080-exec-1] INFO  DispatcherServlet - Completed initialization in 1 ms
-2025-04-24 16:25:32 [File Watcher] INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
-2025-04-24 16:25:33 [Thread-17] INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-24 16:25:33 [tomcat-shutdown] INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
-2025-04-24 16:25:33 [tomcat-shutdown] INFO  GracefulShutdown - Graceful shutdown complete
-2025-04-24 16:25:33 [Thread-17] INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
-2025-04-24 16:25:33 [restartedMain] INFO  ProjectFrontEndApplication - Starting ProjectFrontEndApplication using Java 17 with PID 5088 (C:\Users\Admin\git\Spring\project_front_end\bin\main started by Admin in C:\Users\Admin\git\Spring\project_front_end)
-2025-04-24 16:25:33 [restartedMain] INFO  ProjectFrontEndApplication - No active profile set, falling back to 1 default profile: "default"
-2025-04-24 16:25:33 [restartedMain] INFO  TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-04-24 16:25:33 [restartedMain] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2025-04-24 16:25:33 [restartedMain] INFO  StandardService - Starting service [Tomcat]
-2025-04-24 16:25:33 [restartedMain] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-24 16:25:33 [restartedMain] INFO  [/] - Initializing Spring embedded WebApplicationContext
-2025-04-24 16:25:33 [restartedMain] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 179 ms
-2025-04-24 16:25:33 [restartedMain] INFO  WelcomePageHandlerMapping - Adding welcome page template: index
-2025-04-24 16:25:33 [restartedMain] WARN  OptionalLiveReloadServer - Unable to start LiveReload server
-2025-04-24 16:25:33 [restartedMain] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2025-04-24 16:25:33 [restartedMain] INFO  TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2025-04-24 16:25:33 [restartedMain] INFO  ProjectFrontEndApplication - Started ProjectFrontEndApplication in 0.365 seconds (process running for 25418.991)
-2025-04-24 16:25:33 [restartedMain] INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
-2025-04-24 16:27:23 [File Watcher] INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-2025-04-24 16:27:23 [Thread-21] INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-04-24 16:27:23 [tomcat-shutdown] INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
-2025-04-24 16:27:23 [tomcat-shutdown] INFO  GracefulShutdown - Graceful shutdown complete
-2025-04-24 16:27:23 [Thread-21] INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
-2025-04-24 16:27:23 [restartedMain] INFO  ProjectFrontEndApplication - Starting ProjectFrontEndApplication using Java 17 with PID 5088 (C:\Users\Admin\git\Spring\project_front_end\bin\main started by Admin in C:\Users\Admin\git\Spring\project_front_end)
-2025-04-24 16:27:23 [restartedMain] INFO  ProjectFrontEndApplication - No active profile set, falling back to 1 default profile: "default"
-2025-04-24 16:27:24 [restartedMain] INFO  TomcatWebServer - Tomcat initialized with port 8080 (http)
-2025-04-24 16:27:24 [restartedMain] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-2025-04-24 16:27:24 [restartedMain] INFO  StandardService - Starting service [Tomcat]
-2025-04-24 16:27:24 [restartedMain] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
-2025-04-24 16:27:24 [restartedMain] INFO  [/] - Initializing Spring embedded WebApplicationContext
-2025-04-24 16:27:24 [restartedMain] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 211 ms
-2025-04-24 16:27:24 [restartedMain] INFO  WelcomePageHandlerMapping - Adding welcome page template: index
-2025-04-24 16:27:24 [restartedMain] WARN  OptionalLiveReloadServer - Unable to start LiveReload server
-2025-04-24 16:27:24 [restartedMain] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-2025-04-24 16:27:24 [restartedMain] INFO  TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
-2025-04-24 16:27:24 [restartedMain] INFO  ProjectFrontEndApplication - Started ProjectFrontEndApplication in 0.331 seconds (process running for 25529.28)
-2025-04-24 16:27:24 [restartedMain] INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
-2025-04-24 16:42:41 [http-nio-8080-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-04-24 16:42:41 [http-nio-8080-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2025-04-24 16:42:41 [http-nio-8080-exec-1] INFO  DispatcherServlet - Completed initialization in 1 ms
->>>>>>> branch 'main' of https://github.com/lee-eun-sik/Spring.git
+2025-04-25 01:26:56 [File Watcher] INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-25 01:26:57 [Thread-1] INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-25 01:26:57 [tomcat-shutdown] INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-04-25 01:26:58 [tomcat-shutdown] INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-25 01:26:58 [Thread-1] INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-04-25 01:27:02 [restartedMain] INFO  ProjectFrontEndApplication - Starting ProjectFrontEndApplication using Java 17.0.1 with PID 17448 (C:\Users\dldms\git\Spring\project_front_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_front_end)
+2025-04-25 01:27:03 [restartedMain] INFO  ProjectFrontEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-25 01:27:08 [restartedMain] INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-25 01:27:08 [restartedMain] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-25 01:27:08 [restartedMain] INFO  StandardService - Starting service [Tomcat]
+2025-04-25 01:27:08 [restartedMain] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-25 01:27:08 [restartedMain] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-25 01:27:08 [restartedMain] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4144 ms
+2025-04-25 01:27:09 [restartedMain] INFO  WelcomePageHandlerMapping - Adding welcome page template: index
+2025-04-25 01:27:09 [restartedMain] WARN  OptionalLiveReloadServer - Unable to start LiveReload server
+2025-04-25 01:27:09 [restartedMain] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-25 01:27:09 [restartedMain] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-04-25 01:27:09 [restartedMain] INFO  ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-04-25 01:27:10 [restartedMain] ERROR LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+2025-04-25 01:27:19 [restartedMain] INFO  ProjectFrontEndApplication - Starting ProjectFrontEndApplication using Java 17.0.1 with PID 17448 (C:\Users\dldms\git\Spring\project_front_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_front_end)
+2025-04-25 01:27:19 [restartedMain] INFO  ProjectFrontEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-25 01:27:20 [restartedMain] INFO  TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-25 01:27:20 [restartedMain] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-25 01:27:20 [restartedMain] INFO  StandardService - Starting service [Tomcat]
+2025-04-25 01:27:20 [restartedMain] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-25 01:27:20 [restartedMain] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-25 01:27:20 [restartedMain] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 768 ms
+2025-04-25 01:27:20 [restartedMain] INFO  WelcomePageHandlerMapping - Adding welcome page template: index
+2025-04-25 01:27:20 [restartedMain] WARN  OptionalLiveReloadServer - Unable to start LiveReload server
+2025-04-25 01:27:20 [restartedMain] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-25 01:27:20 [restartedMain] INFO  TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-25 01:27:20 [restartedMain] INFO  ProjectFrontEndApplication - Started ProjectFrontEndApplication in 1.174 seconds (process running for 6072.077)
+2025-04-25 01:27:20 [restartedMain] INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-25 01:27:23 [http-nio-8080-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-25 01:27:23 [http-nio-8080-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-25 01:27:23 [http-nio-8080-exec-1] INFO  DispatcherServlet - Completed initialization in 1 ms
+2025-04-25 01:29:35 [File Watcher] INFO  LocalDevToolsAutoConfiguration$RestartingClassPathChangeChangedEventListener - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2025-04-25 01:29:35 [Thread-5] INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-25 01:29:35 [tomcat-shutdown] INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-04-25 01:29:36 [tomcat-shutdown] INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-25 01:29:36 [Thread-5] INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-04-25 01:29:36 [restartedMain] INFO  ProjectFrontEndApplication - Starting ProjectFrontEndApplication using Java 17.0.1 with PID 17448 (C:\Users\dldms\git\Spring\project_front_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_front_end)
+2025-04-25 01:29:36 [restartedMain] INFO  ProjectFrontEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-25 01:29:36 [restartedMain] INFO  TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-04-25 01:29:36 [restartedMain] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2025-04-25 01:29:36 [restartedMain] INFO  StandardService - Starting service [Tomcat]
+2025-04-25 01:29:36 [restartedMain] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-25 01:29:37 [restartedMain] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-25 01:29:37 [restartedMain] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 618 ms
+2025-04-25 01:29:37 [restartedMain] INFO  WelcomePageHandlerMapping - Adding welcome page template: index
+2025-04-25 01:29:37 [restartedMain] WARN  OptionalLiveReloadServer - Unable to start LiveReload server
+2025-04-25 01:29:37 [restartedMain] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2025-04-25 01:29:37 [restartedMain] WARN  AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2025-04-25 01:29:37 [restartedMain] INFO  ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-04-25 01:29:37 [restartedMain] ERROR LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
+2025-04-25 01:30:15 [restartedMain] INFO  ProjectFrontEndApplication - Starting ProjectFrontEndApplication using Java 17.0.1 with PID 17448 (C:\Users\dldms\git\Spring\project_front_end\bin\main started by dldms in C:\Users\dldms\git\Spring\project_front_end)
+2025-04-25 01:30:15 [restartedMain] INFO  ProjectFrontEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-04-25 01:30:15 [restartedMain] INFO  TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-04-25 01:30:15 [restartedMain] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-04-25 01:30:15 [restartedMain] INFO  StandardService - Starting service [Tomcat]
+2025-04-25 01:30:15 [restartedMain] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-04-25 01:30:15 [restartedMain] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-04-25 01:30:15 [restartedMain] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 691 ms
+2025-04-25 01:30:15 [restartedMain] INFO  WelcomePageHandlerMapping - Adding welcome page template: index
+2025-04-25 01:30:15 [restartedMain] WARN  OptionalLiveReloadServer - Unable to start LiveReload server
+2025-04-25 01:30:15 [restartedMain] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-04-25 01:30:15 [restartedMain] INFO  TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-04-25 01:30:15 [restartedMain] INFO  ProjectFrontEndApplication - Started ProjectFrontEndApplication in 1.01 seconds (process running for 6247.142)
+2025-04-25 01:30:15 [restartedMain] INFO  ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2025-04-25 01:30:15 [http-nio-8080-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-04-25 01:30:15 [http-nio-8080-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-04-25 01:30:15 [http-nio-8080-exec-1] INFO  DispatcherServlet - Completed initialization in 1 ms
