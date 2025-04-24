@@ -28,6 +28,7 @@
     <mappers> 
         <mapper resource="mapper/user/UserMapper.xml"/> <!-- 사용자 매퍼 파일 -->
         <mapper resource="mapper/PetSitter/PetSitterMapper.xml"/>
-        
+        <mapper resource="mapper/Reservation/ReservationMapper.xml"/>
+        <mapper resource="mapper/member/MemberMapper.xml"/>
     </mappers>
 </configuration>

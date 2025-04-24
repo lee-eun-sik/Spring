@@ -1,5 +1,9 @@
 package back.mapper.reservation;
 
-public interface ReservationMapper {
+import java.util.List;
 
+import back.model.reservation.Reservation;
+
+public interface ReservationMapper {
+	List<Reservation> getReservationList(Reservation reservation);
 }

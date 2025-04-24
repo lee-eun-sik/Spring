@@ -47,7 +47,7 @@ public class SecurityConfig {
     /**
      * ✅ 보안 필터 체인 정의 중요!! 보안 필터 체인 재정의 
      */
-    @Bean
+    @Bean// 리턴값 등록한다.
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http // 객체안에서 함수 호출 데이터 실행문을 넣음
             /** 객체에서 뭔가 뽑아옴 자동주입 도는 시점에서
@@ -74,9 +74,11 @@ public class SecurityConfig {
                     "/api/petsitter/list.do",
                     "/api/file/down.do",
                     "/api/file/imgDown.do",
-                    "/api/file/imgUpload.do"
+                    "/api/file/imgUpload.do",
+                    "/api/reservation/list.do",
+                    "/api/member/list.do"
                     
-                ).permitAll() // 로그인을 안해도 로그인, 로그아웃, 회원가입은 누구나 접근 가능
+                ).permitAll() // 로그인을 안해도 로그인, 로그아웃, 회원가입은 누구나 접근 가능,부모 관련 비교할 경우
                 .anyRequest().authenticated() // 그 외는 인증 필요, 요청은 다 체크
             )
 

@@ -4,8 +4,16 @@ import java.util.List;
 import java.util.Map;
 
 import back.model.common.PostFile;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import back.model.Model;
-
+import back.model.NewBoard.NewBoard;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 public class Board extends Model {
 
 	// 별점 통계 (별점 값별 개수)
@@ -42,13 +50,6 @@ public class Board extends Model {
 	
 	private List<PostFile> postFiles;
 	private List<Comment> comments;
-	
-	
-	public Board () {
-			
-	}
-	
-	
 	
 	public String getSitter() {
 		return sitter;

@@ -2,7 +2,15 @@ package back.model.user;
 import java.util.Date;
 
 import back.model.Model;
-
+import back.model.NewBoard.NewBoard;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 public class User extends Model {
 	private String userId;
     private String username;
@@ -19,10 +27,7 @@ public class User extends Model {
 	
 	//기본 생성자
 	
-	public User() {
-		
-	}
-
+	
 	public String getUserId() {
 		return userId;
 	}

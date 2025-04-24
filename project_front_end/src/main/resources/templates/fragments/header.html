@@ -1,5 +1,12 @@
+<!-- fragments/header.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+	
+</head>
+<body>
 <!-- flagments/header.html-->
-<body th:data-loggedin="${session.loginUser != null}">
 <div th:fragment="header">	
     <nav>
         <img th:src="@{/images/logo.png}" alt="logo" />
@@ -7,7 +14,7 @@
         <div class="menu">
             <a th:href="@{/notice/list}">공지사항</a>
             <a th:href="@{/petsitter/petsitterlist}">펫시터</a>
-            <a th:href="@{/reservation/list}">예약목록</a>
+            <a th:href="@{/reservation/reservationlist}">예약목록</a>
             <a th:href="@{/review/list}">리뷰목록</a>
 
             <!-- 드롭다운 -->
@@ -20,7 +27,23 @@
             </div>
         </div>
 
-        
+        <!-- 로그인 상태 표시 -->
+        <div class="signInfo">
+            <div th:if="${session.loginUser == null}">
+                <button type="button" id="login">로그인</button>
+                <button type="button" id="join">회원가입</button>
+            </div>
+            <div th:if="${session.loginUser != null}">
+                <p id="userGreeting">
+                    안녕하세요,
+                    <a th:href="@{${session.loginUser.role == 'admin'} ? '/user/manager' : '/user/main'}">
+                        <span th:text="${session.loginUser.userId} + '님!'"></span>
+                    </a>
+                </p>
+                <button type="button" id="logout">로그아웃</button>
+            </div>
+        </div>
+    </nav>
 
     <div class="backgroundimg" th:if="${pageName != 'manager'}">
         <img id="background" th:src="@{/images/pet.png}" />
@@ -29,12 +52,10 @@
             <p id="p1">나와 내 반려동물을 위한 돌봄 서비스</p>
         </div>
     </div>
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>	
+	<script src="/js/jquery-3.7.1.min.js"></script>
     <script th:inline="javascript">
-		
         /*<![CDATA[*/
         $(document).ready(function () {
-			
             $("#communityBtn").click(function (event) {
                 event.preventDefault();
                 $(".dropdown-content").toggle();
@@ -154,4 +175,6 @@
             text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.7);
         }
     </style>
-</div>
+</div>	
+</body>
+</html>

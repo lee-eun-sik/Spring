@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>예약 신청 목록</title>
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" th:href="@{/css/reservation/list.css}">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+
+        button {
+            margin: 2px;
+        }
+
+        .header-buttons {
+            margin-top: 20px;
+        }
+
+        .header-buttons button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div th:replace="~{fragments/header :: header}"></div>
+
+<h2>신청된 예약목록</h2>
+
+<div class="header-buttons">
+    <button type="button" th:onclick="|location.href='@{/user/main}'|">마이페이지</button>
+    <button type="button" th:onclick="|location.href='@{/reservation/list}'|">예약관리</button>
+    <button type="button" th:onclick="|location.href='@{/member/list}'|">회원관리</button>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>아이디</th>
+            <th>날짜</th>
+            <th>주소</th>
+            <th>품종</th>
+            <th>펫이름</th>
+            <th>전화번호</th>
+            <th>펫시터</th>
+            <th>일급</th>
+            <th>관리</th>
+        </tr>
+    </thead>
+    <tbody id="reservationTableBody">
+        <!-- Ajax로 데이터 삽입 예정 -->
+    </tbody>
+</table>
+
+<script>
+    $(document).ready(function () {
+		$("#background").hide();
+		$("#p").hide(); // 단락 숨기기
+		$("#p1").hide(); //단락 숨기기
+		$("#join").hide(); // 회원가입 버튼 숨기기
+		$("#login").hide(); // 로그인 버튼 숨기기
+
+        const requestData = {}; // Add search conditions if needed
+
+        $.ajax({
+            url: '[[${apiBaseUrl}]]/api/reservation/list.do',
+            type: 'POST',  
+            contentType: 'application/json',
+            data: JSON.stringify(requestData),
+            success: function (response) {
+                const list = response.data.list;
+                const $tbody = $("#reservationTableBody");
+                $tbody.empty();
+
+                if (list.length > 0) {
+                    list.forEach(reservation => {
+                        const row = `
+                            <tr>
+                                <td>${reservation.reservationId}</td>
+                                <td>${reservation.startDate} ~ ${reservation.endDate}</td>
+                                <td>${reservation.address}</td>
+                                <td>${reservation.variety}</td>
+                                <td>${reservation.petName}</td>
+                                <td>${reservation.phoneNumber}</td>
+                                <td>${reservation.sitterName}</td>
+                                <td>${reservation.price}</td>
+                                <td><button onclick="alert('관리기능 준비중')">관리</button></td>
+                            </tr>
+                        `;
+                        $tbody.append(row);
+                    });
+                } else {
+                    $tbody.append(`<tr><td colspan="9" style="text-align:center;">검색 결과가 없습니다.</td></tr>`);
+                }
+            },
+            error: function () {
+                alert("예약 목록을 불러오는 데 실패했습니다.");
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

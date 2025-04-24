@@ -13,7 +13,7 @@ public class Config {
         return new BCryptPasswordEncoder();
     }
     
-    @Bean
+    @Bean //객체를 꺼내서 반환함. 함수를 리턴한다. 쓰기전 xml에 다 기록함. 서비스는 트랜잭션, 
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
     }
