@@ -23869,3 +23869,80 @@ CREATE_DT, UPDATE_DT, ROLE FROM USERS WHERE USER_ID = '5544' AND DEL_YN = 'N'  {
 2025-04-23 17:20:20 INFO  log4j2 - 99. Connection.new Connection returned 
 2025-04-23 17:20:20 INFO  log4j2 - 99. Connection.isReadOnly() returned false
 2025-04-23 17:20:20 INFO  log4j2 - 99. Connection.getAutoCommit() returned true
+2025-04-23 17:29:48 INFO  log4j2 - 95. Connection.isClosed() returned false
+2025-04-23 17:29:48 INFO  log4j2 - 95. Connection closed. {executed in 2ms} 
+2025-04-23 17:29:48 INFO  log4j2 - 95. Connection.close() returned 
+2025-04-23 17:29:48 INFO  log4j2 - 95. Connection closed. {executed in 0ms} 
+2025-04-23 17:29:48 INFO  log4j2 - 95. Connection.close() returned 
+2025-04-23 17:29:48 INFO  log4j2 - 100. Connection opened. {executed in 57ms} 
+2025-04-23 17:29:48 INFO  log4j2 - 100. Connection.new Connection returned 
+2025-04-23 17:29:48 INFO  log4j2 - 100. Connection.isReadOnly() returned false
+2025-04-23 17:29:48 INFO  log4j2 - 100. Connection.getAutoCommit() returned true
+2025-04-23 17:29:59 INFO  log4j2 - 97. Connection.isClosed() returned false
+2025-04-23 17:29:59 INFO  log4j2 - 97. Connection closed. {executed in 2ms} 
+2025-04-23 17:29:59 INFO  log4j2 - 97. Connection.close() returned 
+2025-04-23 17:29:59 INFO  log4j2 - 97. Connection closed. {executed in 0ms} 
+2025-04-23 17:29:59 INFO  log4j2 - 97. Connection.close() returned 
+2025-04-23 17:29:59 INFO  log4j2 - 101. Connection opened. {executed in 99ms} 
+2025-04-23 17:29:59 INFO  log4j2 - 101. Connection.new Connection returned 
+2025-04-23 17:29:59 INFO  log4j2 - 101. Connection.isReadOnly() returned false
+2025-04-23 17:29:59 INFO  log4j2 - 101. Connection.getAutoCommit() returned true
+2025-04-23 17:30:00 INFO  log4j2 - 96. Connection.isClosed() returned false
+2025-04-23 17:30:00 INFO  log4j2 - 96. Connection closed. {executed in 2ms} 
+2025-04-23 17:30:00 INFO  log4j2 - 96. Connection.close() returned 
+2025-04-23 17:30:00 INFO  log4j2 - 96. Connection closed. {executed in 0ms} 
+2025-04-23 17:30:00 INFO  log4j2 - 96. Connection.close() returned 
+2025-04-23 17:30:00 INFO  log4j2 - 102. Connection opened. {executed in 91ms} 
+2025-04-23 17:30:00 INFO  log4j2 - 102. Connection.new Connection returned 
+2025-04-23 17:30:00 INFO  log4j2 - 102. Connection.isReadOnly() returned false
+2025-04-23 17:30:00 INFO  log4j2 - 102. Connection.getAutoCommit() returned true
+2025-04-23 17:30:03 INFO  log4j2 - 98. Connection.isClosed() returned false
+2025-04-23 17:30:03 INFO  log4j2 - 98. Connection closed. {executed in 2ms} 
+2025-04-23 17:30:03 INFO  log4j2 - 98. Connection.close() returned 
+2025-04-23 17:30:03 INFO  log4j2 - 98. Connection closed. {executed in 0ms} 
+2025-04-23 17:30:03 INFO  log4j2 - 98. Connection.close() returned 
+2025-04-23 17:30:04 INFO  log4j2 - 103. Connection opened. {executed in 118ms} 
+2025-04-23 17:30:04 INFO  log4j2 - 103. Connection.new Connection returned 
+2025-04-23 17:30:04 INFO  log4j2 - 103. Connection.isReadOnly() returned false
+2025-04-23 17:30:04 INFO  log4j2 - 103. Connection.getAutoCommit() returned true
+2025-04-23 17:30:16 INFO  log4j2 - 99. Connection.isClosed() returned false
+2025-04-23 17:30:16 INFO  log4j2 - 99. Connection closed. {executed in 2ms} 
+2025-04-23 17:30:16 INFO  log4j2 - 99. Connection.close() returned 
+2025-04-23 17:30:16 INFO  log4j2 - 99. Connection closed. {executed in 0ms} 
+2025-04-23 17:30:16 INFO  log4j2 - 99. Connection.close() returned 
+2025-04-23 17:30:16 INFO  log4j2 - 104. Connection opened. {executed in 91ms} 
+2025-04-23 17:30:16 INFO  log4j2 - 104. Connection.new Connection returned 
+2025-04-23 17:30:16 INFO  log4j2 - 104. Connection.isReadOnly() returned false
+2025-04-23 17:30:16 INFO  log4j2 - 104. Connection.getAutoCommit() returned true
+2025-04-23 17:31:09 INFO  SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-04-23 17:31:09 INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-23 17:31:09 INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8081"]
+2025-04-23 17:31:09 INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-23 17:31:09 INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8081"]
+2025-04-23 17:31:09 INFO  HikariDataSource - HikariPool-4 - Shutdown initiated...
+2025-04-23 17:31:09 INFO  log4j2 - 100. Connection.isClosed() returned false
+2025-04-23 17:31:09 INFO  log4j2 - 100. Connection closed. {executed in 1ms} 
+2025-04-23 17:31:09 INFO  log4j2 - 100. Connection.close() returned 
+2025-04-23 17:31:09 INFO  log4j2 - 100. Connection closed. {executed in 0ms} 
+2025-04-23 17:31:09 INFO  log4j2 - 100. Connection.close() returned 
+2025-04-23 17:31:09 INFO  log4j2 - 101. Connection.isClosed() returned false
+2025-04-23 17:31:09 INFO  log4j2 - 101. Connection closed. {executed in 1ms} 
+2025-04-23 17:31:09 INFO  log4j2 - 101. Connection.close() returned 
+2025-04-23 17:31:09 INFO  log4j2 - 101. Connection closed. {executed in 0ms} 
+2025-04-23 17:31:09 INFO  log4j2 - 101. Connection.close() returned 
+2025-04-23 17:31:09 INFO  log4j2 - 102. Connection.isClosed() returned false
+2025-04-23 17:31:09 INFO  log4j2 - 102. Connection closed. {executed in 0ms} 
+2025-04-23 17:31:09 INFO  log4j2 - 102. Connection.close() returned 
+2025-04-23 17:31:09 INFO  log4j2 - 102. Connection closed. {executed in 0ms} 
+2025-04-23 17:31:09 INFO  log4j2 - 102. Connection.close() returned 
+2025-04-23 17:31:09 INFO  log4j2 - 103. Connection.isClosed() returned false
+2025-04-23 17:31:09 INFO  log4j2 - 103. Connection closed. {executed in 1ms} 
+2025-04-23 17:31:09 INFO  log4j2 - 103. Connection.close() returned 
+2025-04-23 17:31:09 INFO  log4j2 - 103. Connection closed. {executed in 0ms} 
+2025-04-23 17:31:09 INFO  log4j2 - 103. Connection.close() returned 
+2025-04-23 17:31:09 INFO  log4j2 - 104. Connection.isClosed() returned false
+2025-04-23 17:31:09 INFO  log4j2 - 104. Connection closed. {executed in 0ms} 
+2025-04-23 17:31:09 INFO  log4j2 - 104. Connection.close() returned 
+2025-04-23 17:31:09 INFO  log4j2 - 104. Connection closed. {executed in 0ms} 
+2025-04-23 17:31:09 INFO  log4j2 - 104. Connection.close() returned 
+2025-04-23 17:31:09 INFO  HikariDataSource - HikariPool-4 - Shutdown completed.
