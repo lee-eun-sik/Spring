@@ -76,7 +76,10 @@ public class SecurityConfig {
                     "/api/file/imgDown.do",
                     "/api/file/imgUpload.do",
                     "/api/reservation/list.do",
-                    "/api/member/list.do"
+                    "/api/member/list.do",
+                    "/api/newboard/newboard.do",
+                    "/api/newboard/notice.do",
+                    "/api/newboard/imgUpload.do"
                     
                 ).permitAll() // 로그인을 안해도 로그인, 로그아웃, 회원가입은 누구나 접근 가능,부모 관련 비교할 경우
                 .anyRequest().authenticated() // 그 외는 인증 필요, 요청은 다 체크

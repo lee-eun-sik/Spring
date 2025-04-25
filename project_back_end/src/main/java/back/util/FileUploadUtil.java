@@ -73,4 +73,6 @@ public class FileUploadUtil {
     public static String getUploadPath(String basePath, String dateFolder) {
         return File.separator + UPLOAD_DIR + File.separator + basePath + File.separator + dateFolder;
     }
+
+   
 }
