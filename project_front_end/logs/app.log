@@ -100,3 +100,8 @@ Identify and stop the process that's listening on port 8081 or configure this ap
 2025-04-25 01:30:15 [http-nio-8080-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-04-25 01:30:15 [http-nio-8080-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2025-04-25 01:30:15 [http-nio-8080-exec-1] INFO  DispatcherServlet - Completed initialization in 1 ms
+2025-04-25 01:45:21 [RMI TCP Connection(121)-127.0.0.1] INFO  SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-04-25 01:45:21 [RMI TCP Connection(121)-127.0.0.1] INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-04-25 01:45:21 [tomcat-shutdown] INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-04-25 01:45:22 [tomcat-shutdown] INFO  GracefulShutdown - Graceful shutdown complete
+2025-04-25 01:45:22 [RMI TCP Connection(121)-127.0.0.1] INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
