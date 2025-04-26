@@ -1,5 +1,9 @@
 package back.model.common;
 
+import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
+
 import back.model.Model;
 import back.model.NewBoard.NewBoard;
 import lombok.AllArgsConstructor;
@@ -16,7 +20,8 @@ public class PostFile extends Model {
     private String fileName;
     private String filePath;
     private String delYn;
-    
+    // Add MultipartFile to store the uploaded file
+    private MultipartFile file;  // This is the missing field
    
 	public int getFileId() {
 		return fileId;
@@ -57,7 +62,8 @@ public class PostFile extends Model {
 	public void setDelYn(String delYn) {
 		this.delYn = delYn;
 	}
-    
+
+	
     
     
 }

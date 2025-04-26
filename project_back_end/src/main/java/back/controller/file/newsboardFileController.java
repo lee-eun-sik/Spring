@@ -23,6 +23,6 @@ import back.service.file.newsboardFileService;
 import back.service.file.newsboardFileServiceImpl;
 
 
-public class newsboardFileController extends HttpServlet {
+public class newsboardFileController{
 
 }

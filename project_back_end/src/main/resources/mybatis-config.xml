@@ -30,5 +30,7 @@
         <mapper resource="mapper/PetSitter/PetSitterMapper.xml"/>
         <mapper resource="mapper/Reservation/ReservationMapper.xml"/>
         <mapper resource="mapper/member/MemberMapper.xml"/>
+        <mapper resource="mapper/newsboardBoard/newsboardBoardMapper.xml"/>
+        <mapper resource="mapper/newsboardFile/newsboardFileMapper.xml"/>
     </mappers>
 </configuration>

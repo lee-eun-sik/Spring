@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>공지사항 목록</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/js/tinymce/tinymce.min.js?ver=1.0.1"></script>
+    <script th:src="@{/js/tinymce/tinymce.min.js?ver=1.0.1}"></script>
+    <style>
+        body { background-color: #f4f4f4; font-family: Arial; padding: 30px; }
+        .btn {
+            background-color: #222; color: white;
+            padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>공지사항 목록</h2>
+    <div id="notice-list"></div>
+
+    <!-- Form to create new notice -->
+    <h3>새 공지사항 작성</h3>
+    <form id="notice-form">
+        <label for="title">제목</label>
+        <input type="text" id="title" placeholder="제목을 입력하세요" /><br><br>
+
+        <label for="content">내용</label>
+        <textarea id="content"></textarea><br><br>
+
+        <label>📎 파일 업로드</label>
+        <div id="drop-zone" class="drop-zone">
+            이곳에 파일을 드래그 앤 드롭하거나 클릭하여 업로드하세요.
+            <input type="file" id="files" multiple hidden />
+        </div>
+        <div id="file-list">선택된 파일이 없습니다.</div><br><br>
+
+        <button type="button" class="btn" id="submit-btn">공지사항 작성</button>
+    </form>
+
+    <script>
+        tinymce.init({
+            selector: '#content',
+            height: 300,
+            menubar: false,
+            plugins: 'link image code lists',
+            toolbar: 'undo redo | styleselect |fontselect fontsizeselect | bold italic | alignleft aligncenter alignright | bullist numlist | link image',
+			fontsize_formats: '8pt 10pt 12pt 14pt'
+        });
+
+        $(document).ready(function() {
+            // Load notices on page load
+            loadNotices();
+
+            // Function to load all notices via AJAX
+            function loadNotices() {
+                $.ajax({
+                    url: '[[${apiBaseUrl}]]/api/newboard/notice.do',
+                    type: 'POST',
+                    success: function(data) {
+                        var html = '';
+                        data.forEach(function(notice) {
+                            html += '<div><h4>' + notice.title + '</h4><p>' + notice.content + '</p></div>';
+                        });
+                        $('#notice-list').html(html);
+                    }
+                });
+            }
+
+            // Handle file uploads
+            const dropZone = $('#drop-zone');
+            const fileInput = $('#files');
+            const fileList = $('#file-list');
+            let selectedFiles = [];
+
+			dropZone.on('click', (e) => {
+			    e.stopPropagation();
+			    fileInput.click();
+			});
+
+            dropZone.on('dragover', function(e) {
+                e.preventDefault();
+                dropZone.addClass('dragover');
+            });
+
+            dropZone.on('dragleave', function() {
+                dropZone.removeClass('dragover');
+            });
+
+            dropZone.on('drop', function(e) {
+                e.preventDefault();
+                dropZone.removeClass('dragover');
+                const files = Array.from(e.originalEvent.dataTransfer.files);
+                selectedFiles = files;
+                showFileNames(files);
+            });
+
+            fileInput.on('change', function() {
+                selectedFiles = Array.from(fileInput[0].files);
+                showFileNames(selectedFiles);
+            });
+
+            function showFileNames(files) {
+                fileList.empty();
+                files.forEach(function(file) {
+                    fileList.append('<div>' + file.name + '</div>');
+                });
+            }
+
+            // Handle submitting the new notice
+            $('#submit-btn').on('click', function(e) {
+                e.preventDefault();
+				const formData = new FormData();
+				const token = localStorage.getItem('token');
+				formData.append("title", $('#title').val());
+				formData.append("content", tinymce.get('content').getContent());
+				selectedFiles.forEach(file => formData.append("files", file));
+
+				$.ajax({
+				    url: '[[${apiBaseUrl}]]/api/newboard/notice.do',
+				    type: 'POST',
+					headers: {
+					        'Authorization': 'Bearer ' + token // Add the JWT token to the request headers
+					    },
+				    data: formData,
+				    processData: false,
+				    contentType: false, // ⚠️ 반드시 false
+				    success: function(response) {
+				        alert("공지사항이 등록되었습니다.");
+				        loadNotices();
+				    },
+				    error: function() {
+				        alert("공지사항 등록에 실패했습니다.");
+				    }
+				});
+            });
+        });
+    </script>
+</body>
+</html>
