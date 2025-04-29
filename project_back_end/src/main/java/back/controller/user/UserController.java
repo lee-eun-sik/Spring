@@ -38,7 +38,7 @@ public class UserController {
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
     @PostMapping("/register.do")
-    public ResponseEntity<?> register(@RequestBody User user) {
+    public ResponseEntity<?> register(@RequestBody User user) {// json 형식을 받을때 사용함.
         log.info("회원가입 요청: {}", user.getUserId());
         
         // 🔐 비밀번호 암호화
@@ -48,7 +48,7 @@ public class UserController {
         user.setCreateId("SYSTEM");
         boolean success = userService.registerUser(user);
         
-        return ResponseEntity.ok(new ApiResponse<>(success, success ? "회원가입 성공" : "회원가입 실패", null));
+        return ResponseEntity.ok(new ApiResponse<>(success, success ? "회원가입 성공" : "회원가입 실패", null)); // API호출 결과를 감싸는 응답 객체
     }
     @PostMapping("/login.do")
     public ResponseEntity<?> login(@RequestBody User user, HttpServletRequest request) {
