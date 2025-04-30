@@ -30,11 +30,11 @@
 	        EMAIL, 
 	        CREATE_ID
         ) VALUES (
-	        #{userId}, 
-	        #{username}, 
-	        #{password}, 
-	        #{email}, 
-	        #{createId}
+	        #{userId, jdbcType=VARCHAR},
+		    #{username, jdbcType=VARCHAR},
+		    #{password, jdbcType=VARCHAR},
+		    #{email, jdbcType=VARCHAR},
+		    #{createId, jdbcType=VARCHAR}
         )
     </insert>
 

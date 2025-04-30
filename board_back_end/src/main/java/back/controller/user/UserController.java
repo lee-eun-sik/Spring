@@ -146,8 +146,9 @@ public class UserController {
 	            SecurityContextHolder.getContext()
 	        );
 	        log.info("세션 ID: {}", session.getId());
-	
-	        return ResponseEntity.ok(new ApiResponse<>(true, "로그인 성공", null));
+	        CustomUserDetails userDetails = (CustomUserDetails) SecurityContextHolder.getContext()
+					.getAuthentication().getPrincipal();
+	        return ResponseEntity.ok(new ApiResponse<>(true, "로그인 성공", userDetails.getUser()));
 	    } catch (AuthenticationException e) {
 	        log.warn("로그인 실패: {}", user.getUserId());
 	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
