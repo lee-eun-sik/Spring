@@ -4,47 +4,52 @@
 
 <mapper namespace="back.mapper.board.BoardMapper"> <!-- 매퍼의 네임스페이스 설정 인터페이스 경로 지정하기-->
 
-       <select id="getBoardList" parameterType="back.model.board.Board" resultType="back.model.board.Board"> <!-- 조외조건 -->
-     
-         SELECT
-            B.RN,
-		    B.BOARD_ID,
-		    B.TITLE,
-		    B.CONTENT,
-		    B.VIEW_COUNT,
-		    B.CREATE_ID,
-		    B.UPDATE_ID,
-		    B.CREATE_DT,
-		    B.UPDATE_DT,
-		    B.DEL_YN
-        FROM(
-        SELECT
-            ROWNUM  AS RN,
-		    A.BOARD_ID,
-		    A.TITLE,
-		    A.CONTENT,
-		    A.VIEW_COUNT,
-		    A.CREATE_ID,
-		    A.UPDATE_ID,
-		    TO_CHAR(A.CREATE_DT,'YYYY-MM-DD') AS CREATE_DT,
-		    TO_CHAR(A.UPDATE_DT,'YYYY-MM-DD') AS UPDATE_DT,
-		    A.DEL_YN
-		  FROM BOARD A
-		  WHERE A.DEL_YN = 'N'
-		  
-		  <if test="searchText != null and searchText != ''">
-		  		AND (A.TITLE LIKE CONCAT('%', #{searchText}, '%') OR A.CONTENT LIKE CONCAT('%', #{searchText}, '%'))
-		  </if>
-		  
-		  <if test="searchStartDate != null and searchStartDate != ''">
-		  		AND A.CREATE_DT >= TO_DATE(#{searchStartDate}, 'YYYY-MM-DD')
-		  </if>
-		  
-		  <if test="searchEndDate != null and searchEndDate != ''">
-		  		AND A.CREATE_DT<![CDATA[<=]]> TO_DATE(#{searchEndDate}, 'YYYY-MM-DD')
-		  </if>		
-	  ) B
-		  WHERE B.RN BETWEEN #{startRow} AND #{endRow}
+       <select id="getBoardList" parameterType="back.model.board.Board" resultType="back.model.board.Board">
+             SELECT *
+             FROM (
+                 SELECT
+                    ROWNUM AS RN,
+                    B.BOARD_ID,
+                    B.TITLE,
+                    B.CONTENT,
+                    B.VIEW_COUNT,
+                    B.CREATE_ID,
+                    B.UPDATE_ID,
+                    B.CREATE_DT,
+                    B.UPDATE_DT,
+                    B.DEL_YN
+                FROM (
+                    SELECT
+                        A.BOARD_ID,
+                        A.TITLE,
+                        A.CONTENT,
+                        A.VIEW_COUNT,
+                        A.CREATE_ID,
+                        A.UPDATE_ID,
+                        TO_CHAR(A.CREATE_DT, 'YYYY-MM-DD') AS CREATE_DT,
+                        TO_CHAR(A.UPDATE_DT, 'YYYY-MM-DD') AS UPDATE_DT,
+                        A.DEL_YN 
+                    FROM BOARD A
+                    <where>
+                        AND A.DEL_YN = 'N' 
+                       <if test="searchText != null and searchText != ''">
+						    AND (
+						        A.TITLE LIKE CONCAT('%', CONCAT(#{searchText}, '%'))
+						        OR A.CONTENT LIKE CONCAT('%', CONCAT(#{searchText}, '%'))
+						    )
+						</if>
+                       <if test="startDate != null and startDate != ''">
+						    <![CDATA[ AND A.CREATE_DT >= TO_DATE(#{startDate} || ' 00:00:00', 'YYYY-MM-DD HH24:MI:SS') ]]>
+						</if>
+						<if test="endDate != null and endDate != ''">
+						    <![CDATA[ AND A.CREATE_DT <= TO_DATE(#{endDate} || ' 23:59:59', 'YYYY-MM-DD HH24:MI:SS') ]]>
+						</if>
+                    </where>
+                    ORDER BY ${sortField} ${sortOrder}
+                ) B
+               ) C
+            WHERE C.RN BETWEEN #{startRow} AND #{endRow}
+
     </select>
     <!-- getTotalBoardCount with filtering -->
     <select id="getTotalBoardCount" resultType="int"> <!--조회조건 -->

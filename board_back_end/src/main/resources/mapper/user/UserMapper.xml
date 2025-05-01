@@ -19,6 +19,7 @@
             USERS
         WHERE 
             USER_ID = #{userId} <!-- SQL 매개변수 바인딩 -->
+          AND DEL_YN = 'N'  
     </select>
 
     <!-- 사용자 생성 -->

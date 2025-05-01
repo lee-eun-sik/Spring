@@ -35,12 +35,15 @@ public class Board extends Model{
 	private int size = 10; // 기본 페이지 크기 10
 	private int totalCount;
 	private int totalPages;
-	
+
+	private String sortField = "CREATE_DT";
+    private String sortOrder = "DESC"; //정렬
 	// 연관 데이터
 	private List<PostFile> postFiles;
 	private List<Comment> comments;
 	
 	private List<MultipartFile> files;
 	private String remainingFileIds;
+	
 	
 }
