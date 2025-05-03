@@ -3,6 +3,7 @@ package back.service.file;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -33,16 +34,7 @@ public class newsboardFileServiceImpl implements newsboardFileService {
 
 	@Override
 	public ResponseEntity<?> uploadImage(PostFile postFile) {
-	    try {
-	        // Get the file from PostFile object
-	        MultipartFile file = postFile.getFile();
-	        
-	        // Save the file using your custom file upload utility
-	        String fileName = FileUploadUtil.saveFile(file); // Assuming saveFile accepts a MultipartFile
-	        return ResponseEntity.ok("File uploaded successfully: " + fileName);
-	    } catch (Exception e) {
-	        return ResponseEntity.status(500).body("File upload failed: " + e.getMessage());
-	    }
+		return ResponseEntity.ok().body(Map.of("url", "/upload/path/" + postFile.getFile().getOriginalFilename()));
 	}
 
 
@@ -53,7 +45,7 @@ public class newsboardFileServiceImpl implements newsboardFileService {
 	    SqlSession sqlSession = MybatisUtil.getSqlSessionFactory().openSession();
 	    try {
 	        // Insert the new board record into the database
-	        sqlSession.insert("back.mapper.NewBoardMapper.insertNewBoard", newBoard);
+	        sqlSession.insert("back.mapper.NewBoardMapper.insertComment", newBoard);
 	        
 	        // If there are files to upload, associate them with the notice
 	        if (newBoard.getFiles() != null) {

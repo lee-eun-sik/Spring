@@ -1,6 +1,9 @@
 package back.controller.newboard;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,8 +44,24 @@ public class newboardController {
             @RequestParam("content") String content,
             @RequestParam(value = "files", required = false) List<MultipartFile> files
     ) {
-        // 처리 로직
-        return ResponseEntity.ok("공지사항 등록 성공");
+        NewBoard newBoard = new NewBoard();
+        newBoard.setTitle(title);
+        newBoard.setContent(content);
+        newBoard.setViewCount(0);  // 기본 조회수
+
+        // 파일이 있을 경우 PostFile 리스트로 매핑
+        if (files != null && !files.isEmpty()) {
+            List<PostFile> postFiles = new ArrayList<>();
+            for (MultipartFile file : files) {
+                PostFile postFile = new PostFile();
+                postFile.setFile(file);
+                postFiles.add(postFile);
+            }
+            newBoard.setFiles(postFiles);
+        }
+
+        newsboardFileService.createNotice(newBoard);
+        return ResponseEntity.ok().body(Map.of("success", true));
     }
 
     // API for file upload (same as in your provided controller)

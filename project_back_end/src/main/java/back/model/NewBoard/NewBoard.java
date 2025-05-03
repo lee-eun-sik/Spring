@@ -8,21 +8,29 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class NewBoard extends Model{
+public class NewBoard extends Model {
 
-    private Long newboardId;     // NEWBOARD_ID
-    private String title;        // TITLE
-    private String content;      // CONTENT
-    private Integer viewCount;   // VIEW_COUNT
-    private String createId;     // CREATE_ID
-    private String updateId;     // UPDATE_ID
-    private String delYn;        // DEL_YN ('Y' or 'N')
+    private Long newboardId;
+    private String title;
+    private String content;
+    private Integer viewCount;
+    private String createId;
+    private String updateId;
+    private String delYn;
+
+    // ✅ files 필드 추가
+    private List<PostFile> files;
+
     public List<PostFile> getFiles() {
-        // Return a list of associated PostFile objects, possibly from the database
-        return getFiles(); // Assuming 'files' is a list of PostFile objects already loaded
+        return files;
+    }
+
+    public void setFiles(List<PostFile> files) {
+        this.files = files;
     }
 }

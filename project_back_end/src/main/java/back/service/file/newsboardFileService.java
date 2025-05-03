@@ -12,21 +12,7 @@ import back.model.NewBoard.NewBoard;
 import back.model.common.PostFile;
 @Service
 public interface newsboardFileService {
-    
-	
-    
-    
-    
-
 	public List<NewBoard> getAllNotices();
-
-	
-
 	public ResponseEntity<?> uploadImage(PostFile postFile);
-
-
-
 	public void createNotice(NewBoard newBoard);
-    
-
 }
