@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(callSuper = true)
 public class NewBoard extends Model {
 
-    private Long newboardId;
+    private String boardId;
     private String title;
     private String content;
     private Integer viewCount;

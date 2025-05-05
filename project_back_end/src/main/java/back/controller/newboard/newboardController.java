@@ -15,9 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import back.model.common.PostFile;
+import back.model.user.User;
 import back.controller.PetSitter.PetSitterController;
 import back.model.NewBoard.NewBoard;
 import back.service.file.newsboardFileService;
+import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.http.ResponseEntity;
@@ -31,10 +33,17 @@ public class newboardController {
     @Autowired
     private newsboardFileService newsboardFileService;
 
-    // API for retrieving all notices
-    @GetMapping("/newboard.do")
-    public List<NewBoard> getAllNotices() {
-        return newsboardFileService.getAllNotices();
+    @PostMapping("/list.do")
+    public ResponseEntity<?> getNoticeList(@RequestParam("page") int page) {
+        int pageSize = 10;  // Example, you can adjust this as needed
+        List<NewBoard> noticeList = newsboardFileService.getNoticeList(page, pageSize);
+        int totalCount = newsboardFileService.getNoticeCount();
+        int totalPages = (int) Math.ceil((double) totalCount / pageSize);
+        
+        return ResponseEntity.ok().body(Map.of(
+            "success", true,
+            "data", Map.of("list", noticeList, "page", page, "totalPages", totalPages,  "totalCount", totalCount )
+        ));
     }
 
     // API for creating a new notice
@@ -42,14 +51,22 @@ public class newboardController {
     public ResponseEntity<?> createNotice(
             @RequestParam("title") String title,
             @RequestParam("content") String content,
-            @RequestParam(value = "files", required = false) List<MultipartFile> files
+            @RequestParam(value = "files", required = false) List<MultipartFile> files,
+            HttpSession session
     ) {
+        
+        User loginUser = (User) session.getAttribute("loginUser");
+        if (loginUser == null) {
+            return ResponseEntity.badRequest().body(Map.of("success", false, "message", "로그인한 사용자만 게시글을 작성할 수 있습니다."));
+        }
+        String loginId = loginUser.getUserId();
         NewBoard newBoard = new NewBoard();
         newBoard.setTitle(title);
         newBoard.setContent(content);
-        newBoard.setViewCount(0);  // 기본 조회수
+        newBoard.setViewCount(0);
+        newBoard.setCreateId(loginId);
+        newBoard.setUpdateId(loginId);
 
-        // 파일이 있을 경우 PostFile 리스트로 매핑
         if (files != null && !files.isEmpty()) {
             List<PostFile> postFiles = new ArrayList<>();
             for (MultipartFile file : files) {
@@ -63,7 +80,6 @@ public class newboardController {
         newsboardFileService.createNotice(newBoard);
         return ResponseEntity.ok().body(Map.of("success", true));
     }
-
     // API for file upload (same as in your provided controller)
     @PostMapping("/imgUpload.do")
     public ResponseEntity<?> uploadImage(

@@ -77,7 +77,7 @@ public class SecurityConfig {
                     "/api/file/imgUpload.do",
                     "/api/reservation/list.do",
                     "/api/member/list.do",
-                    "/api/newboard/newboard.do",
+                    "/api/newboard/list.do",
                     "/api/newboard/notice.do",
                     "/api/newboard/imgUpload.do"
                     

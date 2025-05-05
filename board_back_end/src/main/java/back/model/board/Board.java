@@ -26,7 +26,8 @@ public class Board extends Model{
 	private String title;
 	private String content;
 	private String viewCount;
-	
+	private String createId; // 작성자 ID
+	private String updateId;
 	//페이징
 	private int rn;
 	private int startRow;

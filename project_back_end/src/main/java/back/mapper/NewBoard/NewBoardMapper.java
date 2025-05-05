@@ -10,7 +10,7 @@ import back.model.common.PostFile;
 
 @Mapper
 public interface NewBoardMapper {
-    List<NewBoard> getAllNotices();
-    void insertComment(NewBoard newBoard);
+	List<NewBoard> getBoardList();
+    void create(NewBoard newBoard);
     void insertPostFile(PostFile postFile);
 }
