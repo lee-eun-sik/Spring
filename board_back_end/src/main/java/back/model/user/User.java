@@ -18,5 +18,20 @@ public class User extends Model {
     private String username;   // 사용자 이름
     private String password;   // 비밀번호 (암호화 저장됨)
     private String email;      // 이메일
-  
+    //검색 필터
+    private String startDate;
+	private String endDate;
+	private String searchText;
+	private String delYn;
+	 //페이징 정렬
+	private int rn;
+	private int startRow;
+	private int endRow;
+	private int page = 1; // 기본 페이지 1
+	private int size = 10; // 기본 페이지 크기 10
+	private int totalCount;
+	private int totalPages;
+
+	private String sortField = "CREATE_DT";
+    private String sortOrder = "DESC"; //정렬
 }

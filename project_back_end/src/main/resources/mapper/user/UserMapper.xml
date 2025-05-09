@@ -77,7 +77,7 @@
 	    WHERE USER_ID = #{userId} AND DEL_YN = 'N'
 	</update>
 	
-	<select id="checkUserIdDuplicate" parameterType="String" resultType="int">
+	<select id="checkUserIdDuplicate" resultType="int">
 	    SELECT 
 	        COUNT(*) 
 	    FROM USERS

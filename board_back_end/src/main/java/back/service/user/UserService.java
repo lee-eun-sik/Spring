@@ -1,6 +1,7 @@
 package back.service.user;
 
 import java.util.Date;
+import java.util.List;
 
 import back.model.user.User;
 
@@ -20,4 +21,9 @@ public interface UserService {
 
 	boolean deleteUser(User user);
 	
+	public List<User> getUserList(User user);
+	
+	public boolean userM(User user);
+	
+	public boolean isUserIdDuplicate(String userId);
 }

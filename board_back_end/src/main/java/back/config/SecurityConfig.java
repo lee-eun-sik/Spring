@@ -73,7 +73,8 @@ public class SecurityConfig {
                     "/api/user/register.do",
                     "/api/file/down.do",
                     "/api/file/imgDown.do",
-                    "/api/file/imgUpload.do"
+                    "/api/file/imgUpload.do",
+                    "/api/user/duplicate.do"
                     
                 ).permitAll() // 로그인을 안해도 로그인, 로그아웃, 회원가입은 누구나 접근 가능
                 .anyRequest().authenticated() // 그 외는 인증 필요, 요청은 다 체크

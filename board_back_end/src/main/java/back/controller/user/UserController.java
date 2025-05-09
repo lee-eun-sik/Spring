@@ -2,6 +2,9 @@ package back.controller.user;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -51,17 +54,23 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
-	@PostMapping("/view.do")// user정보를 꺼내온다.
-	public ResponseEntity<?> view() {
-		CustomUserDetails userDetails = (CustomUserDetails) SecurityContextHolder.getContext()
-				.getAuthentication().getPrincipal();
-		
-		SecurityUtil.checkAuthorization(userDetails, userDetails.getUser().getUserId());
-		User user = userService.getUserById(userDetails.getUser().getUserId());
-		
-		return ResponseEntity.ok(new ApiResponse<>(true, "조회 성공", user));
+	@PostMapping("/view.do") // user 정보를 꺼내온다.
+	public ResponseEntity<?> view(@RequestBody User user) {
+	    CustomUserDetails userDetails = (CustomUserDetails) SecurityContextHolder.getContext()
+	            .getAuthentication().getPrincipal();
+	    String userId = "";
+	    
+	    if (user.getUserId() == null || user.getUserId().equals("")) {
+	        userId = userDetails.getUser().getUserId();
+	    } else {
+	        userId = user.getUserId();
+	    }
+
+	    User selectUser = userService.getUserById(userId); // 실제 DB 조회 결과
+
+	    // ⛔️ 현재는 user (요청 들어온 객체) 를 그대로 반환 중이었음
+	    return ResponseEntity.ok(new ApiResponse<>(true, "조회 성공", selectUser)); // ✅ 수정
 	}
-	
 	@PostMapping("/register.do")
 	public ResponseEntity<?> register(@RequestBody User user) {
 		log.info("회원가입 요청: {}", user.getUserId());
@@ -164,5 +173,39 @@ public class UserController {
 	    SecurityContextHolder.clearContext();
 	
 	    return ResponseEntity.ok(new ApiResponse<>(true, "로그아웃 완료", null));
+	}
+	@PostMapping("/list.do")
+    public ResponseEntity<?> getUserList(@RequestBody User user) {
+    	log.info(user.toString());
+    	List<User> userList = userService.getUserList(user);
+    	Map dataMap = new HashMap();
+    	dataMap.put("list", userList);
+    	dataMap.put("user", user);
+    	return ResponseEntity.ok(new ApiResponse<>(true, "목록 조회 성공", dataMap));
+    }
+	
+	@PostMapping("/userM.do")
+	public ResponseEntity<?> userM(@RequestBody User user) {
+		CustomUserDetails userDetails = (CustomUserDetails) SecurityContextHolder.getContext()
+				.getAuthentication().getPrincipal();
+		
+		log.info("회원관리 요청: {}", user.getUserId());
+		user.setUpdateId(userDetails.getUsername());
+		
+		boolean success = userService.userM(user);
+		
+		return ResponseEntity.ok(new ApiResponse<>(success, success ? "회원관리 성공" : "회원관리 실패", null));
+	}
+	
+	@PostMapping("/duplicate.do")
+	public ResponseEntity<?> checkDuplicate(@RequestBody Map<String, String> request) {
+		String userId = request.get("userId"); //아이디 값을 가져옵니다. json형식
+		boolean isDuplicate = userService.isUserIdDuplicate(userId);
+		
+		Map<String, Boolean> response = new HashMap<>(); //아이디와 중복체크값을 동시에 처리하려합니다.
+		
+		response.put("duplicate", isDuplicate); //중복체크한것을 집어넣습니다.
+		
+		return ResponseEntity.ok(response); // 응답객체에다가 응답 성공한 것을 반환합니다.
 	}
 }

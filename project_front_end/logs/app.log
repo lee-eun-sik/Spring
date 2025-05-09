@@ -105,3 +105,49 @@ Identify and stop the process that's listening on port 8081 or configure this ap
 2025-04-25 01:45:21 [tomcat-shutdown] INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
 2025-04-25 01:45:22 [tomcat-shutdown] INFO  GracefulShutdown - Graceful shutdown complete
 2025-04-25 01:45:22 [RMI TCP Connection(121)-127.0.0.1] INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-05-07 16:59:48 [restartedMain] INFO  ProjectFrontEndApplication - Starting ProjectFrontEndApplication using Java 17 with PID 13632 (C:\Users\Admin\git\Spring\project_front_end\bin\main started by Admin in C:\Users\Admin\git\Spring\project_front_end)
+2025-05-07 16:59:48 [restartedMain] INFO  ProjectFrontEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-07 16:59:49 [restartedMain] INFO  DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-07 16:59:49 [restartedMain] INFO  DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-07 16:59:49 [restartedMain] INFO  TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-07 16:59:49 [restartedMain] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-07 16:59:49 [restartedMain] INFO  StandardService - Starting service [Tomcat]
+2025-05-07 16:59:49 [restartedMain] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-07 16:59:49 [restartedMain] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-05-07 16:59:49 [restartedMain] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 856 ms
+2025-05-07 16:59:50 [restartedMain] INFO  WelcomePageHandlerMapping - Adding welcome page template: index
+2025-05-07 16:59:50 [restartedMain] WARN  OptionalLiveReloadServer - Unable to start LiveReload server
+2025-05-07 16:59:50 [restartedMain] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-07 16:59:50 [restartedMain] INFO  TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-05-07 16:59:50 [restartedMain] INFO  ProjectFrontEndApplication - Started ProjectFrontEndApplication in 1.803 seconds (process running for 2.633)
+2025-05-07 17:00:01 [http-nio-8080-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-07 17:00:01 [http-nio-8080-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-07 17:00:01 [http-nio-8080-exec-1] INFO  DispatcherServlet - Completed initialization in 1 ms
+2025-05-07 17:04:51 [RMI TCP Connection(13)-127.0.0.1] INFO  SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-05-07 17:04:51 [RMI TCP Connection(13)-127.0.0.1] INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-07 17:04:51 [tomcat-shutdown] INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-05-07 17:04:51 [tomcat-shutdown] INFO  GracefulShutdown - Graceful shutdown complete
+2025-05-07 17:04:51 [RMI TCP Connection(13)-127.0.0.1] INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]
+2025-05-07 17:05:30 [restartedMain] INFO  ProjectFrontEndApplication - Starting ProjectFrontEndApplication using Java 17 with PID 11672 (C:\Users\Admin\git\Spring\project_front_end\bin\main started by Admin in C:\Users\Admin\git\Spring\project_front_end)
+2025-05-07 17:05:30 [restartedMain] INFO  ProjectFrontEndApplication - No active profile set, falling back to 1 default profile: "default"
+2025-05-07 17:05:30 [restartedMain] INFO  DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-05-07 17:05:30 [restartedMain] INFO  DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-05-07 17:05:31 [restartedMain] INFO  TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-05-07 17:05:31 [restartedMain] INFO  Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-05-07 17:05:31 [restartedMain] INFO  StandardService - Starting service [Tomcat]
+2025-05-07 17:05:31 [restartedMain] INFO  StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.39]
+2025-05-07 17:05:31 [restartedMain] INFO  [/] - Initializing Spring embedded WebApplicationContext
+2025-05-07 17:05:31 [restartedMain] INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 767 ms
+2025-05-07 17:05:31 [restartedMain] INFO  WelcomePageHandlerMapping - Adding welcome page template: index
+2025-05-07 17:05:32 [restartedMain] WARN  OptionalLiveReloadServer - Unable to start LiveReload server
+2025-05-07 17:05:32 [restartedMain] INFO  Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-05-07 17:05:32 [restartedMain] INFO  TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-05-07 17:05:32 [restartedMain] INFO  ProjectFrontEndApplication - Started ProjectFrontEndApplication in 1.781 seconds (process running for 2.604)
+2025-05-07 17:05:45 [http-nio-8080-exec-1] INFO  [/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-07 17:05:45 [http-nio-8080-exec-1] INFO  DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-05-07 17:05:45 [http-nio-8080-exec-1] INFO  DispatcherServlet - Completed initialization in 1 ms
+2025-05-07 17:11:01 [RMI TCP Connection(15)-127.0.0.1] INFO  SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+2025-05-07 17:11:01 [RMI TCP Connection(15)-127.0.0.1] INFO  GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-07 17:11:01 [tomcat-shutdown] INFO  Http11NioProtocol - Pausing ProtocolHandler ["http-nio-8080"]
+2025-05-07 17:11:01 [tomcat-shutdown] INFO  GracefulShutdown - Graceful shutdown complete
+2025-05-07 17:11:01 [RMI TCP Connection(15)-127.0.0.1] INFO  Http11NioProtocol - Stopping ProtocolHandler ["http-nio-8080"]

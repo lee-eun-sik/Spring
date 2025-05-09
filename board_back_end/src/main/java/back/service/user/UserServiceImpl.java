@@ -1,6 +1,7 @@
 package back.service.user;
 
 import java.util.Date;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -102,6 +103,52 @@ public class UserServiceImpl implements UserService {// 보안때문, 인터페�
 		}
 	}
 
-	
+	@Override
+	public List<User> getUserList(User user) {
+		// TODO Auto-generated method stub
+		try {
+			int page = user.getPage();
+			int size = user.getSize();
+			
+			int totalCount = userMapper.getTotalUserCount(user);
+			int totalPages = (int) Math.ceil((double) totalCount/size);
+			
+			int startRow = (page - 1) * size + 1;
+			int endRow = page * size;
+			
+			user.setTotalCount(totalCount);
+			user.setTotalPages(totalPages);
+			user.setStartRow(startRow);
+			user.setEndRow(endRow);
+			
+			return userMapper.getUserList(user);
+		} catch (Exception e) {
+			log.error("유저 목록 조회 싫패", e);
+			throw new HException("유저 목록 조회 실패", e);
+		}
+	}
+
+	@Override
+	@Transactional
+	public boolean userM(User user) {
+		// TODO Auto-generated method stub
+		try {
+			return userMapper.userM(user) > 0;
+		} catch (Exception e) {
+			log.error("사용자 관리 중 오류", e);
+			throw new HException("사용자 관리 실패", e);
+		}
+	}
+
+	@Override
+	public boolean isUserIdDuplicate(String userId) {
+		try {
+			int count = userMapper.checkUserIdDuplicate(userId);
+			return count > 0; // 이미 DB에 존재하면 true, 존재하지 않으면 false
+		} catch (Exception e) {
+			log.error("아이디 중복 체크 중 오류", e);
+			throw new HException("아이디 중복 체크 실패", e);
+		}
+	}
 	
 }
