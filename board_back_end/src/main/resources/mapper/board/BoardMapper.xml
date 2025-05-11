@@ -34,8 +34,8 @@
                         AND A.DEL_YN = 'N' 
                        <if test="searchText != null and searchText != ''">
 						    AND (
-						        A.TITLE LIKE CONCAT('%', CONCAT(#{searchText}, '%'))
-						        OR A.CONTENT LIKE CONCAT('%', CONCAT(#{searchText}, '%'))
+						        A.TITLE LIKE '%' || #{searchText} || '%'
+						        OR A.CONTENT LIKE '%' || #{searchText} || '%'
 						    )
 						</if>
                        <if test="startDate != null and startDate != ''">
@@ -58,7 +58,7 @@
          WHERE A.DEL_YN ='N'
          
          <if test="searchText != null and searchText != ''">
-         	AND (A.TITLE LIKE CONCAT('%', #{searchText}, '%') OR A.CONTENT LIKE CONCAT('%', #{searchText}, '%'))
+         	AND (A.TITLE LIKE '%' || #{searchText} || '%' OR A.CONTENT LIKE '%' || #{searchText} || '%')
          </if>
          
          <if test="searchStartDate != null and searchStartDate != ''">
