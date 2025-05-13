@@ -20,13 +20,46 @@
 
     <!-- 회원 목록 조회 (페이지네이션) -->
 	<select id="selectMembersByPage" resultType="back.model.user.User">
-	    SELECT * FROM (
-	        SELECT u.*, ROW_NUMBER() OVER (ORDER BY CREATE_DT DESC) AS rn
-	        FROM USERS u
-	    ) temp
-	    WHERE rn BETWEEN #{startRow} AND #{endRow}
+	  SELECT *
+	  FROM users
+	  WHERE 1 = 1
+	    <if test="searchType != null and searchKeyword != null">
+	      <choose>
+	        <when test="searchType == 'username'">
+	          AND username LIKE '%' || #{searchKeyword} || '%'
+	        </when>
+	        <when test="searchType == 'email'">
+	          AND email LIKE '%' || #{searchKeyword} || '%'
+	        </when>
+	      </choose>
+	    </if>
+	
+	    <if test="startDate != null and endDate != null">
+	      AND create_dt BETWEEN TO_DATE(#{startDate}, 'YYYY-MM-DD') AND TO_DATE(#{endDate}, 'YYYY-MM-DD')
+	    </if>
+	
+	  <choose>
+	    <when test="sortField != null and sortOrder != null">
+	      ORDER BY 
+	        <choose>
+	          <when test="sortField == 'username'">username</when>
+	          <when test="sortField == 'email'">email</when>
+	          <when test="sortField == 'create_dt'">create_dt</when>
+	          <otherwise>create_dt</otherwise>
+	        </choose>
+	        <choose>
+	          <when test="sortOrder == 'ASC'">ASC</when>
+	          <otherwise>DESC</otherwise>
+	        </choose>
+	    </when>
+	    <otherwise>
+	      ORDER BY create_dt DESC
+	    </otherwise>
+	  </choose>
+	
+	  OFFSET #{startRow, jdbcType=INTEGER} ROWS
+	  FETCH NEXT #{pageSize, jdbcType=INTEGER} ROWS ONLY
 	</select>
-
 
     <!-- 전체 회원 수 조회 -->
     <select id="selectTotalMemberCount" resultType="int">

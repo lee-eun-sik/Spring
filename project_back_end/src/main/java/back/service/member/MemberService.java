@@ -8,7 +8,6 @@ import back.model.user.User;
 @Service
 public interface MemberService {
 	List<User> getMemberList(int page, int pageSize, String sortField, String sortOrder);
-    List<User> searchMembersByKeyword(String searchType, String searchKeyword, int page, int pageSize, String sortField, String sortOrder);
     int getSearchMemberCount(String searchType, String searchKeyword);
     int getTotalMemberCount();
     boolean deleteUser(String userId);
@@ -17,5 +16,5 @@ public interface MemberService {
     List<User> getAllMembers();
     boolean deleteMember(String userId);
     List<User> getMembersByPage(int page, int pageSize);
-	List<User> searchMembersByKeyword(String searchType, String searchKeyword, int page, int pageSize);
+    List<User> searchMembersByKeyword(String searchType, String searchKeyword, int page, int pageSize, String sortField, String sortOrder);
 }

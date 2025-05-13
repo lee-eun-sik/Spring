@@ -33,7 +33,7 @@ public class MemberServiceImpl implements MemberService {
         return memberMapper.selectMembersByPage(paramMap);
     }
     @Override
-    public List<User> searchMembersByKeyword(String searchType, String searchKeyword, int page, int pageSize) {
+    public List<User> searchMembersByKeyword(String searchType, String searchKeyword, int page, int pageSize, String sortField, String sortOrder) {
         int startRow = (page - 1) * pageSize + 1;
         int endRow = page * pageSize;
 
@@ -42,6 +42,8 @@ public class MemberServiceImpl implements MemberService {
         paramMap.put("searchKeyword", searchKeyword);
         paramMap.put("startRow", startRow);
         paramMap.put("endRow", endRow);
+        paramMap.put("sortField", sortField);      // 추가
+        paramMap.put("sortOrder", sortOrder);      // 추가
 
         return memberMapper.searchMembersByKeyword(paramMap);
     }
@@ -76,10 +78,5 @@ public class MemberServiceImpl implements MemberService {
     public List<User> getMembersByPage(int page, int pageSize) {
         return null;
     }
-	@Override
-	public List<User> searchMembersByKeyword(String searchType, String searchKeyword, int page, int pageSize,
-			String sortField, String sortOrder) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	
 }

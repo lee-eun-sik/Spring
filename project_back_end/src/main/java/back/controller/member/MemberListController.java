@@ -26,11 +26,13 @@ public class MemberListController {
      */
     @PostMapping("/list.do")
     public ResponseEntity<ApiResponse> getMemberList(
-        @RequestParam(name = "page", defaultValue = "1") int page,
-        @RequestParam(name = "searchType", required = false) String searchType,
-        @RequestParam(name = "searchKeyword", required = false) String searchKeyword,
-        @RequestParam(name = "sortField", defaultValue = "create_dt") String sortField,
-        @RequestParam(name = "sortOrder", defaultValue = "desc") String sortOrder
+    		@RequestParam(name = "page", defaultValue = "1") int page,
+    	    @RequestParam(name = "searchType", required = false) String searchType,
+    	    @RequestParam(name = "searchKeyword", required = false) String searchKeyword,
+    	    @RequestParam(name = "startDate", required = false) String startDate,
+    	    @RequestParam(name = "endDate", required = false) String endDate,
+    	    @RequestParam(name = "sortField", defaultValue = "create_dt") String sortField,
+    	    @RequestParam(name = "sortOrder", defaultValue = "desc") String sortOrder
     ) {
         int pageSize = 10;
         List<User> userList;
