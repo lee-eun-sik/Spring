@@ -23,7 +23,7 @@
 		        create_dt, 
 		        update_dt, 
 		        del_yn,
-		        address_detail
+		        addressdetail
 		    ) VALUES (
 		        reservation_seq.NEXTVAL, 
 		        #{startDate, jdbcType=DATE}, 
@@ -63,7 +63,7 @@
 		        create_dt,
 		        update_dt,
 		        del_yn,
-		        address_detail
+		        addressdetail
 		    FROM reservation
 		    WHERE del_yn = 'N'
 		    ORDER BY reservation_date DESC
@@ -87,7 +87,7 @@
 		        create_dt,
 		        update_dt,
 		        del_yn,
-		        address_detail
+		        addressdetail
 		    FROM reservation
 		    WHERE del_yn = 'N'
 		    ORDER BY reservation_date DESC

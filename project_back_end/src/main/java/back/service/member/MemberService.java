@@ -7,14 +7,15 @@ import org.springframework.stereotype.Service;
 import back.model.user.User;
 @Service
 public interface MemberService {
-	List<User> getAllMembers();
-	boolean deleteMember(String userId);
-	
-	List<User> getMembersByPage(int page, int pageSize);
-	int getTotalMemberCount();
-	
-	List<User> searchMembersByKeyword(String searchType, String searchKeyword, int page, int pageSize);
-	int getSearchMemberCount(String searchType, String searchKeyword);
+	List<User> getMemberList(int page, int pageSize, String sortField, String sortOrder);
+    List<User> searchMembersByKeyword(String searchType, String searchKeyword, int page, int pageSize, String sortField, String sortOrder);
+    int getSearchMemberCount(String searchType, String searchKeyword);
+    int getTotalMemberCount();
     boolean deleteUser(String userId);
-	List<User> getMemberList(int page, int pageSize);
+
+    // 아래 메서드들은 불필요하면 삭제
+    List<User> getAllMembers();
+    boolean deleteMember(String userId);
+    List<User> getMembersByPage(int page, int pageSize);
+	List<User> searchMembersByKeyword(String searchType, String searchKeyword, int page, int pageSize);
 }

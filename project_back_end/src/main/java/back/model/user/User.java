@@ -16,7 +16,7 @@ public class User extends Model {
     private String username;
     private String password;
     private String email;
-
+    private String createDt;
     private String delYn;
     private String password_confirm;
     private String phonenumber;

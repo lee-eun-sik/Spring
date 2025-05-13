@@ -9,7 +9,9 @@ import back.service.member.MemberService;
 import back.util.ApiResponse;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Slf4j
 @RestController
@@ -22,25 +24,35 @@ public class MemberListController {
     /**
      * Fetch users with pagination and optional search criteria
      */
-    @GetMapping("/list.do")
+    @PostMapping("/list.do")
     public ResponseEntity<ApiResponse> getMemberList(
-    		 @RequestParam(name = "page", defaultValue = "1") int page,
-    		    @RequestParam(name = "searchType", required = false) String searchType,
-    		    @RequestParam(name = "searchKeyword", required = false) String searchKeyword)  {
-
-        int pageSize = 10;  // Set your page size here
+        @RequestParam(name = "page", defaultValue = "1") int page,
+        @RequestParam(name = "searchType", required = false) String searchType,
+        @RequestParam(name = "searchKeyword", required = false) String searchKeyword,
+        @RequestParam(name = "sortField", defaultValue = "create_dt") String sortField,
+        @RequestParam(name = "sortOrder", defaultValue = "desc") String sortOrder
+    ) {
+        int pageSize = 10;
         List<User> userList;
+        int totalCount;
 
-        // If search criteria are provided, perform a search
         if (searchType != null && searchKeyword != null && !searchKeyword.trim().isEmpty()) {
-            userList = memberService.searchMembersByKeyword(searchType, searchKeyword, page, pageSize);
+            userList = memberService.searchMembersByKeyword(searchType, searchKeyword, page, pageSize, sortField, sortOrder);
+            totalCount = memberService.getSearchMemberCount(searchType, searchKeyword);
         } else {
-            userList = memberService.getMemberList(page, pageSize);  // Default: fetch all members
+            userList = memberService.getMemberList(page, pageSize, sortField, sortOrder);
+            totalCount = memberService.getTotalMemberCount();
         }
 
-        return ResponseEntity.ok(new ApiResponse<>(true, "회원 목록 조회 성공", userList));
-    }
+        int totalPages = (int) Math.ceil((double) totalCount / pageSize);
 
+        Map<String, Object> result = new HashMap<>();
+        result.put("list", userList);
+        result.put("totalCount", totalCount);
+        result.put("totalPages", totalPages);
+
+        return ResponseEntity.ok(new ApiResponse<>(true, "회원 목록 조회 성공", result));
+    }
     /**
      * Delete a user
      */
