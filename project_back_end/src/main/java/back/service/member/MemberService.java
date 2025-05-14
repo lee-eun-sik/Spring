@@ -16,5 +16,7 @@ public interface MemberService {
     List<User> getAllMembers();
     boolean deleteMember(String userId);
     List<User> getMembersByPage(int page, int pageSize);
-    List<User> searchMembersByKeyword(String searchType, String searchKeyword, int page, int pageSize, String sortField, String sortOrder);
+    
+	List<User> searchMembersByKeyword(String searchType, String searchKeyword, int page, int pageSize, String sortField,
+			String sortOrder, String startDate, String endDate);
 }

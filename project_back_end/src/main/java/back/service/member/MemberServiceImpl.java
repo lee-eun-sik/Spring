@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-
+import back.exception.HException;
 import back.mapper.member.MemberMapper;  // Corrected import
 import back.model.user.User;
 
@@ -20,20 +20,25 @@ public class MemberServiceImpl implements MemberService {
     private MemberMapper memberMapper;
 
     @Override
-    public List<User> getMemberList(int page, int pageSize, String sortField, String sortOrder) {
-        int startRow = (page - 1) * pageSize + 1;
-        int endRow = page * pageSize;
+    public List<User> getMemberList(int page, int size, String searchType, String searchKeyword) {
+        int startRow = (page - 1) * size + 1;
+        int endRow = page * size;
 
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("startRow", startRow);
         paramMap.put("endRow", endRow);
-        paramMap.put("sortField", sortField);
-        paramMap.put("sortOrder", sortOrder);
-
-        return memberMapper.selectMembersByPage(paramMap);
+        paramMap.put("searchType", searchType);
+        paramMap.put("searchKeyword", searchKeyword);
+        paramMap.put("sortField", "create_dt");
+        paramMap.put("sortOrder", "DESC");
+        
+        return memberMapper.searchMembersByKeyword(paramMap);
     }
     @Override
-    public List<User> searchMembersByKeyword(String searchType, String searchKeyword, int page, int pageSize, String sortField, String sortOrder) {
+    public List<User> searchMembersByKeyword(String searchType, String searchKeyword,
+                                             int page, int pageSize,
+                                             String sortField, String sortOrder,
+                                             String startDate, String endDate) {
         int startRow = (page - 1) * pageSize + 1;
         int endRow = page * pageSize;
 
@@ -42,9 +47,16 @@ public class MemberServiceImpl implements MemberService {
         paramMap.put("searchKeyword", searchKeyword);
         paramMap.put("startRow", startRow);
         paramMap.put("endRow", endRow);
-        paramMap.put("sortField", sortField);      // 추가
-        paramMap.put("sortOrder", sortOrder);      // 추가
-
+        paramMap.put("sortField", sortField);
+        paramMap.put("sortOrder", sortOrder);
+        paramMap.put("startDate", startDate);
+        paramMap.put("endDate", endDate);
+        System.out.println("searchType: " + searchType);
+        System.out.println("searchKeyword: " + searchKeyword);
+        System.out.println("startDate: " + startDate);
+        System.out.println("endDate: " + endDate);
+        System.out.println("startRow: " + startRow);
+        System.out.println("endRow: " + endRow);
         return memberMapper.searchMembersByKeyword(paramMap);
     }
 
@@ -78,5 +90,6 @@ public class MemberServiceImpl implements MemberService {
     public List<User> getMembersByPage(int page, int pageSize) {
         return null;
     }
+	
 	
 }

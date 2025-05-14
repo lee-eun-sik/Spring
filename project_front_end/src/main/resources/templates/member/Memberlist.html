@@ -49,37 +49,64 @@
 
 <script type="text/javascript">
     // Fetch and display members on page load
-    function loadMemberList(page=1) {
-        $.ajax({
-            url: "[[${apiBaseUrl}]]/api/member/list.do",
-            method: "GET",
-            data: { page: page },
-            success: function(response) {
-                const userList = response.data;
-                const tbody = $("#memberListTable tbody");
-                tbody.empty(); // Clear previous rows
-                if (userList.length === 0) {
-                    tbody.append('<tr><td colspan="8" style="text-align: center;">검색 결과가 없습니다.</td></tr>');
-                } else {
-                    userList.forEach(user => {
-                        tbody.append(`
-                            <tr>
-                                <td>${user.username}</td>
-                                <td>${user.gender}</td>
-                                <td>${user.userId}</td>
-                                <td>****</td>
-                                <td>${user.phonenumber}</td>
-                                <td>${user.email}</td>
-                                <td>${user.createDt}</td>
-                                <td><button onclick="deleteUser('${user.userId}')">탈퇴</button></td>
-                            </tr>
-                        `);
-                    });
-                }
-            }
-        });
-    }
+	function loadMemberList(page = 1) {
+	    const searchType = $("#searchType").val();
+	    const searchKeyword = $("#searchKeyword").val();
 
+	    $.ajax({
+	        url: "[[${apiBaseUrl}]]/api/member/list.do",
+	        method: "GET",
+	        data: {
+	            page: page,
+	            size: 10,
+	            searchType: searchType,
+	            searchKeyword: searchKeyword
+	        },
+	        success: function(response) {
+	            const data = response.data;
+	            const userList = data.list;
+	            const totalPages = data.totalPages;
+	            const currentPage = data.currentPage;
+
+	            const tbody = $("#memberListTable tbody");
+	            tbody.empty();
+	            if (userList.length === 0) {
+	                tbody.append('<tr><td colspan="8" style="text-align: center;">검색 결과가 없습니다.</td></tr>');
+	            } else {
+	                userList.forEach(user => {
+	                    tbody.append(`
+	                        <tr>
+	                            <td>${user.username}</td>
+	                            <td>${user.gender}</td>
+	                            <td>${user.userId}</td>
+	                            <td>****</td>
+	                            <td>${user.phonenumber}</td>
+	                            <td>${user.email}</td>
+	                            <td>${user.createDt}</td>
+	                            <td><button onclick="deleteUser('${user.userId}')">탈퇴</button></td>
+	                        </tr>
+	                    `);
+	                });
+	            }
+
+	            renderPagination(totalPages, currentPage);
+	        }
+	    });
+	}
+
+	function renderPagination(totalPages, currentPage) {
+	    const container = $("#pagination");
+	    container.empty();
+
+	    for (let i = 1; i <= totalPages; i++) {
+	        const btn = $(`<button>${i}</button>`);
+	        if (i === currentPage) {
+	            btn.css("font-weight", "bold");
+	        }
+	        btn.on("click", () => loadMemberList(i));
+	        container.append(btn);
+	    }
+	}
     // Delete user via AJAX
     function deleteUser(userId) {
         if (confirm(`${userId} 회원을 정말 탈퇴하시겠습니까?`)) {
@@ -102,7 +129,7 @@
 	function searchMember() {
 	    const type = $("#searchType").val();
 	    const keyword = $("#searchKeyword").val().trim();
-	    
+		loadMemberList(1); // Always start from first page when searching
 	    if (!keyword) {
 	        alert("검색어를 입력해주세요.");
 	        return;

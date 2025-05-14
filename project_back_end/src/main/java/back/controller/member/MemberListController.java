@@ -3,7 +3,7 @@ package back.controller.member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.RequestParam; 
+
 import back.model.user.User;
 import back.service.member.MemberService;
 import back.util.ApiResponse;
@@ -25,35 +25,38 @@ public class MemberListController {
      * Fetch users with pagination and optional search criteria
      */
     @PostMapping("/list.do")
-    public ResponseEntity<ApiResponse> getMemberList(
-    		@RequestParam(name = "page", defaultValue = "1") int page,
-    	    @RequestParam(name = "searchType", required = false) String searchType,
-    	    @RequestParam(name = "searchKeyword", required = false) String searchKeyword,
-    	    @RequestParam(name = "startDate", required = false) String startDate,
-    	    @RequestParam(name = "endDate", required = false) String endDate,
-    	    @RequestParam(name = "sortField", defaultValue = "create_dt") String sortField,
-    	    @RequestParam(name = "sortOrder", defaultValue = "desc") String sortOrder
-    ) {
-        int pageSize = 10;
-        List<User> userList;
-        int totalCount;
+    public ResponseEntity<ApiResponse> getMemberList(@RequestBody Map<String, Object> params) {
+        int page = Integer.parseInt(params.getOrDefault("page", 1).toString());
+        int size = Integer.parseInt(params.getOrDefault("size", 10).toString());
+        String searchType = (String) params.get("searchType");
+        String searchKeyword = (String) params.get("searchKeyword");
+        String sortField = (String) params.get("sortField");
+        String sortOrder = (String) params.get("sortOrder");
+        String startDate = (String) params.get("startDate");
+        String endDate = (String) params.get("endDate");
 
-        if (searchType != null && searchKeyword != null && !searchKeyword.trim().isEmpty()) {
-            userList = memberService.searchMembersByKeyword(searchType, searchKeyword, page, pageSize, sortField, sortOrder);
-            totalCount = memberService.getSearchMemberCount(searchType, searchKeyword);
-        } else {
-            userList = memberService.getMemberList(page, pageSize, sortField, sortOrder);
-            totalCount = memberService.getTotalMemberCount();
-        }
-
-        int totalPages = (int) Math.ceil((double) totalCount / pageSize);
+        System.out.println("Received Parameters:");
+        System.out.println("page: " + page);
+        System.out.println("size: " + size);
+        System.out.println("searchType: " + searchType);
+        System.out.println("searchKeyword: " + searchKeyword);
+        System.out.println("startDate: " + startDate);
+        System.out.println("endDate: " + endDate);
 
         Map<String, Object> result = new HashMap<>();
-        result.put("list", userList);
-        result.put("totalCount", totalCount);
-        result.put("totalPages", totalPages);
 
-        return ResponseEntity.ok(new ApiResponse<>(true, "회원 목록 조회 성공", result));
+        List<User> userList = memberService.searchMembersByKeyword(
+            searchType, searchKeyword, page, size,
+            sortField, sortOrder, startDate, endDate
+        );
+        int totalCount = memberService.getSearchMemberCount(searchType, searchKeyword);
+        int totalPages = (int) Math.ceil((double) totalCount / size);
+
+        result.put("list", userList);
+        result.put("totalPages", totalPages);
+        result.put("currentPage", page);
+
+        return ResponseEntity.ok(new ApiResponse<>(true, "목록 조회 성공", result));
     }
     /**
      * Delete a user
