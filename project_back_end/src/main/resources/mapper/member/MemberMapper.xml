@@ -73,9 +73,11 @@
 	            create_dt
 	        FROM users
 	        WHERE 1 = 1
-	        <if test="searchText != null and searchText != ''">
-	            AND username LIKE '%' || #{searchText} || '%'
-	        </if>
+	        <if test="searchKeyword != null and searchKeyword != ''">
+			    AND (
+			        username LIKE CONCAT('%', CONCAT(#{searchKeyword}, '%'))
+			    )
+			</if>
 	        <if test="startDate != null and startDate != ''">
 	            <![CDATA[ AND CREATE_DT >= TO_DATE(#{startDate} || ' 00:00:00', 'YYYY-MM-DD HH24:MI:SS') ]]>
 	        </if>
@@ -91,18 +93,12 @@
 	    SELECT COUNT(*)
 	    FROM users
 	    <where>
-	        <choose>
-	            <when test="searchType == 'userId' and searchKeyword != null and searchKeyword != ''">
-	                user_id LIKE '%' || #{searchKeyword} || '%'
-	            </when>
-	            <when test="searchType == 'userName' and searchKeyword != null and searchKeyword != ''">
-	                user_name LIKE '%' || #{searchKeyword} || '%'
-	            </when>
-	            <when test="searchType == 'email' and searchKeyword != null and searchKeyword != ''">
-	                email LIKE '%' || #{searchKeyword} || '%'
-	            </when>
-	            <!-- 필요한 필드 추가 가능 -->
-	        </choose>
+	        
+	            <if test="searchKeyword != null and searchKeyword != ''">
+				    AND (
+				        username LIKE CONCAT('%', CONCAT(#{searchKeyword}, '%'))
+				    )
+				</if>
 	    </where>
 	</select>
 
