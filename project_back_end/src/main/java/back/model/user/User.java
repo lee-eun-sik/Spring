@@ -21,7 +21,7 @@ public class User extends Model {
     private String password_confirm;
     private String phonenumber;
     private String gender;
-    private String birthdate;
+    private String birthday;
     private String role;
     // Getters/Setters
 	
@@ -87,13 +87,6 @@ public class User extends Model {
 
 
 
-	public String getBirthdate() {
-		return birthdate;
-	}
-
-	public void setBirthdate(String birthdate) {
-		this.birthdate = birthdate;
-	}
 
 	public String getRole() {
 		return role;

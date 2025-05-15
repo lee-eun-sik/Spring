@@ -38,7 +38,7 @@ public class EmailService {
         message.setTo(to);
         message.setSubject(subject);
         message.setText(text);
-        message.setFrom("dldmstlr1999@gmail.com"); // 실제 발신 이메일 주소로 변경 필요
+        message.setFrom("dldmstlr20419@naver.com"); // 실제 발신 이메일 주소로 변경 필요
 
         mailSender.send(message);
     }

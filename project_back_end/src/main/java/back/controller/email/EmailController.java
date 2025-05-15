@@ -33,7 +33,7 @@ public class EmailController {
 		
 		String code = String.format("%06d", new Random().nextInt(999999));
 		log.info("이메일 인증번호 발송: {} -> {}", email, code);
-		
+		emailService.sendEmail(email, "회원가입 인증번호", "인증번호는 " + code + " 입니다. 5분 내에 사용해주세요.");
 		// 이메일 발송 생략 (예: JavaMailSender 등 사용 가능)
 		
 		emailService.saveVerificationCode(email, code);
@@ -41,20 +41,20 @@ public class EmailController {
 	}
 	
 	// 인증번호 검증
-	@PostMapping("/verify-code.do") 
+	@PostMapping("/verify-code.do")
 	public ApiResponse<?> verifyCode(@RequestBody Map<String, String> request) {
-		String email = request.get("email");
-		String code = request.get("code");
-		
-		if (email == null || code == null) {
-			return new ApiResponse<>(false, "요청값이 잘못되었습니다.", null);
-		}
-		
-		boolean success = emailService.verifyCode(email, code);
-		if (success) {
-			return new ApiResponse<>(true, "인증 성공", null);
-		} else {
-			return new ApiResponse<>(false, "인증 실패 (코드 불일치 또는 만료)", null);
-		}
+	    String email = request.get("email");
+	    String code = request.get("code");
+
+	    if (email == null || code == null) {
+	        return new ApiResponse<>(false, "이메일과 인증번호를 모두 입력해주세요.", null);
+	    }
+
+	    boolean isValid = emailService.verifyCode(email, code);
+	    if (isValid) {
+	        return new ApiResponse<>(true, "인증번호가 일치합니다.", null);
+	    } else {
+	        return new ApiResponse<>(false, "인증번호가 일치하지 않거나 만료되었습니다.", null);
+	    }
 	}
 }
