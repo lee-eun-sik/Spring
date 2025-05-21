@@ -60,8 +60,8 @@
 	        #{email},
 	        #{createId},
 	        #{phonenumber, jdbcType=VARCHAR},
-	        #{gender, jdbcType=VARCHAR]},
-	        TO_DATE(#{birthday, jdbcType=VARCHAR}, 'YYYY-MM-DD'),
+	        #{gender, jdbcType=VARCHAR},
+	        TO_DATE(#{birthdate, jdbcType=VARCHAR}, 'YYYY-MM-DD'),
 	        SYSDATE,
 	        #{role},
 	        'N'

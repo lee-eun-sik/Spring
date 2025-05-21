@@ -18,7 +18,7 @@ public class MailConfig {
         mailSender.setHost("smtp.gmail.com");
         mailSender.setPort(587);
         mailSender.setUsername("dldmstlr1999@gmail.com");    // 실제 Gmail 주소
-        mailSender.setPassword("bjhqndvclqqsxnwf");       // Gmail 앱 비밀번호 또는 OAuth2 토큰
+        mailSender.setPassword("nxodnskdlknzypek");       // Gmail 앱 비밀번호 또는 OAuth2 토큰
 
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.transport.protocol", "smtp");

@@ -51,7 +51,7 @@ public class UserController {
         log.info("받은 전화번호: {}", user.getPhonenumber());
         user.setCreateId("SYSTEM");
         boolean success = userService.registerUser(user);
-        System.out.println("생년월일: " + user.getBirthday());
+        System.out.println("생년월일: " + user.getBirthdate());
         return ResponseEntity.ok(new ApiResponse<>(success, success ? "회원가입 성공" : "회원가입 실패", null)); // API호출 결과를 감싸는 응답 객체
     }
     @PostMapping("/login.do")

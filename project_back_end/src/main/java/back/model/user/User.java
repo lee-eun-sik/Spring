@@ -21,7 +21,7 @@ public class User extends Model {
     private String password_confirm;
     private String phonenumber;
     private String gender;
-    private String birthday;
+    private String birthdate;
     private String role;
     // Getters/Setters
 	
