@@ -89,6 +89,9 @@ public class UserServiceImpl implements UserService {
 	    }
 	}
 
-	
+	@Override
+	public List<String> getUserIdsByEmail(String email) {
+	    return userMapper.getUserIdsByEmail(email);
+	}
    
 }

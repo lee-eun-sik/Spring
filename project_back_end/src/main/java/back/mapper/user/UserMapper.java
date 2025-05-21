@@ -1,5 +1,7 @@
 package back.mapper.user;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import back.model.user.User;
@@ -11,5 +13,6 @@ public interface UserMapper {
 	void registerUser(User user);
 
 	int checkUserIdDuplicate(String userId);
-
+	
+	List<String> getUserIdsByEmail(String email);
 }

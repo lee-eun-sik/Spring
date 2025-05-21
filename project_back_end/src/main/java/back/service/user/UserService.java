@@ -21,7 +21,7 @@ public interface UserService {
     User login(String id, String pass);
 
 	
-    
+    List<String> getUserIdsByEmail(String email);
    
 
 }
