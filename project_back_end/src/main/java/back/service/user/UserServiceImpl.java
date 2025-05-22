@@ -107,7 +107,9 @@ public class UserServiceImpl implements UserService {
 
 	
 	@Override
-	public User findUserForPwReset(String userId, String username, String phonenumber, String birthDate, String email) {
+	public User findUserForPwReset(String userId, String username, String phonenumber, 
+			String birthDate, String email) {
+		
 	    return userMapper.findUserForPwReset(userId, username, phonenumber, birthDate, email);
 	}
 

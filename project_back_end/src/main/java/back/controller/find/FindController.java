@@ -1,7 +1,5 @@
 package back.controller.find;
 
-
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -15,86 +13,91 @@ import back.model.user.User;
 import back.service.user.UserService;
 import back.util.ApiResponse;
 
+import java.security.SecureRandom;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
+
 @RestController
 @RequestMapping("/api/find")
 @Slf4j
 @RequiredArgsConstructor
 public class FindController {
 
-	 private final UserService userService;
-	 private final JavaMailSender mailSender;
-	 private final PasswordEncoder passwordEncoder; 
-    // 이메일로 사용자 ID 찾기 후 메일 전송
-	 @PostMapping("/findId.do")
-	 public ResponseEntity<?> findUserIdByInfo(@RequestBody Map<String, String> body) {
-	     String username = body.get("username");
-	     String phonenumber = body.get("phonenumber");
-	     String birthDate = body.get("birthdate");
-	     String email = body.get("email"); // ✔ 이미 선언됨
-	     log.info("사용자 정보로 ID 찾기 요청: {}, {}, {}, {}", username, phonenumber, birthDate, email);
+    private final UserService userService;
+    private final JavaMailSender mailSender;
+    private final PasswordEncoder passwordEncoder;
 
-	     List<User> users = userService.findUsersByInfo(username, phonenumber, birthDate, email);
-	     if (users.isEmpty()) {
-	         return ResponseEntity.ok(new ApiResponse<>(false, "일치하는 사용자 정보를 찾을 수 없습니다.", null));
-	     }
+    @PostMapping("/findId.do")
+    public ResponseEntity<?> findUserIdByInfo(@RequestBody Map<String, String> body) {
+        String username = body.get("username");
+        String phonenumber = body.get("phonenumber");
+        String birthDate = body.get("birthdate");  // 통일: "birthdate"
+        String email = body.get("email");
 
-	     List<Map<String, String>> userInfoList = users.stream()
-	         .map(user -> Map.of(
-	             "userId", user.getUserId(),
-	             "createDt", user.getCreateDt()
-	         ))
-	         .toList();
+        log.info("사용자 정보로 ID 찾기 요청: {}, {}, {}, {}", username, phonenumber, birthDate, email);
 
-	     StringBuilder emailBody = new StringBuilder("회원님의 아이디 목록과 가입일자입니다:\n");
-	     userInfoList.forEach(info -> {
-	         emailBody.append("- 아이디: ").append(info.get("userId"))
-	                  .append(", 가입일자: ").append(info.get("createDt"))
-	                  .append("\n");
-	     });
+        List<User> users = userService.findUsersByInfo(username, phonenumber, birthDate, email);
+        if (users.isEmpty()) {
+            return ResponseEntity.ok(new ApiResponse<>(false, "일치하는 사용자 정보를 찾을 수 없습니다.", null));
+        }
 
-	     // 이메일 전송 제거 → 화면 응답만 반환
-	     return ResponseEntity.ok(new ApiResponse<>(true, "일치하는 사용자 정보를 찾았습니다.", Map.of("list", userInfoList)));
-	 }
-	 
-	 @PostMapping("/findPw.do")
-	 public ResponseEntity<?> findUserPwByInfo(@RequestBody Map<String, String> body) {
-	     String userId = body.get("userId");
-	     String username = body.get("username");
-	     String phonenumber = body.get("phonenumber");
-	     String birthDate = body.get("birthdate");
-	     String email = body.get("email");
+        List<Map<String, String>> userInfoList = users.stream()
+            .map(user -> Map.of(
+                "userId", user.getUserId(),
+                "createDt", user.getCreateDt()
+            ))
+            .toList();
 
-	     log.info("비밀번호 찾기 요청: {}, {}, {}, {}, {}", userId, username, phonenumber, birthDate, email);
+        return ResponseEntity.ok(new ApiResponse<>(true, "일치하는 사용자 정보를 찾았습니다.", Map.of("list", userInfoList)));
+    }
 
-	     // 해당 유저가 존재하는지 확인
-	     User user = userService.findUserForPwReset(userId, username, phonenumber, birthDate, email);
+    @PostMapping("/findPw.do")
+    public ResponseEntity<?> findUserPwByInfo(@RequestBody Map<String, String> body) {
+        String userId = body.get("userId");
+        String username = body.get("username");
+        String phonenumber = body.get("phonenumber");
+        String birthDate = body.get("birthDate");  // 통일: "birthdate"
+        String email = body.get("email");
 
-	     if (user == null) {
-	         return ResponseEntity.ok(new ApiResponse<>(false, "일치하는 사용자 정보를 찾을 수 없습니다.", null));
-	     }
+        log.info("비밀번호 찾기 요청: {}, {}, {}, {}, {}", userId, username, phonenumber, birthDate, email);
 
-	     // 임시 비밀번호 생성
-	     String tempPassword = UUID.randomUUID().toString().substring(0, 10);
-	     String encodedPassword = passwordEncoder.encode(tempPassword);
+        User user = userService.findUserForPwReset(userId, username, phonenumber, birthDate, email);
+        if (user == null) {
+            return ResponseEntity.ok(new ApiResponse<>(false, "일치하는 사용자 정보를 찾을 수 없습니다.", null));
+        }
 
-	     // 비밀번호 업데이트
-	     boolean updateResult = userService.updatePassword(user.getUserId(), encodedPassword);
-	     if (!updateResult) {
-	         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-	                 .body(new ApiResponse<>(false, "비밀번호 변경 실패", null));
-	     }
+        String tempPassword = generateSecureTempPassword(10);
+        String encodedPassword = passwordEncoder.encode(tempPassword);
+        log.info("임시비밀번호 생성: {}", tempPassword);
 
-	     // 이메일 발송
-	     SimpleMailMessage message = new SimpleMailMessage();
-	     message.setTo(email);
-	     message.setSubject("임시 비밀번호 안내");
-	     message.setText("요청하신 임시 비밀번호는 다음과 같습니다:\n" + tempPassword + "\n로그인 후 반드시 비밀번호를 변경해주세요.");
-	     mailSender.send(message);
+        boolean updateResult = userService.updatePassword(user.getUserId(), encodedPassword);
+        if (!updateResult) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(new ApiResponse<>(false, "비밀번호 변경 실패", null));
+        }
 
-	     return ResponseEntity.ok(new ApiResponse<>(true, "임시 비밀번호가 이메일로 발송되었습니다.", null));
-	 }
-	 
+        try {
+            SimpleMailMessage message = new SimpleMailMessage();
+            message.setTo(email);
+            message.setSubject("임시 비밀번호 안내");
+            message.setText("요청하신 임시 비밀번호는 다음과 같습니다:\n" + tempPassword + "\n로그인 후 반드시 비밀번호를 변경해주세요.");
+            mailSender.send(message);
+        } catch (Exception e) {
+            log.error("임시 비밀번호 이메일 전송 실패", e);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(new ApiResponse<>(false, "이메일 전송 실패", null));
+        }
+
+        return ResponseEntity.ok(new ApiResponse<>(true, "임시 비밀번호가 이메일로 발송되었습니다.", null));
+    }
+
+    private String generateSecureTempPassword(int length) {
+        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%";
+        SecureRandom random = new SecureRandom();
+        StringBuilder sb = new StringBuilder(length);
+        for (int i = 0; i < length; i++) {
+            sb.append(chars.charAt(random.nextInt(chars.length())));
+        }
+        return sb.toString();
+    }
 }

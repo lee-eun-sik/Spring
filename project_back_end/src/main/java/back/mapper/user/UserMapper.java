@@ -1,5 +1,6 @@
 package back.mapper.user;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -18,6 +19,10 @@ public interface UserMapper {
 	
 	List<User> findUsersByInfo(Map<String, Object> params);
 	
-	User findUserForPwReset(String userId, String username, String phonenumber, String birthDate, String email);
-	int updatePassword(String userId, String encodedPassword);
+	User findUserForPwReset(@Param("userId") String userId,
+            @Param("username") String username,
+            @Param("phonenumber") String phonenumber,
+            @Param("birthDate") String birthDate,
+            @Param("email") String email);
+	int updatePassword(@Param("userId") String userId, @Param("encodedPassword") String encodedPassword);
 }
