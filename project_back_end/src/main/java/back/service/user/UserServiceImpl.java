@@ -4,6 +4,7 @@ import org.apache.ibatis.session.SqlSession;
 import java.util.Map;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Collections;
 import java.util.Date;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -89,9 +90,31 @@ public class UserServiceImpl implements UserService {
 	    }
 	}
 
-	@Override
-	public List<String> getUserIdsByEmail(String email) {
-	    return userMapper.getUserIdsByEmail(email);
+	public List<User> findUsersByInfo(String username, String phonenumber, String birthDate, String email) {
+	    try (SqlSession session = MybatisUtil.getSqlSessionFactory().openSession()) {
+	        UserMapper mapper = session.getMapper(UserMapper.class);
+	        Map<String, Object> params = new HashMap<>();
+	        params.put("name", username);
+	        params.put("phone", phonenumber);
+	        params.put("birthDate", birthDate);
+	        params.put("email", email);
+	        return mapper.findUsersByInfo(params);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return Collections.emptyList(); // 결과가 없거나 오류 시 빈 리스트 반환
+	    }
 	}
+
+	
+	@Override
+	public User findUserForPwReset(String userId, String username, String phonenumber, String birthDate, String email) {
+	    return userMapper.findUserForPwReset(userId, username, phonenumber, birthDate, email);
+	}
+
+	@Override
+	public boolean updatePassword(String userId, String encodedPassword) {
+	    return userMapper.updatePassword(userId, encodedPassword) > 0;
+	}
+	
    
 }

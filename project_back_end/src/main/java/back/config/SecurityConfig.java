@@ -82,8 +82,8 @@ public class SecurityConfig {
                     "/api/newboard/imgUpload.do",
                     "/api/email/send-code.do",
                     "/api/email/verify-code.do",
-                    "/api/find/sendUserIdsByEmail.do",
-                    "/api/find/find-id-by-email.do"
+                    "/api/find/findId.do",
+                    "/api/find/findPw.do"
                     
                 ).permitAll() // 로그인을 안해도 로그인, 로그아웃, 회원가입은 누구나 접근 가능,부모 관련 비교할 경우, 인가함수
                 .anyRequest().authenticated() // 그 외는 인증 필요, 요청은 다 체크ㅡ 나머지 모드는 인증 요청한다. 

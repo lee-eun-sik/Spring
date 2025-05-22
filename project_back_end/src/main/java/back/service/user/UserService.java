@@ -20,8 +20,8 @@ public interface UserService {
 
     User login(String id, String pass);
 
-	
-    List<String> getUserIdsByEmail(String email);
-   
-
-}
+    List<User>  findUsersByInfo(String username, String phonenumber, String birthDate, String email);
+    
+    User findUserForPwReset(String userId, String username, String phonenumber, String birthDate, String email);
+    boolean updatePassword(String userId, String encodedPassword);
+}    

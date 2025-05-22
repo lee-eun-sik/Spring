@@ -85,10 +85,10 @@
 	      AND DEL_YN = 'N'
 	</select>
 	
-	<update id="updatePassword" parameterType="back.model.user.User">
-	    UPDATE users
-	    SET password = NVL(#{password}, password)
-	    WHERE user_id = #{userId}
+	<update id="updatePassword">
+		UPDATE users
+		SET password = #{encodedPassword}
+		WHERE user_id = #{userId}
 	</update>
 	<select id="getUserRoleById" parameterType="string" resultType="string">
 	    SELECT ROLE 
@@ -117,12 +117,13 @@
 	   AND DEL_YN = 'N'
 	</select>
 	
-	<select id="findUserByInfo" parameterType="map" resultType="back.model.user.User">
+	<select id="findUsersByInfo" parameterType="map" resultType="back.model.user.User">
 	    SELECT *
 	    FROM users
 	    WHERE username = #{name}
-	      AND phonenumber = #{phone}       
+	      AND phonenumber = #{phone}
 	      AND birth_date = #{birthDate}
+	      AND email = #{email}
 	</select>
 	
 	<select id="findUserByCredentials" resultType="back.model.user.User">
@@ -134,10 +135,12 @@
 	    AND BIRTH_DATE = #{birthDate, jdbcType=DATE}
 	</select>
 	
-	<select id="getUserIdsByEmail" parameterType="string" resultType="string">
-	    SELECT USER_ID
-	    FROM USERS
-	    WHERE EMAIL = #{email}
-	      AND DEL_YN = 'N'
+	<select id="findUserForPwReset" resultType="back.model.user.User">
+	  SELECT * FROM users
+	  WHERE user_id = #{userId}
+	    AND username = #{username}
+	    AND phonenumber = #{phonenumber}
+	    AND birthdate = #{birthDate}
+	    AND email = #{email}
 	</select>
 </mapper>
