@@ -25,4 +25,6 @@ public interface UserMapper {
             @Param("birthDate") String birthDate,
             @Param("email") String email);
 	int updatePassword(@Param("userId") String userId, @Param("encodedPassword") String encodedPassword);
+
+	User findByUserId(String userId);
 }

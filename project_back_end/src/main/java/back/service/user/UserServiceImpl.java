@@ -9,6 +9,7 @@ import java.util.Date;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import back.mapper.user.UserMapper;
@@ -21,7 +22,8 @@ import lombok.extern.slf4j.Slf4j;
 public class UserServiceImpl implements UserService {
 	@Autowired
     private UserMapper userMapper;
-
+	 @Autowired
+	 private PasswordEncoder passwordEncoder;
 	@Override
 	public boolean registerUser(User user) {
 	    try (SqlSession session = MybatisUtil.getSqlSessionFactory().openSession()) {
@@ -118,5 +120,12 @@ public class UserServiceImpl implements UserService {
 	    return userMapper.updatePassword(userId, encodedPassword) > 0;
 	}
 	
-   
+	@Override
+	public boolean resetPassword(String userId, String newPassword) {
+	    User user = userMapper.findByUserId(userId);
+	    if (user == null) return false;
+
+	    String encodedPassword = passwordEncoder.encode(newPassword);
+	    return userMapper.updatePassword(userId, encodedPassword) > 0;
+	}
 }

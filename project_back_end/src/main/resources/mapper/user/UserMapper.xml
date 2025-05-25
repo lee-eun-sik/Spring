@@ -17,6 +17,7 @@
     <result property="phonenumber" column="PHONENUMBER"/> 
     <result property="birthdate" column="BIRTH_DATE"/>
     <result property="delYn" column="DEL_YN"/>
+    <result property="nickname" column="NICKNAME"/>
 </resultMap>
 
     <!-- 사용자 ID로 사용자 정보 조회 -->
@@ -43,28 +44,22 @@
     <insert id="registerUser" parameterType="back.model.user.User">
 	    INSERT INTO USERS (
 	        USER_ID, 
-	        USERNAME, 
 	        PASSWORD,
 	        EMAIL,
 	        CREATE_ID,
-	        PHONENUMBER,
-	        GENDER,
-	        BIRTH_DATE,
 	        CREATE_DT,
 	        ROLE,
-	        DEL_YN
+	        DEL_YN,
+	        NICKNAME
 	    ) VALUES (
 	        #{userId}, 
-	        #{username}, 
 	        #{password},
 	        #{email},
 	        #{createId},
-	        #{phonenumber, jdbcType=VARCHAR},
-	        #{gender, jdbcType=VARCHAR},
-	        TO_DATE(#{birthdate, jdbcType=VARCHAR}, 'YYYY-MM-DD'),
 	        SYSDATE,
 	        #{role},
-	        'N'
+	        'N',
+	        #{nickname}
 	    )
 	</insert>
 
@@ -140,8 +135,29 @@
 	    WHERE USER_ID = #{userId}
 	      AND USERNAME = #{username}
 	      AND PHONENUMBER = #{phonenumber}
-	      AND TO_CHAR(BIRTH_DATE, 'YYYY-MM-DD') = #{birthDate,jdbcType=VARCHAR}
+	      AND (
+			TO_CHAR(BIRTH_DATE, 'YYYY-MM-DD') = #{birthDate,jdbcType=VARCHAR}		
+		  )
 	      AND EMAIL = #{email}
+	      AND DEL_YN = 'N'
+	</select>
+	
+	<select id="findByUserId" resultMap="userResultMap" parameterType="string">
+	    SELECT USER_ID, 
+	           USERNAME, 
+	           PASSWORD, 
+	           EMAIL, 
+	           PHONENUMBER,
+	           GENDER,
+	           BIRTH_DATE,
+	           CREATE_ID, 
+	           UPDATE_ID, 
+	           CREATE_DT, 
+	           UPDATE_DT, 
+	           ROLE,
+	           DEL_YN
+	    FROM USERS
+	    WHERE USER_ID = #{userId}
 	      AND DEL_YN = 'N'
 	</select>
 </mapper>

@@ -24,4 +24,6 @@ public interface UserService {
     
     User findUserForPwReset(String userId, String username, String phonenumber, String birthDate, String email);
     boolean updatePassword(String userId, String encodedPassword);
+    
+    boolean resetPassword(String userId, String newPassword);
 }    

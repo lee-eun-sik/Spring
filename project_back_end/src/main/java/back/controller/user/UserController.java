@@ -50,10 +50,9 @@ public class UserController {
         // 🔐 비밀번호 암호화
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         log.info("암호화된 비밀번호: {}", user.getPassword()); // 여기 로그 중요
-        log.info("받은 전화번호: {}", user.getPhonenumber());
+        
         user.setCreateId("SYSTEM");
         boolean success = userService.registerUser(user);
-        System.out.println("생년월일: " + user.getBirthdate());
         return ResponseEntity.ok(new ApiResponse<>(success, success ? "회원가입 성공" : "회원가입 실패", null)); // API호출 결과를 감싸는 응답 객체
     }
     @PostMapping("/login.do")
@@ -63,7 +62,7 @@ public class UserController {
             Authentication auth = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(user.getUserId(), user.getPassword())
             );
-           
+
             SecurityContextHolder.getContext().setAuthentication(auth);
 
             HttpSession session = request.getSession(true);
@@ -71,14 +70,17 @@ public class UserController {
                 HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY,
                 SecurityContextHolder.getContext()
             );
-            
-            // 직접 사용자 정보 저장 (추가)
-            User loginUser = userService.getUserById(user.getUserId()); // 사용자 정보 조회
-            session.setAttribute("loginUser", loginUser); // 이 부분이 핵심!
-            
+
+            // 사용자 정보 조회
+            User loginUser = userService.getUserById(user.getUserId());
+            session.setAttribute("loginUser", loginUser);
+
             log.info("세션 ID: {}", session.getId());
             System.out.println(loginUser);
-            return ResponseEntity.ok(new ApiResponse<>(true, "로그인 성공", null));
+
+            // ✅ 유저 정보를 클라이언트에 전달하도록 수정
+            return ResponseEntity.ok(new ApiResponse<>(true, "로그인 성공", loginUser));
+
         } catch (AuthenticationException e) {
             log.warn("로그인 실패: {}", user.getUserId(), e);
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED)

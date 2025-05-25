@@ -100,4 +100,25 @@ public class FindController {
         }
         return sb.toString();
     }
+    
+    
+    @PostMapping("/resetPassword.do")
+    public ResponseEntity<ApiResponse<String>> resetPassword(@RequestBody Map<String, String> payload) {
+        String userId = payload.get("userId");
+        String newPassword = payload.get("newPassword");
+
+        if (userId == null || newPassword == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(new ApiResponse<>(false, "필수 정보 누락", null));
+        }
+
+        boolean result = userService.resetPassword(userId, newPassword);
+
+        if (result) {
+            return ResponseEntity.ok(new ApiResponse<>(true, "비밀번호가 변경되었습니다.", null));
+        } else {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                .body(new ApiResponse<>(false, "비밀번호 변경 실패", null));
+        }
+    }
 }

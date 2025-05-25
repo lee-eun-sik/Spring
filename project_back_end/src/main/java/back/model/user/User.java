@@ -23,11 +23,11 @@ public class User extends Model {
     private String gender;
     private String birthdate;
     private String role;
-    // Getters/Setters
-	
-	//기본 생성자
-	
-	
+    private String nickname;
+  
+ // 네이버 로그인용 필드 추가
+    private String naverId;
+    private String kakaoId;
 	public String getUserId() {
 		return userId;
 	}
@@ -104,10 +104,13 @@ public class User extends Model {
 		this.password_confirm = password_confirm;
 	}
 
-	
-	
-	
 
-
-
+	public String getNaverId() {
+	    return naverId;
+	}
+	
+	public void setNaverId(String naverId) {
+	    this.naverId = naverId;
+	}
+		
 }
