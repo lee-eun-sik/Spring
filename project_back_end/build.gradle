@@ -31,7 +31,9 @@ dependencies {
 	implementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'
 	// log4j2 설정
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
-	
+	implementation 'org.springframework:spring-websocket:6.1.4'
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+    implementation 'org.springframework:spring-messaging'
 }
 tasks.named('test') {
 	useJUnitPlatform()
