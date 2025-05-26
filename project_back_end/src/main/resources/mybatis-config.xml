@@ -32,6 +32,5 @@
         <mapper resource="mapper/member/MemberMapper.xml"/>
         <mapper resource="mapper/newsboardBoard/newsboardBoardMapper.xml"/>
         <mapper resource="mapper/newsboardFile/newsboardFileMapper.xml"/>
-        <mapper resource="mapper/auth/AuthMapper.xml"/>
     </mappers>
 </configuration>
