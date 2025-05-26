@@ -115,10 +115,7 @@
 	<select id="findUsersByInfo" parameterType="map" resultType="back.model.user.User">
 	    SELECT *
 	    FROM users
-	    WHERE username = #{name}
-	      AND phonenumber = #{phone}
-	      AND birth_date = #{birthDate}
-	      AND email = #{email}
+	    WHERE email = #{email, jdbcType=VARCHAR}
 	</select>
 	
 	<select id="findUserByCredentials" resultType="back.model.user.User">
@@ -130,16 +127,10 @@
 	    AND BIRTH_DATE = #{birthDate, jdbcType=DATE}
 	</select>
 	
-	<select id="findUserForPwReset" resultMap="userResultMap" parameterType="map">
+	<select id="findUserByUserIdAndEmail" resultMap="userResultMap" parameterType="map">
 	    SELECT * FROM USERS
 	    WHERE USER_ID = #{userId}
-	      AND USERNAME = #{username}
-	      AND PHONENUMBER = #{phonenumber}
-	      AND (
-			TO_CHAR(BIRTH_DATE, 'YYYY-MM-DD') = #{birthDate,jdbcType=VARCHAR}		
-		  )
 	      AND EMAIL = #{email}
-	      AND DEL_YN = 'N'
 	</select>
 	
 	<select id="findByUserId" resultMap="userResultMap" parameterType="string">

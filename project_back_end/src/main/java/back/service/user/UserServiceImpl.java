@@ -92,13 +92,11 @@ public class UserServiceImpl implements UserService {
 	    }
 	}
 
-	public List<User> findUsersByInfo(String username, String phonenumber, String birthDate, String email) {
+	public List<User> findUsersByInfo(String email) {
 	    try (SqlSession session = MybatisUtil.getSqlSessionFactory().openSession()) {
 	        UserMapper mapper = session.getMapper(UserMapper.class);
 	        Map<String, Object> params = new HashMap<>();
-	        params.put("name", username);
-	        params.put("phone", phonenumber);
-	        params.put("birthDate", birthDate);
+	       
 	        params.put("email", email);
 	        return mapper.findUsersByInfo(params);
 	    } catch (Exception e) {
@@ -107,14 +105,20 @@ public class UserServiceImpl implements UserService {
 	    }
 	}
 
-	
 	@Override
-	public User findUserForPwReset(String userId, String username, String phonenumber, 
-			String birthDate, String email) {
-		
-	    return userMapper.findUserForPwReset(userId, username, phonenumber, birthDate, email);
+	public User findUserByUserIdAndEmail(String userId, String email) {
+	    try (SqlSession session = MybatisUtil.getSqlSessionFactory().openSession()) {
+	        UserMapper mapper = session.getMapper(UserMapper.class);
+	        Map<String, Object> params = new HashMap<>();
+	        params.put("userId", userId);
+	        params.put("email", email);
+	        return mapper.findUserByUserIdAndEmail(params);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return null;
+	    }
 	}
-
+	
 	@Override
 	public boolean updatePassword(String userId, String encodedPassword) {
 	    return userMapper.updatePassword(userId, encodedPassword) > 0;

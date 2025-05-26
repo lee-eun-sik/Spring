@@ -33,7 +33,7 @@ public class EmailController {
 		
 		String code = String.format("%06d", new Random().nextInt(999999));
 		log.info("이메일 인증번호 발송: {} -> {}", email, code);
-		emailService.sendEmail(email, "회원가입 인증번호", "인증번호는 " + code + " 입니다. 5분 내에 사용해주세요.");
+		emailService.sendEmail(email, "회원가입 인증번호", "인증번호는 " + code + " 입니다. 3분 내에 사용해주세요.");
 		// 이메일 발송 생략 (예: JavaMailSender 등 사용 가능)
 		
 		emailService.saveVerificationCode(email, code);
@@ -52,9 +52,9 @@ public class EmailController {
 
 	    boolean isValid = emailService.verifyCode(email, code);
 	    if (isValid) {
-	        return new ApiResponse<>(true, "인증번호가 일치합니다.", null);
+	        return new ApiResponse<>(true, "인증에 성공했습니다.", null);
 	    } else {
-	        return new ApiResponse<>(false, "인증번호가 일치하지 않거나 만료되었습니다.", null);
+	        return new ApiResponse<>(false, "인증번호가 틀리거나 시간이 만료되었습니다.", null);
 	    }
 	}
 }

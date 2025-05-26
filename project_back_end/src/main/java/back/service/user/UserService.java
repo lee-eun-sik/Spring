@@ -20,10 +20,12 @@ public interface UserService {
 
     User login(String id, String pass);
 
-    List<User>  findUsersByInfo(String username, String phonenumber, String birthDate, String email);
+    List<User>  findUsersByInfo(String email);
     
-    User findUserForPwReset(String userId, String username, String phonenumber, String birthDate, String email);
+    
     boolean updatePassword(String userId, String encodedPassword);
     
     boolean resetPassword(String userId, String newPassword);
+
+	User findUserByUserIdAndEmail(String userId, String email);
 }    

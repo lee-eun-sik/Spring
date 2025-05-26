@@ -19,11 +19,7 @@ public interface UserMapper {
 	
 	List<User> findUsersByInfo(Map<String, Object> params);
 	
-	User findUserForPwReset(@Param("userId") String userId,
-            @Param("username") String username,
-            @Param("phonenumber") String phonenumber,
-            @Param("birthDate") String birthDate,
-            @Param("email") String email);
+	User findUserByUserIdAndEmail(Map<String, Object> params);
 	int updatePassword(@Param("userId") String userId, @Param("encodedPassword") String encodedPassword);
 
 	User findByUserId(String userId);
