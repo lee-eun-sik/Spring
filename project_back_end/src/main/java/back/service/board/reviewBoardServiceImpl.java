@@ -18,7 +18,7 @@ import back.model.board.Comment;
 import back.model.common.PostFile;
 import back.model.petSitter.PetSitter;
 import back.util.FileUploadUtil;
-import back.util.MybatisUtil;
+
 
 public class reviewBoardServiceImpl implements reviewBoardService {
 

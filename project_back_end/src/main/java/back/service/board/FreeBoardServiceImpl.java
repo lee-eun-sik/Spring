@@ -15,7 +15,7 @@ import back.model.board.Comment;
 import back.model.board.Board;
 import back.model.common.PostFile;
 import back.util.FileUploadUtil;
-import back.util.MybatisUtil;
+
 
 public class FreeBoardServiceImpl implements FreeBoardService {
 

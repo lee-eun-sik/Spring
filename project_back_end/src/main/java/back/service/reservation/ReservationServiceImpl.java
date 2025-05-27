@@ -18,7 +18,7 @@ import back.model.common.PostFile;
 import back.model.petSitter.PetSitter;
 import back.model.reservation.Reservation;
 import back.util.FileUploadUtil;
-import back.util.MybatisUtil;
+
 @Service
 public class ReservationServiceImpl implements ReservationService {
 
@@ -28,17 +28,17 @@ public class ReservationServiceImpl implements ReservationService {
 	@Override
     public List<Reservation> getReservationList(Reservation reservation) {
         try (SqlSession session = sqlSessionFactory.openSession()) {
-            ReservationMapper mapper = session.getMapper(ReservationMapper.class);
-            return mapper.getReservationList(reservation);
-        }
-    }
+           ReservationMapper mapper = session.getMapper(ReservationMapper.class);
+           return mapper.getReservationList(reservation);
+       }
+  }
 
-    @Override
-    public List<Reservation> getAllReservations() {
-        try (SqlSession session = sqlSessionFactory.openSession()) {
-            ReservationMapper mapper = session.getMapper(ReservationMapper.class);
-            return mapper.getReservationList(new Reservation()); // 전체 예약 목록 조회
-        }
-    }
+   @Override
+   public List<Reservation> getAllReservations() {
+       try (SqlSession session = sqlSessionFactory.openSession()) {
+           ReservationMapper mapper = session.getMapper(ReservationMapper.class);
+          return mapper.getReservationList(new Reservation()); // 전체 예약 목록 조회
+       }
+   }
 
 }

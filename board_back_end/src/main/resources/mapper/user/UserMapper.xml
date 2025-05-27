@@ -80,23 +80,7 @@
          )B
     </select>
     
-    <!-- 사용자 ID로 사용자 정보 조회 -->
-    <select id="getUserById" parameterType="string" resultType="back.model.user.User">
-        SELECT 
-            USER_ID, 
-            USERNAME, 
-            PASSWORD, 
-            EMAIL, 
-            CREATE_DT,
-            CREATE_ID,
-            UPDATE_ID, 
-            UPDATE_DT
-        FROM 
-            USERS
-        WHERE 
-            USER_ID = #{userId} <!-- SQL 매개변수 바인딩 -->
-          AND DEL_YN = 'N'  
-    </select>
+    
 
     <!-- 사용자 생성 -->
     <insert id="registerUser" parameterType="back.model.user.User">

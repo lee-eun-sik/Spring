@@ -12,10 +12,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import back.exception.HException;
 import back.mapper.user.UserMapper;
 import back.model.user.User;
-import back.util.MybatisUtil;
-import back.util.SHA256Util;
+
 import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Service
@@ -24,41 +24,31 @@ public class UserServiceImpl implements UserService {
     private UserMapper userMapper;
 	 @Autowired
 	 private PasswordEncoder passwordEncoder;
-	@Override
-	public boolean registerUser(User user) {
-	    try (SqlSession session = MybatisUtil.getSqlSessionFactory().openSession()) {
-	        UserMapper mapper = session.getMapper(UserMapper.class);
-
-	        // 사용자 ID 중복 체크
-	        int count = mapper.checkUserIdDuplicate(user.getUserId());
-	        if (count > 0) {
-	            return false; // 이미 존재하는 ID
-	        }
-
-	       
-	        user.setCreateId(user.getUserId()); // 기본 작성자 ID로 userId 저장
-	        user.setRole("USER"); // 기본 권한 설정
-
-	        mapper.registerUser(user);
-	        session.commit();
-	        return true;
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	        return false;
+	 @Override
+	    public boolean registerUser(User user) {
+	    	try {
+	    		String password = user.getPassword();
+	    		user.setPassword(password != null ? passwordEncoder.encode(password) : null);
+	    		return userMapper.registerUser(user) > 0;
+	    	} catch (Exception e) {
+	    		log.error("회원가입 중 오류", e);
+	    		throw new HException("회원가입 실패", e);
+	    	}
 	    }
-	}
-
-	@Override
-	public boolean validateUser(User user) {
-	    try (SqlSession session = MybatisUtil.getSqlSessionFactory().openSession()) {
-	        UserMapper mapper = session.getMapper(UserMapper.class);
-	        int count = mapper.checkUserIdDuplicate(user.getUserId());
-	        return count == 0; // 중복 없으면 유효
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	        return false;
-	    }
-	}
+	 @Override
+	 public boolean validateUser(User user) {
+		 // TODO Auto-generated method stub
+		 try {
+			 User dbUser = userMapper.getUserById(user.getUserId());
+			 if (dbUser == null) return false;
+			
+			 String encryptedPassword = passwordEncoder.encode(user.getPassword());
+			 return passwordEncoder.matches(dbUser.getPassword(), encryptedPassword);
+		 } catch(Exception e) {
+			 log.error("로그인 검증 중 오류", e);
+			 throw new HException("로그인 검증 실패", e);
+		 }
+	 }
 
 	@Override
 	public User login(String id, String pass) {

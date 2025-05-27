@@ -14,9 +14,9 @@ import org.springframework.transaction.annotation.Transactional;
 import back.exception.HException;
 import back.mapper.user.UserMapper;
 import back.model.user.User;
-import back.util.MybatisUtil;
-import back.util.SHA256Util;
-import lombok.Data;
+
+
+
 import lombok.extern.slf4j.Slf4j;
 @Service //스프링이 관리함
 @Slf4j
@@ -98,8 +98,8 @@ public class UserServiceImpl implements UserService {// 보안때문, 인터페�
 			user.setPassword(password != null ? passwordEncoder.encode(password) : null);
 			return userMapper.deleteUser(user) > 0;
 		} catch(Exception e) {
-			log.error("사용자 수정 중 오류", e);
-			throw new HException("사용자 수정 실패", e);
+			log.error("사용자 탈퇴 중 오류", e);
+			throw new HException("사용자 탈퇴 실패", e);
 		}
 	}
 

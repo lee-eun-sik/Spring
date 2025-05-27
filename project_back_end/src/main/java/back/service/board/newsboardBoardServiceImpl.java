@@ -16,7 +16,7 @@ import back.model.board.Comment;
 import back.model.common.PostFile;
 import back.model.user.User;
 import back.util.FileUploadUtil;
-import back.util.MybatisUtil;
+
 
 public class newsboardBoardServiceImpl implements newsboardBoardService {
 

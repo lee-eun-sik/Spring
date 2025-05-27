@@ -13,7 +13,7 @@ public interface UserMapper {
 
 	User getUserById(String username);
 
-	void registerUser(User user);
+	public int registerUser(User user);
 
 	int checkUserIdDuplicate(String userId);
 	

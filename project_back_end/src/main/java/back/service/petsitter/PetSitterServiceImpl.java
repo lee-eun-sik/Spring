@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import back.mapper.PetSitter.PetSitterMapper;
 import back.model.petSitter.PetSitter;
 import back.service.user.UserServiceImpl;
-import back.util.MybatisUtil;
+
 import lombok.extern.slf4j.Slf4j;
 @Service
 @Slf4j

@@ -17,7 +17,7 @@ import back.model.NewBoard.NewBoard;
 import back.model.board.Board;
 import back.model.common.PostFile;
 import back.util.FileUploadUtil;
-import back.util.MybatisUtil;
+
 @Service
 public class newsboardFileServiceImpl implements newsboardFileService {
 
