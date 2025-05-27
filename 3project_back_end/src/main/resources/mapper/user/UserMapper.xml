@@ -19,7 +19,24 @@
     <result property="delYn" column="DEL_YN"/>
     <result property="nickname" column="NICKNAME"/>
 </resultMap>
-
+	<!-- 사용자 ID로 사용자 정보 조회 -->
+    <select id="getUserById" resultMap="userResultMap" parameterType="string">
+	    SELECT USER_ID, 
+		       USERNAME, 
+		       PASSWORD, 
+		       EMAIL, 
+		       PHONENUMBER,
+		       GENDER,
+		       BIRTH_DATE,
+		       CREATE_ID, 
+		       UPDATE_ID, 
+		       CREATE_DT, 
+		       UPDATE_DT, 
+		       ROLE
+		FROM USERS
+	    WHERE USER_ID = #{userId}
+	      AND DEL_YN = 'N'
+	</select>
 
     <!-- 사용자 생성 -->
 
