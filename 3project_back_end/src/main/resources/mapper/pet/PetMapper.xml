@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="back.mapper.pet.PetMapper">
+
+    <insert id="insertPet" parameterType="back.model.pet.Pet" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO pets (
+            name,
+            species,
+            adoption_date,
+            birth_date,
+            gender,
+            notes,
+            profile_image_path,
+            create_id,
+            created_at
+        )
+        VALUES (
+            #{name},
+            #{species},
+            #{adoptionDate},
+            #{birthDate},
+            #{gender},
+            #{notes},
+            #{profileImagePath},
+            #{createId},
+            #{createdAt}
+        )
+    </insert>
+
+</mapper>
