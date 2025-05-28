@@ -6,5 +6,5 @@ import back.model.pet.Pet;
 
 @Mapper
 public interface PetMapper {
-	int insertPet(Pet pet);
+	public int insertPet(Pet pet);
 }
