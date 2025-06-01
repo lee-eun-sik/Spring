@@ -1,18 +1,22 @@
 package back.controller.pet;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import back.model.Pet.Pet;
 import back.model.common.CustomUserDetails;
-
+import back.model.Pet.Pet;
 import back.service.pet.PetService;
 import back.util.ApiResponse;
+import back.util.SecurityUtil;
+import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -23,40 +27,40 @@ public class PetController {
     @Autowired
     private PetService petService;
 
-    @PostMapping("/animalregister.do")
-    public ResponseEntity<?> registerPet(
-            @RequestParam(value = "animalName", required = false) String animalName,
-            @RequestParam(value = "animalSpecies", required = false) String animalSpecies,
-            @RequestParam(value = "animalAdoptionDate", required = false) String animalAdoptionDate,
-            @RequestParam(value = "birthDate", required = false) String birthDate,
-            @RequestParam(value = "gender", required = false) String gender,
-            @RequestParam(value = "animalMemo", required = false) String animalMemo,
-            @RequestParam(value = "imageFile", required = false) MultipartFile imageFile
-    ) {
-        try {
-            CustomUserDetails userDetails = (CustomUserDetails) SecurityContextHolder.getContext()
-                    .getAuthentication().getPrincipal();
-            String userId = userDetails.getUser().getUserId();
+    @PostMapping("/pet.do")
+    public ResponseEntity<?> createPet(
+        @RequestPart(value = "profileImage", required = false) MultipartFile profileImage,
+        @RequestPart("animalName") String animalName,
+        @RequestPart("animalSpecies") String animalSpecies,
+        @RequestPart("animalAdoptionDate") LocalDate animalAdoptionDate,
+        @RequestPart("birthDate") LocalDate birthDate,
+        @RequestPart("gender") String gender,
+        @RequestPart("animalMemo") String animalMemo,
+        HttpSession session
+    ) throws IOException {
 
-            Pet pet = new Pet();
-            pet.setUserId(userId);
-            pet.setAnimalName(animalName);
-            pet.setAnimalSpecies(animalSpecies);
-            pet.setAnimalAdoptionDate(animalAdoptionDate != null ? LocalDate.parse(animalAdoptionDate) : null);
-            pet.setBirthDate(birthDate != null ? LocalDate.parse(birthDate) : null);
-            pet.setGender(gender);
-            pet.setAnimalMemo(animalMemo);
-            pet.setCreateId(userId);
-            pet.setUpdateId(userId);
-            pet.setDelYn("N");
+        CustomUserDetails userDetails = (CustomUserDetails) session.getAttribute("userDetails");
 
-            log.info("반려동물 등록 요청: {}", pet);
+        Pet pet = new Pet();
+        pet.setAnimalName(animalName);
+        pet.setAnimalSpecies(animalSpecies);
+        pet.setAnimalAdoptionDate(animalAdoptionDate);
+        pet.setBirthDate(birthDate);
+        pet.setGender(gender);
+        pet.setAnimalMemo(animalMemo);
+        pet.setCreateId(userDetails != null ? userDetails.getUsername() : "SYSTEM");
+        pet.setCreateDt(LocalDateTime.now());
 
-            boolean success = petService.registerPet(pet, imageFile);
-            return ResponseEntity.ok(new ApiResponse<>(success, success ? "반려동물 등록 성공" : "반려동물 등록 실패", null));
-        } catch (Exception e) {
-            log.error("반려동물 등록 중 예외 발생", e);
-            return ResponseEntity.badRequest().body(new ApiResponse<>(false, "오류 발생: " + e.getMessage(), null));
+        if (profileImage != null && !profileImage.isEmpty()) {
+            String fileName = UUID.randomUUID() + "_" + profileImage.getOriginalFilename();
+            String uploadDir = "uploads/images/pets/";
+            File dest = new File(uploadDir + fileName);
+            dest.getParentFile().mkdirs();
+            profileImage.transferTo(dest);
+            pet.setProfileImagePath(uploadDir + fileName);
         }
+
+        boolean success = petService.registerPet(pet);
+        return ResponseEntity.ok(new ApiResponse<>(success, success ? "반려동물 등록 성공" : "등록 실패", pet));
     }
 }

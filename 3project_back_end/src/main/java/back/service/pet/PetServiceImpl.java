@@ -45,7 +45,7 @@ public class PetServiceImpl implements PetService {
                 File destFile = new File(uploadPath, storedFileName);
                 imageFile.transferTo(destFile);
 
-                pet.setImagePath("/petImages/" + storedFileName); // DB 저장용 상대 경로
+                pet.setProfileImagePath("/petImages/" + storedFileName); // DB 저장용 상대 경로
             }
 
             return petMapper.insertPet(pet) > 0;
@@ -58,4 +58,11 @@ public class PetServiceImpl implements PetService {
             throw new HException("반려동물 등록 실패", e);
         }
     }
+
+	@Override
+	public boolean registerPet(Pet pet) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
+
