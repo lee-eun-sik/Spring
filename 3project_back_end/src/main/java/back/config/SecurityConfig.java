@@ -86,6 +86,7 @@ public class SecurityConfig {
                     "/api/find/findId.do",
                     "/api/find/findPw.do",
                     "/api/find/resetPassword.do",
+                    "/api/pet/animalregister.do",
                     "/ws/**",
                     "/ws"
                 ).permitAll() // 로그인을 안해도 로그인, 로그아웃, 회원가입은 누구나 접근 가능,부모 관련 비교할 경우, 인가함수

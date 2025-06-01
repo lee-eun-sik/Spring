@@ -26,11 +26,9 @@
 
     <!-- 매퍼 파일 등록 --> 
     <mappers> 
-        <mapper resource="mapper/user/UserMapper.xml"/> <!-- 사용자 매퍼 파일 -->
-        <mapper resource="mapper/PetSitter/PetSitterMapper.xml"/>
-        <mapper resource="mapper/Reservation/ReservationMapper.xml"/>
-        <mapper resource="mapper/member/MemberMapper.xml"/>
-        <mapper resource="mapper/newsboardBoard/newsboardBoardMapper.xml"/>
-        <mapper resource="mapper/newsboardFile/newsboardFileMapper.xml"/>
+        <mapper resource="mapper/UserMapper.xml"/> <!-- 사용자 매퍼 파일 -->
+        <mapper resource="mapper/PetMapper.xml"/>
+        <mapper resource="mapper/FileMapper.xml"/>
+        <mapper resource="mapper/BoardMapper.xml"/>
     </mappers>
 </configuration>
