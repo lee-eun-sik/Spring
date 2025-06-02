@@ -18,10 +18,16 @@ public interface UserService {
     
     List<User>  findUsersByInfo(String email);
     
-    
+    public boolean isUserIdDuplicate(String usersId);
     boolean updatePassword(String userId, String encodedPassword);
     
     boolean resetPassword(String userId, String newPassword);
 
 	User findUserByUserIdAndEmail(String userId, String email);
+
+	public boolean isUserEmailDuplicate(String email);
+
+	public boolean isEmailRegistered(String email);
+
+	public User findByEmail(String email);
 }    

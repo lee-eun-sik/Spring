@@ -41,7 +41,7 @@ public class FindController {
 
         List<Map<String, String>> userInfoList = users.stream()
             .map(user -> Map.of(
-                "userId", user.getUserId(),
+                "usersId", user.getUsersId(),
                 "createDt", user.getCreateDt()
             ))
             .toList();

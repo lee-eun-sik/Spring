@@ -8,8 +8,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import back.exception.HException;
 import back.mapper.pet.PetMapper;
-import back.model.Pet.Pet;
-
+import back.model.pet.Pet;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;

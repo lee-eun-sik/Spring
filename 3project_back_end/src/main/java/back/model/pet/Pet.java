@@ -1,4 +1,4 @@
-package back.model.Pet;
+package back.model.pet;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -20,8 +20,8 @@ public class Pet extends Model {
     private String gender;            // GENDER
     private String animalMemo;        // ANIMAL_MEMO
 
-    private LocalDateTime createDt;   // CREATE_DT
-    private LocalDateTime updateDt;   // UPDATE_DT
+    private String createDt;   // CREATE_DT
+    private String updateDt;   // UPDATE_DT
     private String createId;          // CREATE_ID
     private String updateId;          // UPDATE_ID
 

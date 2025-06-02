@@ -11,94 +11,24 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class User extends Model {
-	private String userId;
-    private String username;
-    private String password;
-    private String email;
-    private String createDt;
-    private String delYn;
-    private String password_confirm;
-    private String phonenumber;
-    private String gender;
-    private String birthdate;
-    private String role;
-    private String nickname;
-  
-	public String getUserId() {
-		return userId;
+public class User extends Model{
+	private String usersId;
+	private String usersFileId;
+	private String usersName;
+	private String usersPassword;
+	private String usersEmail;
+	private String createDt;
+	private String updateDt;
+	private String createId;
+	private String updateId;
+	private String delYn;
+	public String getUsersId() {
+	    return usersId;
 	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public String getUsersPassword() {
+	    return usersPassword;
 	}
-
-	public String getUsername() {
-		return username;
+	public String getUsersEmail() {
+	    return usersEmail;
 	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-
-	public String getDelYn() {
-		return delYn;
-	}
-
-	public void setDelYn(String delYn) {
-		this.delYn = delYn;
-	}
-
-	public String getPhonenumber() {
-		return phonenumber;
-	}
-
-	public void setPhonenumber(String phonenumber) {
-		this.phonenumber = phonenumber;
-	}
-
-	public String getGender() {
-		return gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
-
-
-
-	public String getRole() {
-		return role;
-	}
-
-	public void setRole(String role) {
-		this.role = role;
-	}
-
-	public String getPassword_confirm() {
-		return password_confirm;
-	}
-
-	public void setPassword_confirm(String password_confirm) {
-		this.password_confirm = password_confirm;
-	}
-
 }

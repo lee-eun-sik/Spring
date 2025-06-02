@@ -34,4 +34,12 @@ public class User extends Model {
 
 	private String sortField = "CREATE_DT";
     private String sortOrder = "DESC"; //정렬
+	public void setUsersPassword(Object object) {
+		// TODO Auto-generated method stub
+		
+	}
+	public String getUsersPassword() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

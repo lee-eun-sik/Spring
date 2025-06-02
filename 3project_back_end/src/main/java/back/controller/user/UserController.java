@@ -46,7 +46,7 @@ public class UserController {
     private BCryptPasswordEncoder passwordEncoder;
     @PostMapping("/register.do")
 	public ResponseEntity<?> register(@RequestBody User user) {
-		log.info("회원가입 요청: {}", user.getUserId());
+		log.info("회원가입 요청: {}", user.getUsersId());
 		
 		user.setCreateId("SYSTEM");
 		boolean success = userService.registerUser(user);
@@ -55,10 +55,10 @@ public class UserController {
 	}
     @PostMapping("/login.do")
 	public ResponseEntity<?> login(@RequestBody User user, HttpServletRequest request) {
-	    log.info("로그인 시도: {}", user.getUserId());
+	    log.info("로그인 시도: {}", user.getUsersId());
 	    try {
 	        Authentication auth = authenticationManager.authenticate(
-	            new UsernamePasswordAuthenticationToken(user.getUserId(), user.getPassword())
+	            new UsernamePasswordAuthenticationToken(user.getUsersId(), user.getUsersPassword())
 	        );
 	
 	        SecurityContextHolder.getContext().setAuthentication(auth);
@@ -73,7 +73,7 @@ public class UserController {
 					.getAuthentication().getPrincipal();
 	        return ResponseEntity.ok(new ApiResponse<>(true, "로그인 성공", userDetails.getUser()));
 	    } catch (AuthenticationException e) {
-	        log.warn("로그인 실패: {}", user.getUserId());
+	        log.warn("로그인 실패: {}", user.getUsersId());
 	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
 	            .body(new ApiResponse<>(false, "아이디 또는 비밀번호가 일치하지 않습니다.", null));
 	    }
@@ -88,6 +88,14 @@ public class UserController {
 
         return ResponseEntity.ok(new ApiResponse<>(true, "로그아웃 완료", null));
     }
-    
+    @PostMapping("/checkUserId.do")
+    public ResponseEntity<?> checkUserId(@RequestBody Map<String, String> request) {
+        String usersId = request.get("usersId");
+        boolean isDuplicate = userService.isUserIdDuplicate(usersId);
+        
+        Map<String, Object> result = new HashMap<>();
+        result.put("available", !isDuplicate);
+        return ResponseEntity.ok(result);
+    }
     
 }

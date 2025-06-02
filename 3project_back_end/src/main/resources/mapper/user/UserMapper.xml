@@ -4,37 +4,31 @@
 
 <mapper namespace="back.mapper.user.UserMapper">
 <resultMap id="userResultMap" type="back.model.user.User">
-    <result property="userId" column="USER_ID"/>
-    <result property="username" column="USERNAME"/>
-    <result property="password" column="PASSWORD"/>
-    <result property="email" column="EMAIL"/>
+    <result property="usersId" column="USERS_ID"/>
+    <result property="usersFileId" column="USERS_FILE_ID"/>
+    <result property="usersName" column="USERS_NAME"/>
+    <result property="usersPassword" column="USERS_PASSWORD"/>
+    <result property="usersemail" column="USERS_EMAIL"/>
     <result property="createId" column="CREATE_ID"/>
     <result property="updateId" column="UPDATE_ID"/>
     <result property="createDt" column="CREATE_DT"/>
     <result property="updateDt" column="UPDATE_DT"/>
-    <result property="role" column="ROLE"/>
-    <result property="gender" column="GENDER"/>        
-    <result property="phonenumber" column="PHONENUMBER"/> 
-    <result property="birthdate" column="BIRTH_DATE"/>
     <result property="delYn" column="DEL_YN"/>
-    <result property="nickname" column="NICKNAME"/>
+    
 </resultMap>
 	<!-- 사용자 ID로 사용자 정보 조회 -->
     <select id="getUserById" resultMap="userResultMap" parameterType="string">
-	    SELECT USER_ID, 
-		       USERNAME, 
-		       PASSWORD, 
-		       EMAIL, 
-		       PHONENUMBER,
-		       GENDER,
-		       BIRTH_DATE,
-		       CREATE_ID, 
-		       UPDATE_ID, 
-		       CREATE_DT, 
-		       UPDATE_DT, 
-		       ROLE
-		FROM USERS
-	    WHERE USER_ID = #{userId}
+	    SELECT USERS_ID,
+	           USERS_FILE_ID,
+	           USERS_NAME,
+	           USERS_PASSWORD,
+	           USERS_EMAIL,
+	           CREATE_ID,
+	           UPDATE_ID,
+	           CREATE_DT,
+	           UPDATE_DT
+	    FROM USERS
+	    WHERE USERS_ID = #{usersId}
 	      AND DEL_YN = 'N'
 	</select>
 
@@ -42,23 +36,21 @@
 
     <insert id="registerUser" parameterType="back.model.user.User">
 	    INSERT INTO USERS (
-	        USER_ID, 
-	        PASSWORD,
-	        EMAIL,
+	        USERS_ID, 
+	        USERS_PASSWORD,
+	        USERS_EMAIL,
 	        CREATE_ID,
 	        CREATE_DT,
-	        ROLE,
 	        DEL_YN,
-	        NICKNAME
+	        USERS_NAME
 	    ) VALUES (
-	        #{userId}, 
-	        #{password},
-	        #{email},
+	        #{usersId}, 
+	        #{usersPassword},
+	        #{usersemail},
 	        #{createId},
 	        SYSDATE,
-	        #{role, jdbcType=VARCHAR},
 	        'N',
-	        #{nickname}
+	        #{usersName}
 	    )
 	</insert>
 
@@ -68,78 +60,62 @@
 	    UPDATE USERS 
 	    SET DEL_YN = 'Y',  
 	        UPDATE_DT = SYSDATE  
-	    WHERE USER_ID = #{userId} AND DEL_YN = 'N'
+	    WHERE USERS_ID = #{usersId} AND DEL_YN = 'N'
 	</update>
 	
-	<select id="checkUserIdDuplicate" resultType="int">
-	    SELECT 
-	        COUNT(*) 
+	<select id="checkUserIdDuplicate" parameterType="string" resultType="int">
+	    SELECT COUNT(*) 
 	    FROM USERS
-	    WHERE USER_ID = #{userId}
-	      AND DEL_YN = 'N'
+	    WHERE USERS_ID = #{usersId} AND DEL_YN = 'N'
 	</select>
-	
 	<update id="updatePassword">
 		UPDATE users
-		SET password = #{encodedPassword}
-		WHERE user_id = #{userId}
+		SET users_password = #{encodedPassword}
+		WHERE users_id = #{userId}
 	</update>
-	<select id="getUserRoleById" parameterType="string" resultType="string">
-	    SELECT ROLE 
-	    FROM USERS 
-	    WHERE USER_ID = #{userId}
-	      AND DEL_YN = 'N'
-	</select>
+	
 	
 	<select id="getAllUsers" resultMap="userResultMap">
 	   SELECT 
-		   USER_ID,
-		   USERNAME,
-		   PASSWORD,
-		   EMAIL,
-		   PHONENUMBER,
-		   GENDER,
+		   USERS_ID,
+		   USERS_NAME,
+		   USERS_PASSWORD,
+		   USERS_EMAIL,
 		   CREATE_ID,
 		   UPDATE_ID,
 		   CREATE_DT,
 		   UPDATE_DT,
-		   ROLE,
-		   BIRTH_DATE,
 		   DEL_YN
 	   FROM USERS
-	   WHERE USER_ID = #{userId}
+	   WHERE USERS_ID = #{usersId}
 	   AND DEL_YN = 'N'
 	</select>
 	
 	<select id="findUsersByInfo" parameterType="map" resultType="back.model.user.User">
 	    SELECT *
 	    FROM users
-	    WHERE email = #{email, jdbcType=VARCHAR}
+	    WHERE users_email = #{usersemail, jdbcType=VARCHAR}
 	</select>
 	
 	
 	<select id="findUserByUserIdAndEmail" resultMap="userResultMap" parameterType="map">
 	    SELECT * FROM USERS 
-	    WHERE USER_ID = #{userId}
-	    AND EMAIL = #{email}
+	    WHERE USERS_ID = #{usersId}
+	    AND USERS_EMAIL = #{usersemail}
 	</select>
 	
 	<select id="findByUserId" resultMap="userResultMap" parameterType="string">
-	    SELECT USER_ID, 
-	           USERNAME, 
-	           PASSWORD, 
-	           EMAIL, 
-	           PHONENUMBER,
-	           GENDER,
-	           BIRTH_DATE,
+	    SELECT USERS_ID, 
+	           USERS_NAME, 
+	           USERS_PASSWORD, 
+	           USERS_EMAIL, 
 	           CREATE_ID, 
 	           UPDATE_ID, 
 	           CREATE_DT, 
-	           UPDATE_DT, 
-	           ROLE,
+	           UPDATE_DT,
 	           DEL_YN
 	    FROM USERS
-	    WHERE USER_ID = #{userId}
+	    WHERE USERS_ID = #{usersId}
 	      AND DEL_YN = 'N'
 	</select>
 	
@@ -147,7 +123,19 @@
 	<select id="selectUsersByEmail" resultMap="userResultMap" parameterType="string">
 	    SELECT *
 	    FROM USERS
-	    WHERE EMAIL = #{email}
+	    WHERE USERS_EMAIL = #{usersEmail}
 	      AND DEL_YN = 'N'
+	</select>
+	
+	<select id="selectByEmail" resultType="back.model.user.User" parameterType="String">
+	    SELECT users_id, users_email, users_name, users_password
+	    FROM users
+	    WHERE users_email = #{email}
+	</select>
+	
+	<select id="countByEmail" resultType="int" parameterType="String">
+	    SELECT COUNT(*)
+	    FROM users
+	    WHERE users_email = #{usersEmail}
 	</select>
 </mapper>

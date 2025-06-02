@@ -19,7 +19,7 @@ public class SecurityUtil {
         if (userDetails == null) {
             throw new HException("로그인 필요", HttpStatus.UNAUTHORIZED);
         }
-        if (!userDetails.getUser().getUserId().equals(userId)) {
+        if (!userDetails.getUser().getUsersId().equals(userId)) {
             throw new HException("권한 없음", HttpStatus.FORBIDDEN);
         }
     }

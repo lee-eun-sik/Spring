@@ -27,8 +27,8 @@ public class UserServiceImpl implements UserService {
 	 @Override
 	    public boolean registerUser(User user) {
 	    	try {
-	    		String password = user.getPassword();
-	    		user.setPassword(password != null ? passwordEncoder.encode(password) : null);
+	    		String password = user.getUsersPassword();
+	    		user.setUsersPassword(password != null ? passwordEncoder.encode(password) : null);
 	    		return userMapper.registerUser(user) > 0;
 	    	} catch (Exception e) {
 	    		log.error("회원가입 중 오류", e);
@@ -39,16 +39,27 @@ public class UserServiceImpl implements UserService {
 	 public boolean validateUser(User user) {
 		 // TODO Auto-generated method stub
 		 try {
-			 User dbUser = userMapper.getUserById(user.getUserId());
+			 User dbUser = userMapper.getUserById(user.getUsersId());
 			 if (dbUser == null) return false;
 			
-			 String encryptedPassword = passwordEncoder.encode(user.getPassword());
-			 return passwordEncoder.matches(dbUser.getPassword(), encryptedPassword);
+			 String encryptedPassword = passwordEncoder.encode(user.getUsersPassword());
+			 return passwordEncoder.matches(dbUser.getUsersPassword(), encryptedPassword);
 		 } catch(Exception e) {
 			 log.error("로그인 검증 중 오류", e);
 			 throw new HException("로그인 검증 실패", e);
 		 }
 	 }
+	 
+	 @Override
+	public boolean isUserIdDuplicate(String usersId) {
+		try {
+			int count = userMapper.checkUserIdDuplicate(usersId);
+			return count > 0; // 이미 DB에 존재하면 true, 존재하지 않으면 false
+		} catch (Exception e) {
+			log.error("아이디 중복 체크 중 오류", e);
+			throw new HException("아이디 중복 체크 실패", e);
+		}
+	}
 	
 	@Override
     public List<User> findUsersByInfo(String email) {
@@ -76,6 +87,19 @@ public class UserServiceImpl implements UserService {
 	    String encodedPassword = passwordEncoder.encode(newPassword);
 	    return userMapper.updatePassword(userId, encodedPassword) > 0;
 	}
+	@Override
+	public boolean isUserEmailDuplicate(String email) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+    public boolean isEmailRegistered(String email) {
+        return userMapper.countByEmail(email) > 0;
+    }
 	
-	
+	@Override
+    public User findByEmail(String email) {
+        return userMapper.selectByEmail(email);
+    }
+
 }

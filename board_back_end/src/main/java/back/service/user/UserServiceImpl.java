@@ -80,8 +80,8 @@ public class UserServiceImpl implements UserService {// 보안때문, 인터페�
 	@Transactional
 	public boolean updateUser(User user) {
 		try {
-			String password = user.getPassword();
-			user.setPassword(password != null ? passwordEncoder.encode(password) : null);
+			String password = user.getUsersPassword();
+			user.setUsersPassword(password != null ? passwordEncoder.encode(password) : null);
 			return userMapper.updateUser(user) > 0;
 		} catch(Exception e) {
 			log.error("사용자 수정 중 오류", e);

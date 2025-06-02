@@ -3,7 +3,7 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="back.mapper.pet.PetMapper">
 
-    <insert id="insertPet" parameterType="back.model.Pet.Pet">
+    <insert id="insertPet" parameterType="back.model.pet.Pet">
         INSERT INTO pet (
             user_id, animal_name, animal_species, animal_adoption_date,
             birth_date, gender, animal_memo, image_path, create_id, update_id, del_yn

@@ -30,5 +30,6 @@
         <mapper resource="mapper/PetMapper.xml"/>
         <mapper resource="mapper/FileMapper.xml"/>
         <mapper resource="mapper/BoardMapper.xml"/>
+        <mapper resource="mapper/AutoInfoMapper.xml"/>
     </mappers>
 </configuration>

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import back.model.common.CustomUserDetails;
-import back.model.Pet.Pet;
+import back.model.pet.Pet;
 import back.service.pet.PetService;
 import back.util.ApiResponse;
 import back.util.SecurityUtil;

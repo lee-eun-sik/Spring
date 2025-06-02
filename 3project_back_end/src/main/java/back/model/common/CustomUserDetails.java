@@ -23,12 +23,12 @@ public class CustomUserDetails implements UserDetails { //받아서 재정의함
 
     @Override
     public String getUsername() {
-        return user.getUserId(); // 암호화 Spring 보안이 체크한다. 
+        return user.getUsersId(); // 암호화 Spring 보안이 체크한다. 
     }
 
     @Override
     public String getPassword() {
-        return user.getPassword();
+        return user.getUsersPassword();
     }
 
     @Override

@@ -4,11 +4,8 @@ import java.util.Map;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import back.service.email.EmailService;
 import back.util.ApiResponse;
@@ -18,43 +15,47 @@ import lombok.extern.slf4j.Slf4j;
 @RestController
 @RequestMapping("/api/email")
 public class EmailController {
-	
-	
-	@Autowired
-	private EmailService emailService;
-	
-	// 이메일 인증번호 발송
-	@PostMapping("/send-code.do")
-	public ApiResponse<?> sendCode(@RequestBody Map<String, String> request) {
-		String email = request.get("email");
-		if (email == null || !email.contains("@")) {
-			return new ApiResponse<>(false, "유효한 이메일이 아닙니다.", null);
-		}
-		
-		String code = String.format("%06d", new Random().nextInt(999999));
-		log.info("이메일 인증번호 발송: {} -> {}", email, code);
-		emailService.sendEmail(email, "회원가입 인증번호", "인증번호는 " + code + " 입니다. 3분 내에 사용해주세요.");
-		// 이메일 발송 생략 (예: JavaMailSender 등 사용 가능)
-		
-		emailService.saveVerificationCode(email, code);
-		return new ApiResponse<>(true, "인증번호가 발송되었습니다.", null);
-	}
-	
-	// 인증번호 검증
-	@PostMapping("/verify-code.do")
-	public ApiResponse<?> verifyCode(@RequestBody Map<String, String> request) {
-	    String email = request.get("email");
-	    String code = request.get("code");
 
-	    if (email == null || code == null) {
-	        return new ApiResponse<>(false, "이메일과 인증번호를 모두 입력해주세요.", null);
-	    }
+    @Autowired
+    private EmailService emailService;
 
-	    boolean isValid = emailService.verifyCode(email, code);
-	    if (isValid) {
-	        return new ApiResponse<>(true, "인증에 성공했습니다.", null);
-	    } else {
-	        return new ApiResponse<>(false, "인증번호가 틀리거나 시간이 만료되었습니다.", null);
-	    }
-	}
+    @PostMapping("/send-code.do")
+    public ResponseEntity<?> sendCode(@RequestBody Map<String, String> request) {
+        String email = request.get("users_email");
+
+        if (email == null || email.isEmpty()) {
+            log.info("이메일 누락");
+            return ResponseEntity.badRequest().body(ApiResponse.error("이메일이 누락되었습니다."));
+        }
+
+        // 이미 가입된 이메일인지 확인 (예시 - 실제 구현 필요)
+        if (emailService.isEmailRegistered(email)) {
+            return ResponseEntity.ok().body(ApiResponse.of("DUPLICATE_EMAIL", false));
+        }
+
+        String code = String.format("%06d", new Random().nextInt(999999));
+       
+        // DB나 메모리/캐시에 저장
+        emailService.saveEmailCode(email, code);
+
+        boolean result = emailService.sendEmail(email, code); // 실제 이메일 발송
+
+        if (result) {
+            return ResponseEntity.ok().body(ApiResponse.success());
+        } else {
+            return ResponseEntity.badRequest().body(ApiResponse.error("이메일 전송 실패"));
+        }
+    }
+
+    @PostMapping("/verify-code.do")
+    public ResponseEntity<?> verifyCode(@RequestBody Map<String, String> request) {
+        String email = request.get("users_email");
+        String code = request.get("code");
+
+        if (emailService.verifyEmailCode(email, code)) {
+            return ResponseEntity.ok().body(ApiResponse.success());
+        } else {
+            return ResponseEntity.badRequest().body(ApiResponse.error("인증번호 불일치"));
+        }
+    }
 }

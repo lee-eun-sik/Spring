@@ -15,7 +15,7 @@ public interface UserMapper {
 
 	public int registerUser(User user);
 
-	int checkUserIdDuplicate(String userId);
+	public int checkUserIdDuplicate(String usersId);
 	
 	List<User> findUsersByInfo(Map<String, Object> params);
 	
@@ -25,4 +25,8 @@ public interface UserMapper {
 	User findByUserId(String userId);
 	
 	public List<User> selectUsersByEmail(String email);
+
+	int countByEmail(String email);
+
+	User selectByEmail(String email);
 }

@@ -2,7 +2,7 @@ package back.mapper.pet;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import back.model.Pet.Pet;
+import back.model.pet.Pet;
 
 
 
