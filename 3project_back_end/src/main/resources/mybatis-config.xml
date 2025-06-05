@@ -31,5 +31,6 @@
         <mapper resource="mapper/FileMapper.xml"/>
         <mapper resource="mapper/BoardMapper.xml"/>
         <mapper resource="mapper/AutoInfoMapper.xml"/>
+        <mapper resource="mapper/ComboMapper.xml"/>
     </mappers>
 </configuration>
