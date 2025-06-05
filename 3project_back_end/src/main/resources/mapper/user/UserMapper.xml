@@ -8,7 +8,7 @@
     <result property="usersFileId" column="USERS_FILE_ID"/>
     <result property="usersName" column="USERS_NAME"/>
     <result property="usersPassword" column="USERS_PASSWORD"/>
-    <result property="usersemail" column="USERS_EMAIL"/>
+    <result property="usersEmail" column="USERS_EMAIL"/>
     <result property="createId" column="CREATE_ID"/>
     <result property="updateId" column="UPDATE_ID"/>
     <result property="createDt" column="CREATE_DT"/>
@@ -44,13 +44,13 @@
 	        DEL_YN,
 	        USERS_NAME
 	    ) VALUES (
-	        #{usersId}, 
-	        #{usersPassword},
-	        #{usersemail},
-	        #{createId},
+	        #{usersId, jdbcType=VARCHAR}, 
+	        #{usersPassword, jdbcType=VARCHAR}, 
+	        #{usersEmail, jdbcType=VARCHAR},
+	        #{createId, jdbcType=VARCHAR},
 	        SYSDATE,
 	        'N',
-	        #{usersName}
+	        #{usersName, jdbcType=VARCHAR}
 	    )
 	</insert>
 
@@ -94,14 +94,14 @@
 	<select id="findUsersByInfo" parameterType="map" resultType="back.model.user.User">
 	    SELECT *
 	    FROM users
-	    WHERE users_email = #{usersemail, jdbcType=VARCHAR}
+	    WHERE users_email = #{usersEmail, jdbcType=VARCHAR}
 	</select>
 	
 	
 	<select id="findUserByUserIdAndEmail" resultMap="userResultMap" parameterType="map">
 	    SELECT * FROM USERS 
-	    WHERE USERS_ID = #{usersId}
-	    AND USERS_EMAIL = #{usersemail}
+	    WHERE USERS_ID = #{usersId, jdbcType=VARCHAR}
+	    AND USERS_EMAIL = #{usersEmail, jdbcType=VARCHAR}
 	</select>
 	
 	<select id="findByUserId" resultMap="userResultMap" parameterType="string">
@@ -123,14 +123,15 @@
 	<select id="selectUsersByEmail" resultMap="userResultMap" parameterType="string">
 	    SELECT *
 	    FROM USERS
-	    WHERE USERS_EMAIL = #{usersEmail}
+	    WHERE USERS_EMAIL = #{usersEmail, jdbcType=VARCHAR}
 	      AND DEL_YN = 'N'
 	</select>
 	
 	<select id="selectByEmail" resultType="back.model.user.User" parameterType="String">
 	    SELECT users_id, users_email, users_name, users_password
 	    FROM users
-	    WHERE users_email = #{email}
+	    WHERE users_email = #{usersEmail}
+	      AND ROWNUM = 1
 	</select>
 	
 	<select id="countByEmail" resultType="int" parameterType="String">

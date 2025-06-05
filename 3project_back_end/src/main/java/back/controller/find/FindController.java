@@ -30,7 +30,7 @@ public class FindController {
     @PostMapping("/findId.do")
     public ResponseEntity<?> findUserIdByInfo(@RequestBody Map<String, String> body) {
        
-        String email = body.get("email");
+        String email = body.get("usersEmail");
 
         log.info("사용자 정보로 ID 찾기 요청: {}, {}, {}, {}", email);
 
@@ -42,7 +42,7 @@ public class FindController {
         List<Map<String, String>> userInfoList = users.stream()
             .map(user -> Map.of(
                 "usersId", user.getUsersId(),
-                "createDt", user.getCreateDt()
+                "createDt", user.getCreateDt() == null ? "" : user.getCreateDt()
             ))
             .toList();
 
@@ -51,12 +51,13 @@ public class FindController {
 
     @PostMapping("/findPw.do")
     public ResponseEntity<?> findUserPwByInfo(@RequestBody Map<String, String> body) {
-        String userId = body.get("userId");
-        String email = body.get("email");
+        String usersId = body.get("usersId");
+        String usersEmail = body.get("usersEmail");
 
-        log.info("비밀번호 찾기 요청: userId={}, email={}", userId, email);
-
-        User user = userService.findUserByUserIdAndEmail(userId, email);
+        log.info("비밀번호 찾기 요청: usersId={}, usersEmail={}", usersId, usersEmail);
+        log.info(">>>> 받은 usersId: {}", usersId);
+        log.info(">>>> 받은 usersEmail: {}", usersEmail);
+        User user = userService.findUserByUserIdAndEmail(usersId, usersEmail);
         if (user == null) {
             return ResponseEntity.ok(new ApiResponse<>(false, "입력한 정보가 일치하지 않습니다.", null));
         }
@@ -67,15 +68,15 @@ public class FindController {
     
     @PostMapping("/resetPassword.do")
     public ResponseEntity<ApiResponse<String>> resetPassword(@RequestBody Map<String, String> payload) {
-        String userId = payload.get("userId");
+        String usersId = payload.get("usersId");
         String newPassword = payload.get("newPassword");
 
-        if (userId == null || newPassword == null) {
+        if (usersId == null || newPassword == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                 .body(new ApiResponse<>(false, "필수 정보 누락", null));
         }
 
-        boolean result = userService.resetPassword(userId, newPassword);
+        boolean result = userService.resetPassword(usersId, newPassword);
 
         if (result) {
             return ResponseEntity.ok(new ApiResponse<>(true, "비밀번호가 변경되었습니다.", null));

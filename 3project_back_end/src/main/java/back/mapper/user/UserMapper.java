@@ -22,11 +22,11 @@ public interface UserMapper {
 	public User findUserByUserIdAndEmail(Map<String, Object> params);
 	public int updatePassword(@Param("userId") String userId, @Param("encodedPassword") String encodedPassword);
 
+	List<User> selectUsersByEmail(String email);
+
 	User findByUserId(String userId);
+
+	boolean isEmailRegistered(String email);
+
 	
-	public List<User> selectUsersByEmail(String email);
-
-	int countByEmail(String email);
-
-	User selectByEmail(String email);
 }

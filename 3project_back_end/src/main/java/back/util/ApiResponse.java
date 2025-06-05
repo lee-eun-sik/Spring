@@ -8,20 +8,20 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ApiResponse<T> {
-   
-    private boolean success; // boolean 으로 변경
+
+    private boolean success;
     private String message;
     private T data;
 
     public static ApiResponse success() {
-        return new ApiResponse("SUCCESS", true, null);
+        return new ApiResponse(true, "SUCCESS", null);
     }
 
     public static ApiResponse error(String message) {
-        return new ApiResponse("ERROR", false, message);
+        return new ApiResponse(false, "ERROR", message);
     }
 
-    public static ApiResponse of(String code, boolean success) {
-        return new ApiResponse(code, success, null);
+    public static ApiResponse of(String message, boolean success) {
+        return new ApiResponse(success, message, null);
     }
 }

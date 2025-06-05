@@ -25,9 +25,9 @@ public interface UserService {
 
 	User findUserByUserIdAndEmail(String userId, String email);
 
-	public boolean isUserEmailDuplicate(String email);
+	 boolean isEmailRegistered(String email);
 
-	public boolean isEmailRegistered(String email);
+	boolean isEmailAlreadyRegistered(String email);
 
 	public User findByEmail(String email);
 }    
