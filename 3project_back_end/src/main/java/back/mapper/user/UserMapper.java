@@ -26,7 +26,7 @@ public interface UserMapper {
 
 	User findByUserId(String userId);
 
-	boolean isEmailRegistered(String email);
+	public int isEmailRegistered(String email);
 
 	
 }

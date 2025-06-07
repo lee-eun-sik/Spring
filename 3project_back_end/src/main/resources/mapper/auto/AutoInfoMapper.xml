@@ -54,4 +54,12 @@
         WHERE AUTH_EMAIL = #{email}
         AND DEL_YN = 'N'
     </update>
+    <!-- 회원가입이 완료하면 AUTH_INFO테이블에 USERS_ID값 삽입합니다.-->
+    <update id="updateUsersId" parameterType="map">
+	    UPDATE AUTH_INFO
+	    SET USERS_ID = #{usersId},
+	        UPDATED_DT = SYSDATE
+	    WHERE AUTH_EMAIL = #{email}
+	      AND DEL_YN = 'N'
+	</update>
 </mapper>    

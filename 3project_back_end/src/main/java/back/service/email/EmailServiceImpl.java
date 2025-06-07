@@ -1,6 +1,8 @@
 package back.service.email;
 
 import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -109,14 +111,11 @@ public class EmailServiceImpl implements EmailService {
     @Transactional
     public boolean saveEmailCode(String email, String code) {
         try {
-            User user = userService.findByEmail(email);
-            if (user == null) throw new HException("등록된 사용자 정보가 없습니다.");
-
+            // 가입 여부는 무시하고 이메일 인증번호만 저장
             AutoInfo existing = autoInfoMapper.selectByEmail(email);
             if (existing == null) {
                 AutoInfo info = new AutoInfo();
-                info.setUser(user);
-                info.setUsersId(null);
+                info.setUsersId(null); // 사용자 ID 없음
                 info.setAuthEmail(email);
                 info.setAuthNumber(code);
                 info.setCreateId("system");
@@ -159,6 +158,7 @@ public class EmailServiceImpl implements EmailService {
      * 인증정보 보관용 내부 클래스
      */
     private static class VerificationInfo {
+
         private final String code;
         private final LocalDateTime generatedTime;
 
@@ -173,6 +173,21 @@ public class EmailServiceImpl implements EmailService {
 
         public LocalDateTime getGeneratedTime() {
             return generatedTime;
+        }
+    }
+   
+    @Override
+    @Transactional
+    public void updateUsersIdToAuthInfo(String email, String usersId) {
+    	try {
+	        Map<String, Object> paramMap = new HashMap<>();
+	        paramMap.put("email", email);
+	        paramMap.put("usersId", usersId);
+	        autoInfoMapper.updateUsersId(paramMap);
+    	}    
+        catch (Exception e) {
+        	log.error("이메일 인증정보에서 사용자 아이디 업데이트중 오류발생");
+        	throw new  HException("이메일 인증정보에서 사용자 아이디 업데이트가 안됬습니다.", e);		
         }
     }
 }

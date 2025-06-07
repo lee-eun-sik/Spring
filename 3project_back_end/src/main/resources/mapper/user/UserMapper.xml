@@ -139,4 +139,11 @@
 	    FROM users
 	    WHERE users_email = #{usersEmail}
 	</select>
+	
+	<select id="isEmailRegistered" resultType="int">
+	    SELECT COUNT(*) 
+	    FROM USERS 
+	    WHERE USERS_EMAIL = #{email}
+	    AND DEL_YN = 'N'
+	</select>
 </mapper>

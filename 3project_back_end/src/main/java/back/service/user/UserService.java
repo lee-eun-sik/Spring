@@ -16,18 +16,18 @@ public interface UserService {
     
 	public boolean validateUser(User user);
     
-    List<User>  findUsersByInfo(String email);
+    public List<User>  findUsersByInfo(String email);
     
     public boolean isUserIdDuplicate(String usersId);
-    boolean updatePassword(String userId, String encodedPassword);
+    public boolean updatePassword(String userId, String encodedPassword);
     
-    boolean resetPassword(String userId, String newPassword);
+    public boolean resetPassword(String userId, String newPassword);
 
-	User findUserByUserIdAndEmail(String userId, String email);
+	public User findUserByUserIdAndEmail(String userId, String email);
 
-	 boolean isEmailRegistered(String email);
+	public boolean isEmailRegistered(String email);
 
-	boolean isEmailAlreadyRegistered(String email);
+	
 
 	public User findByEmail(String email);
 }    

@@ -34,9 +34,12 @@ public class AutoInfo extends Model{
         this.user = user;
     }
 
-	public void setUsersId(Object object) {
-		// TODO Auto-generated method stub
-		
-	}
+    public void setUsersId(String usersId) {
+        if (this.user == null) {
+            this.user = new User();
+        }
+        this.user.setUsersId(usersId);
+    }
+
     
 }

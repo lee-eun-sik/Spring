@@ -25,12 +25,16 @@ public class EmailController {
 
         if (email == null || email.isEmpty()) {
             log.info("이메일 누락");
-            return ResponseEntity.badRequest().body(ApiResponse.error("이메일이 누락되었습니다."));
+            // 직접 ApiResponse 객체 생성
+            ApiResponse<Object> response = new ApiResponse<>(false, "이메일이 누락되었습니다.", null);
+            return ResponseEntity.badRequest().body(response);
         }
 
         // 이미 가입된 이메일인지 확인
         if (emailService.isEmailRegistered(email)) {
-            return ResponseEntity.ok().body(ApiResponse.of("DUPLICATE_EMAIL", false));
+            // 중복 이메일 응답 - success=false, message만 전달
+            ApiResponse<Object> response = new ApiResponse<>(false, "해당 이메일은 이미 가입되어 있습니다.", null);
+            return ResponseEntity.ok().body(response);
         }
 
         String code = String.format("%06d", new Random().nextInt(999999));
@@ -42,26 +46,31 @@ public class EmailController {
         boolean result = emailService.sendVerificationCodeEmail(email, code);
 
         if (result) {
-            return ResponseEntity.ok().body(ApiResponse.success());
+            ApiResponse<Object> response = new ApiResponse<>(true, "인증번호가 전송되었습니다.", null);
+            return ResponseEntity.ok().body(response);
         } else {
-            return ResponseEntity.badRequest().body(ApiResponse.error("이메일 전송 실패"));
+            ApiResponse<Object> response = new ApiResponse<>(false, "이메일 전송 실패", null);
+            return ResponseEntity.badRequest().body(response);
         }
     }
 
     @PostMapping("/verify-code.do")
     public ResponseEntity<?> verifyCode(@RequestBody Map<String, String> request) {
-        String email = request.get("usersEmail"); // 수정된 키 (대소문자 정확히 일치)
+        String email = request.get("usersEmail"); // 대소문자 일치 주의
         String code = request.get("code");
 
         if (email == null || code == null) {
             log.warn("verify-code 요청에서 email 또는 code가 null입니다. email={}, code={}", email, code);
-            return ResponseEntity.badRequest().body(ApiResponse.error("이메일 또는 인증번호가 누락되었습니다."));
+            ApiResponse<Object> response = new ApiResponse<>(false, "이메일 또는 인증번호가 누락되었습니다.", null);
+            return ResponseEntity.badRequest().body(response);
         }
 
         if (emailService.verifyEmailCode(email, code)) {
-            return ResponseEntity.ok().body(ApiResponse.success());
+            ApiResponse<Object> response = new ApiResponse<>(true, "이메일 인증이 완료되었습니다.", null);
+            return ResponseEntity.ok().body(response);
         } else {
-            return ResponseEntity.badRequest().body(ApiResponse.error("인증번호 불일치"));
+            ApiResponse<Object> response = new ApiResponse<>(false, "인증번호 불일치", null);
+            return ResponseEntity.badRequest().body(response);
         }
     }
 }

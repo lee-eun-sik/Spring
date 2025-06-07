@@ -1,5 +1,7 @@
 package back.mapper.auto;
 
+import java.util.Map;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import back.model.auto.AutoInfo;
@@ -9,4 +11,6 @@ public interface AutoInfoMapper {
     void insertAuthInfo(AutoInfo info);
     void updateAuthNumber(AutoInfo info);
     void verifyAuthEmail(String email);
+	
+	void updateUsersId(Map<String, Object> paramMap);
 }

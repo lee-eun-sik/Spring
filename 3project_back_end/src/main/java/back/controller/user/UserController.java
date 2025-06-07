@@ -1,5 +1,6 @@
 package back.controller.user;
 
+import java.awt.SystemColor;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +27,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import back.model.common.CustomUserDetails;
 import back.model.user.User;
+import back.service.email.EmailServiceImpl;
 import back.service.user.UserService;
 import back.util.ApiResponse;
 import jakarta.servlet.http.HttpServlet;
@@ -44,15 +46,25 @@ public class UserController {
     private AuthenticationManager authenticationManager;
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
+    @Autowired
+	private EmailServiceImpl emailService;
     @PostMapping("/register.do")
-	public ResponseEntity<?> register(@RequestBody User user) {
-		log.info("회원가입 요청: {}", user.getUsersId());
-		
-		user.setCreateId("SYSTEM");
-		boolean success = userService.registerUser(user);
-		
-		return ResponseEntity.ok(new ApiResponse<>(success, success ? "회원가입 성공" : "회원가입 실패", null));
-	}
+    public ResponseEntity<?> register(@RequestBody User user) {
+        if (user.getUsersId() == null || user.getUsersPassword() == null || user.getUsersEmail() == null) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(new ApiResponse<>(false, "필수 입력값이 누락되었습니다.", null));
+        }
+        System.out.println(user.getUsersPassword());
+        user.setCreateId("SYSTEM");
+        boolean success = userService.registerUser(user);
+        
+        if (success) {
+            // 회원가입 성공 후 AUTH_INFO 테이블에 usersId 저장
+            emailService.updateUsersIdToAuthInfo(user.getUsersEmail(), user.getUsersId());
+        }
+        return ResponseEntity.ok(new ApiResponse<>(success, success ? "회원가입 성공" : "회원가입 실패", null));
+    }
     @PostMapping("/login.do")
 	public ResponseEntity<?> login(@RequestBody User user, HttpServletRequest request) {
 	    log.info("로그인 시도: {}", user.getUsersId());

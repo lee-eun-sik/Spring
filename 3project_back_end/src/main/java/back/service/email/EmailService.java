@@ -9,4 +9,6 @@ public interface EmailService {
 	public void saveVerificationCode(String email, String code); // 수정됨
 	public boolean verifyCode(String email, String code);
 	public boolean sendEmail(String to, String subject, String text); // 추가됨
+	public void updateUsersIdToAuthInfo(String email, String usersId);
+	
 }
